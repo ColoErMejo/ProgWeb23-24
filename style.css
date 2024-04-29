@@ -40,3 +40,7 @@ nav form button {
 nav form button:hover {
   background-color: #444;
 }
+
+footer {
+  max-width: 100%;
+}
