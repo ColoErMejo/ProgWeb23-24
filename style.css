@@ -1,21 +1,42 @@
-header,
-nav,
-footer {
-  max-width: 100%;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-nav,
-#research-filter,
-#content-results {
-  height: 100%;
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
 }
 
-#research-filter {
-  width: 30%;
-  float: left;
+nav {
+  background-color: #eee;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
 }
 
-#content-results {
-  width: 70%;
-  float: left;
+nav form {
+  display: flex;
+  align-items: center;
+}
+
+nav form input[type="text"] {
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin-right: 5px;
+}
+
+nav form button {
+  background-color: #333;
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+nav form button:hover {
+  background-color: #444;
 }
