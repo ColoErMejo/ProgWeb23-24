@@ -1,0 +1,21 @@
+header,
+nav,
+footer {
+  max-width: 100%;
+}
+
+nav,
+#research-filter,
+#content-results {
+  height: 100%;
+}
+
+#research-filter {
+  width: 30%;
+  float: left;
+}
+
+#content-results {
+  width: 70%;
+  float: left;
+}
