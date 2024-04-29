@@ -1,32 +1,67 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <!-- Add your header content here -->
-      <h1>Header</h1>
-    </header>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-    <nav>
-      <!-- Add your navigation bar content here -->
-      <p>NavBar</p>
-    </nav>
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
 
-    <div id="research-filter">
-      <!-- Add your research filter content here -->
-      <p>Research Filter</p>
+    nav {
+      background-color: #eee;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+    }
+
+    nav form {
+      display: flex;
+      align-items: center;
+    }
+
+    nav form input[type="text"] {
+      border: 1px solid #ccc;
+      padding: 5px;
+      margin-right: 5px;
+    }
+
+    nav form button {
+      background-color: #333;
+      border: none;
+      color: #fff;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    nav form button:hover {
+      background-color: #444;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Website</h1>
+  </header>
+  <nav>
+    <form>
+      <input type="text" placeholder="Search...">
+      <button type="submit">Search</button>
+    </form>
+    <div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
     </div>
-
-    <div id="content-results">
-      <!-- Add your content/results content here -->
-      <p>Content Result</p>
-    </div>
-
-    <footer>
-      <!-- Add your footer content here -->
-      <p>Footer</p>
-    </footer>
-  </body>
+  </nav>
+</body>
 </html>
