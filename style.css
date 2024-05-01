@@ -8,6 +8,7 @@ body {
   flex-direction: column;
   margin: 0;
 }
+/* Header*/
 
 .header {
   position: relative;
@@ -28,7 +29,7 @@ body {
 }
 
 .inner-header {
-  height: 45vh;
+  height: 35vh;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -100,6 +101,8 @@ body {
     font-size: 24px;
   }
 }
+
+/* Navbar*/
 nav {
   margin: 27px auto 0;
   position: relative;
@@ -158,6 +161,7 @@ a:nth-child(3):hover ~ .animation {
   background-color: #3498db;
 }
 
+/*Contenuto mid*/
 .container {
   display: flex;
   justify-content: center;
@@ -176,7 +180,7 @@ a:nth-child(3):hover ~ .animation {
   text-align: center;
   line-height: 100px;
 }
-
+/*zona di ricerca a sx*/
 .research-filter {
   background-color: red;
   flex: 0 0 29%;
@@ -220,6 +224,8 @@ a:nth-child(3):hover ~ .animation {
 #research button:hover {
   background-color: #ff6600;
 }
+
+/*Zona di contenuto (tabelle) a dx*/
 .content-results {
   background-color: blue;
   flex: 0 0 69%;
@@ -231,12 +237,15 @@ a:nth-child(3):hover ~ .animation {
     flex: 100%;
   }
 }
-
+/* footer */
 footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #6e4d4d; /* Set the background color of the footer */
-  text-align: center;
-  line-height: 60px; /* Vertically center the content */
+  position: relative;
+  background: #05b3a4;
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 35%;
 }
