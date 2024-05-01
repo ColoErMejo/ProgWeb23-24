@@ -239,6 +239,40 @@ a:nth-child(3):hover ~ .animation {
     flex: 100%;
   }
 }
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 6px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+@media screen and (max-width: 760px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  th,
+  td {
+    padding: 6px;
+    border: none;
+  }
+
+  th:before {
+    content: attr(data-th);
+    display: block;
+    font-weight: bold;
+  }
+}
 /* footer */
 footer {
   position: fixed;
