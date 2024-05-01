@@ -239,13 +239,35 @@ a:nth-child(3):hover ~ .animation {
 }
 /* footer */
 footer {
-  position: relative;
-  background: #05b3a4;
-  min-height: 100px;
-  padding: 20px 50px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(123, 0, 44, 1);
+  color: white;
+  padding: 20px;
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  margin-top: 35%;
+}
+
+.email-section {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.email-section p {
+  display: inline-block;
+  margin: 0 50px;
+  vertical-align: middle;
+}
+.email-section svg {
+  position: relative;
+  top: 5px; /* adjust the value to move the icon down */
+}
+.email-section a {
+  text-decoration: none; /* Rimuovi la sottolineatura */
+  color: inherit; /* Utilizza il colore ereditato */
 }
