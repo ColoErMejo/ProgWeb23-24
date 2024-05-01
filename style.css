@@ -107,7 +107,7 @@ nav {
   margin: 27px auto 0;
   position: relative;
   height: 50px;
-  background-color: #34495e;
+  background-color: rgba(123, 0, 44, 1);
   border-radius: 8px;
   font-size: 0;
 }
@@ -131,7 +131,7 @@ nav .animation {
   z-index: 0;
   transition: all 0.5s ease 0s;
   border-radius: 8px;
-  background-color: #34495e; /* Colore di sfondo predefinito */
+  background-color: rgba(123, 0, 44, 1); /* Colore di sfondo predefinito */
 }
 a:nth-child(1) {
   width: 80px;
@@ -176,10 +176,12 @@ a:nth-child(3):hover ~ .animation {
 .content-results {
   margin: 6px;
   box-sizing: border-box;
+  border-radius: 5px;
   height: 100%;
   text-align: center;
   line-height: 100px;
 }
+
 /*zona di ricerca a sx*/
 .research-filter {
   background-color: red;
@@ -259,13 +261,15 @@ footer {
 }
 
 .email-section p {
+  /*mail*/
   display: inline-block;
   margin: 0 50px;
   vertical-align: middle;
 }
 .email-section svg {
+  /*icona*/
   position: relative;
-  top: 5px; /* adjust the value to move the icon down */
+  top: 5px;
 }
 .email-section a {
   text-decoration: none; /* Rimuovi la sottolineatura */
