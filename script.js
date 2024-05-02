@@ -1,8 +1,12 @@
 $(document).ready(function () {
   var lastClickedIndex = -1; // Memorizza l'indice dell'ultimo bottone cliccato
 
+  // Nascondi l'animazione all'inizio
+  $(".animation").hide();
+
   // Quando passi sopra un bottone, l'animazione si muove verso quel bottone
   $("nav a").hover(function () {
+    $(".animation").show(); // Mostra l'animazione quando passi sopra la navbar
     var index = $(this).index();
     moveAnimation(index);
   });
@@ -27,13 +31,20 @@ $(document).ready(function () {
 
   // Quando esci dalla navbar, reimposta l'animazione all'ultimo bottone cliccato
   $("nav").mouseleave(function () {
-    moveAnimation(lastClickedIndex);
+    if (lastClickedIndex === -1) {
+      $(".animation").hide(); // Nascondi l'animazione solo se nessun bottone è stato cliccato
+    } else {
+      moveAnimation(lastClickedIndex);
+    }
   });
+
   // Quando il mouse entra nella navbar, rimuovi le classi active e btn-clicked da tutti i bottoni
   // e reimposta queste classi sull'ultimo bottone cliccato
   $("nav").mouseenter(function () {
+    $(".animation").show(); // Mostra l'animazione quando il mouse entra nella navbar
     $("nav a").removeClass("active btn-clicked"); // Rimuove le classi active e btn-clicked da tutti i bottoni
   });
+
   // Quando esci dalla navbar, reimposta le classi active e btn-clicked
   // all'ultimo bottone cliccato solo se non è stato cliccato alcun altro bottone mentre il mouse era sulla navbar
   $("nav").mouseleave(function () {
