@@ -10,11 +10,7 @@ body {
 .header {
   position: relative;
   text-align: center;
-  background: linear-gradient(
-    60deg,
-    rgba(123, 0, 44, 1) 0%,
-    rgba(202, 153, 171, 1) 100%
-  );
+  background: #800000; /*BORDEAUX*/
   color: white;
 }
 .logo {
@@ -104,7 +100,7 @@ nav {
   margin: 27px auto 0;
   position: relative;
   height: 50px;
-  background-color: rgba(123, 0, 44, 1);
+  background-color: #800000;
   border-radius: 8px;
   font-size: 0;
 }
@@ -128,7 +124,7 @@ nav .animation {
   z-index: 0;
   transition: all 0.5s ease 0s;
   border-radius: 8px;
-  background-color: rgba(123, 0, 44, 1); /* Colore di sfondo predefinito */
+  background-color: #800000; /* Colore di sfondo predefinito */
 }
 a:nth-child(1) {
   width: 80px;
@@ -143,19 +139,19 @@ nav .start-home,
 a:nth-child(1):hover ~ .animation {
   width: 80px;
   left: 0;
-  background-color: #1abc9c;
+  background-color: #0abab5;
 }
 nav .start-about,
 a:nth-child(2):hover ~ .animation {
   width: 230px;
   left: 80px;
-  background-color: #e74c3c;
+  background-color: #a94133;
 }
 nav .start-blog,
 a:nth-child(3):hover ~ .animation {
   width: 130px;
   left: 310px;
-  background-color: #3498db;
+  background-color: #a578ab;
 }
 
 /* Aggiungi una classe active per il bottone cliccato */
@@ -186,21 +182,21 @@ nav .animation-hover {
 }
 nav a.active.sim {
   /* Stile del bottone 1 */
-  background-color: #1abc9c;
+  background-color: #0abab5;
   color: #fff;
   border-radius: 8px;
 }
 
 nav a.active.cont_tel {
   /* Stile del bottone 2 */
-  background-color: #e74c3c;
+  background-color: #a94133;
   color: #fff;
   border-radius: 8px;
 }
 
 nav a.active.tel {
   /* Stile del bottone 3 */
-  background-color: #3498db;
+  background-color: #a578ab;
   color: #fff;
   border-radius: 8px;
 }
@@ -228,7 +224,9 @@ nav a.active.tel {
 
 /*zona di ricerca a sx*/
 .research-filter {
-  background-color: red;
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   flex: 0 0 29%;
   display: flex;
   align-items: flex-start;
@@ -258,7 +256,7 @@ nav a.active.tel {
 
 #research button {
   padding: 10px 20px;
-  background-color: #ff9900;
+  background-color: #a94133;
   color: white;
   border: none;
   border-radius: 3px;
@@ -268,7 +266,7 @@ nav a.active.tel {
 }
 
 #research button:hover {
-  background-color: #ff6600;
+  background-color: #800000;
 }
 
 /*Zona di contenuto (tabelle) a dx*/
@@ -337,7 +335,7 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(123, 0, 44, 1);
+  background-color: #800000;
   color: white;
   padding: 20px;
   text-align: center;
