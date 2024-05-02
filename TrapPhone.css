@@ -1,0 +1,110 @@
+body{
+	background-color: #FFEFdF;
+	padding: 0px;
+	margin: 0px;
+}
+
+header{
+	top:0px;
+	padding:0px;
+	margin: 0px;
+	margin-bottom: 5px;
+}
+
+h1 {
+	padding:3px;
+	margin: 0px;
+	font-size : 48px;
+	background: #99eACA;
+	color:  #251382;
+	text-align: center;
+}
+
+nav{
+	float: left;
+	width: 150px;
+	padding: 0px;
+	margin: 0px;
+}
+
+ol {
+	list-style-type: none;
+	font-size: 24px;
+	width: 98%;
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+	background-color: #333;
+	position: relative;
+	float:left;
+}
+
+
+
+li {
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li a:hover:not(.active) {
+	background-color: #111;
+}
+.active {
+	background-color: #04AA6D;
+}
+a{
+	color:black;
+}   
+a:hover{
+	color: red;
+}
+
+input, button {
+	font-size:14px;
+}
+
+#content{   
+	float:left;
+	margin:0px;
+	font-size: 14px;
+	padding:20px;
+	border-color:red;
+	border: 1px solid red;
+	width: calc(100% - 200px);
+	height: 85vh;
+}
+#results {
+	border: 1px dashed black;
+	position: relative;
+	margin-top:10px;
+	height: 95%;
+	overflow-y: auto;
+}
+footer{          
+	position:fixed;
+	font-size:12px;
+	width: 100%;
+	bottom:0%;
+	background: #2ba1a3;
+	text-align: center;
+}
+
+.table{
+	border: 1px solid #a24014;	
+}
+.header{
+	background: #1239A1;
+	color:yellow;
+}
+.rowEven { 
+	background: #E9fff0;
+}
+.rowOdd {  
+	background: #E5EEFF;
+}

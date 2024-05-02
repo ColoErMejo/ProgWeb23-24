@@ -15,11 +15,12 @@
 			$qry = $qry . "AND ContrattoTelefonico.DataAttivazione LIKE '%" . $DataAttivazione . "%' ";
 
 		if ($Tipo != "")
-			$qry = $qry . "AND ContrattoTelefonico.Tipo = " . $tipo . " ";
+			$qry = $qry . "AND ContrattoTelefonico.Tipo = " . $Tipo . " ";
 
-		if ($MinutiResidui != "" && $CreditoResiduo != "") {
+		if ($MinutiResidui != "" || $CreditoResiduo != "") {
     		$qry = $qry . "AND ContrattoTelefonico.MInutiResidui = " . $MinutiResidui . " ";
     		$qry = $qry . "AND ContrattoTelefonico.CreditoResiduo = " . $CreditoResiduo . " ";	
+		}
 		return $qry;
 	}
 
@@ -29,10 +30,10 @@
 							"FROM Artist JOIN Video " .
 								"ON Artist.id=Video.idArtist " .
 							"WHERE 1=1 ";	
-		if ($id != "")
-			$qry = $qry . "AND Artist.id = " . $id . " ";
-		if ($name != "")
-			$qry = $qry . "AND Artist.Name LIKE '%" . $name . "%' ";
+		if ($Codice != "")
+			$qry = $qry . "AND SIM.Codice = " . $Codice . " ";
+		if ($TipoSIM != "")
+			$qry = $qry . "AND SIM.TipoSIM LIKE '%" . $TipoSIM . "%' ";
     	
 		$qry = $qry . "GROUP BY Artist.id, Artist.Name " .
 								" ORDER BY Artist.id ";
@@ -40,27 +41,28 @@
 		return $qry;
 	}
 	
-	function getQry ($name, $id) : string {
-		$qry = "SELECT Director2.id AS id, " . 
-									"Director2.Name AS Name, " . 
-									"Director2.WikipediaLink AS Wiki, " .
-									"Director2.ImvdbLink AS Imvdb, " .
-									"Director2.ImdbLink AS Imdb, " .
-									"COUNT(*) AS nVideoclips " . 
-							"FROM Director2 JOIN Video " .
-								"ON Director2.id=Video.idDirector " .
+	function getTelefonataQry ($ID, $EffettuataDa) : string {
+		$qry = "SELECT Telefonata.ID AS ID, " . 
+									"Telefonata.EffettuataDa AS EffettuataDa, " . 
+									"Telefonata.Data AS Data, " .
+									"Telefonata.Ora AS Ora, " .
+									"Telefonata.Durata AS Durata, " .
+									"Telefonata.Costo AS Costo, " . 
+							"FROM Telefonata JOIN ContrattoTelefonico " .
+								"ON Telfonata.EffettuataDa=COntrattoTelefonico.Numero " .
 							"WHERE 1=1 ";
-		if ($name != "")
-			$qry = $qry . "AND Director2.Name LIKE '%" . $name . "%' ";
-		if ($id != "")
-			$qry = $qry . "AND Director2.id = " . $id . " ";
+		if ($ID != "")
+			$qry = $qry . "AND Telefonata.ID LIKE '%" . $ID . "%' ";
+		if ($EffettuataDa != "")
+			$qry = $qry . "AND Telefonata.EffettuataDa = " . $EffettuataDa . " ";
 		
 		$qry = $qry . 
-		 					"GROUP BY Director2.id, Director2.Name, " .
-									"Director2.WikipediaLink, " . 
-									"Director2.ImvdbLink, " . 
-									"Director2.ImdbLink " .
-							"ORDER BY Director2.Name";
+		 					"GROUP BY Telefonata.ID, Telefonata.EffettuataDa, " .
+									"Telefonata.Data, " . 
+									"Telefonata.Ora, " . 
+									"Telefonata.Durata " .
+									"Telefonata.Costo " .
+							"ORDER BY Telefonata.EffettuataDa";
 		return $qry;
 	}
 	
@@ -94,6 +96,4 @@
 			return "";
 		return "<a href='index.php?idArt=" . $lnk . "'>" . $n . "</a>";
 	}	
-
 ?>
-
