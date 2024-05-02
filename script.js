@@ -1,3 +1,4 @@
+//NAVBAR
 $(document).ready(function () {
   var lastClickedIndex = -1; // Memorizza l'indice dell'ultimo bottone cliccato
 
