@@ -4,21 +4,13 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <!-- Include jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!--Include Ajax call-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Include il tuo file JavaScript -->
     <script src="/navbar.js"></script>
     <!--navbar script-->
-    <script>
-      $(document).ready(function () {
-        $("#loadButton").click(function () {
-          $.ajax({
-            url: "/Telefonata.php",
-            success: function (result) {
-              $("#content-results").html(result);
-            },
-          });
-        });
-      });
-    </script>
+    <script src="/ajax.js"></script>
+    <!--Chiamate Ajax-->
     <title>Progetto Prog Web</title>
   </head>
   <body>
@@ -116,7 +108,7 @@
     <nav>
       <a href="#" class="sim">SIM</a>
       <a href="#" class="cont_tel">Contratto Telefonico</a>
-      <a href="Telefonata.php" class="TrapPhone">Telefonata</a>
+      <a href="#" class="tel">Telefonata</a>
       <div class="animation start-home"></div>
     </nav>
     <div class="container">
