@@ -96,4 +96,3 @@
 			return "";
 		return "<a href='index.php?idArt=" . $lnk . "'>" . $n . "</a>";
 	}	
-?>
