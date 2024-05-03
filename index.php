@@ -79,7 +79,7 @@
 						$Numero = $riga["Numero"];
 						$DataAttivazione = $riga["DataAttivazione"];
 						$Tipo = $riga["Tipo"];
-						$MinutiResidu = $riga["MinutiResidui"];
+						$MinutiResidui = $riga["MinutiResidui"];
 						$CreditoResiduo = $riga["CreditoResiduo"];
 
 						?>
