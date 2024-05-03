@@ -1,6 +1,7 @@
 <?php      
 	function getContrattoTelefonicoQry ($Numero, $DataAttivazione, $Tipo, $MinutiResidui, $CreditoResiduo) : string {
-		$qry = "SELECT 	ContrattoTelefonico.Numero AS numero, ContrattoTelefonico.DataAttivazione AS DataAttivazione, ContrattoTelefonico.tipo AS tipo, ContrattoTelefonico.MinutiResidui AS MinutiResidui, ContrattoTelefonico.CreditoResiduo AS CreditoResiduo " .						"FROM ContrattoTelefonico 	" .
+		$qry = "SELECT 	ContrattoTelefonico.Numero AS numero, ContrattoTelefonico.DataAttivazione AS DataAttivazione, ContrattoTelefonico.tipo AS tipo, ContrattoTelefonico.MinutiResidui AS MinutiResidui, ContrattoTelefonico.CreditoResiduo AS CreditoResiduo " .			
+						"FROM ContrattoTelefonico ".
 						"WHERE 1=1 ";	
 		if ($Numero != "")
 			$qry = $qry . "AND ContrattoTelefonico.Numero = " . $Numero . " ";
