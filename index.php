@@ -6,9 +6,9 @@
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<script type="text/javascript" src="./js/script.js"></script>
 	<!--script js-->
-	<script src="./js/navbar.js"></script>
+	<script type="text/javascript" src="./js/navbar.js"></script>
 	<!--navbar script-->
-	<script src="./js/ajax.js"></script>
+	<script type="text/javascript" src="./js/ajax.js"></script>
 	<!--Chiamate Ajax-->
 </head>
 
