@@ -3,8 +3,13 @@
 
 <head>
 	<title>TrapPhone</title>
-	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<script type="text/javascript" src="./js/script.js"></script>
+	<!--script js-->
+	<script src="./js/navbar.js"></script>
+	<!--navbar script-->
+	<script src="./js/ajax.js"></script>
+	<!--Chiamate Ajax-->
 </head>
 
 <body>
@@ -14,7 +19,7 @@
 	include 'footer.html';
 	include 'DBManager.php';
 	?>
-	<div id="research_filter">
+	<div id="research-filter">
 		<form name="myform" method="POST">
 			<input id="Numero" name="Numero" type="text" placeholder="Numero di Telefono" />
 			<input id="DataAttivazione" name="DataAttivazione" type="text" placeholder="Data attivazione" />
@@ -24,7 +29,7 @@
 			<input type="submit" value="Cerca" />
 		</form>
 
-		<div id="results">
+		<div id="content-results">
 			<?php
 			$Numero = "";
 			$DataAttivazione = "";
