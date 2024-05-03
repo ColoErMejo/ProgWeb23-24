@@ -19,7 +19,7 @@
 	include 'footer.html';
 	include 'DBManager.php';
 	?>
-	<div id="research-filter">
+	<div class="research-filter">
 		<form name="myform" method="POST">
 			<input id="Numero" name="Numero" type="text" placeholder="Numero di Telefono" />
 			<input id="DataAttivazione" name="DataAttivazione" type="text" placeholder="Data attivazione" />
@@ -29,7 +29,7 @@
 			<input type="submit" value="Cerca" />
 		</form>
 
-		<div id="content-results">
+		<div class="content-results">
 			<?php
 			$Numero = "";
 			$DataAttivazione = "";
