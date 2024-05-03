@@ -3,8 +3,8 @@
 
 <head>
 	<title>TrapPhone</title>
-	<link rel="stylesheet" href="./style.css">
-	<script type="text/javascript" src="./script.js"></script>
+	<link rel="stylesheet" href="./css/style.css">
+	<script type="text/javascript" src="./js/script.js"></script>
 </head>
 
 <body>

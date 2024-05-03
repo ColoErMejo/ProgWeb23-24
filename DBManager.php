@@ -1,13 +1,7 @@
 <?php      
 	function getContrattoTelefonicoQry ($Numero, $DataAttivazione, $Tipo, $MinutiResidui, $CreditoResiduo) : string {
-		$qry = "SELECT 	ContrattoTelefonico.Numero AS numero, ContrattoTelefonico.DataAttivazione AS DataAttivazione, ContrattoTelefonico.tipo AS tipo, ContrattoTelefonico.MinutiResidui AS MinutiResidui, ContrattoTelefonico.CreditoResiduo AS CreditoResiduo " .
-							" SIMAttiva.DataAttivazione AS DataAttivazioneSIM, Artist.Name AS nArtist, " .
-        					" COUNT(Telefonata.EffettuataDa) AS NumeroChiamate".
-							"FROM ContrattoTelefonico 	" .
-    						"JOIN Telefonata ON Telefonata.EffettuataDa=ContrattoTelefonico.Numero " .
-    						"JOIN SIMAttiva ON SIMAttiva.AssociataA=ContrattoTelefonico.Numero " .
-                            "JOIN SIMDisattiva ON SIMDisattiva.EraAssociataA=ContrattoTelefonico.Numero " .
-							"WHERE 1=1 ";	
+		$qry = "SELECT 	ContrattoTelefonico.Numero AS numero, ContrattoTelefonico.DataAttivazione AS DataAttivazione, ContrattoTelefonico.tipo AS tipo, ContrattoTelefonico.MinutiResidui AS MinutiResidui, ContrattoTelefonico.CreditoResiduo AS CreditoResiduo " .						"FROM ContrattoTelefonico 	" .
+						"WHERE 1=1 ";	
 		if ($Numero != "")
 			$qry = $qry . "AND ContrattoTelefonico.Numero = " . $Numero . " ";
 
