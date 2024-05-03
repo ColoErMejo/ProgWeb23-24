@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Intervalli di date dalle $ora_inizio alle $ora_fine:";
 }
 ?>
-<div id="content">
+<div id="">
     <form name="myform" method="POST" action="<?php echo $_SERVER["PHP_SELF"];?>">
         <input id="num" name="EffettuataDa" type="text" placeholder="Numero di telefono"/>
         <input id="date" name="Data" type="text" placeholder="Data"/>
@@ -40,58 +40,58 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </select>
         <input type="submit" value="Cerca"/>
     </form>
-    <div id="results">
-        <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $ID = "";
-            $EffettuataDa = $_POST["EffettuataDa"];
-            $query = getTelefonataQry($ID, $EffettuataDa);
+    </div>
+<div id="results">
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $ID = "";
+        $EffettuataDa = $_POST["EffettuataDa"];
+        $query = getTelefonataQry($ID, $EffettuataDa);
 
-            include 'connectDB.php';
+        include 'connectDB.php';
 
-            try {
-                $result = $conn->query($query);
-                ?>
-                <table class="table">
-                    <tr class="header">
-                        <th>ID</th>
-                        <th>EffettuataDa</th>
-                        <th>Data</th>
-                        <th>Ora</th>
-                        <th>Durata</th>
-                        <th>Costo</th>
+        try {
+            $result = $conn->query($query);
+            ?>
+            <table class="table">
+                <tr class="header">
+                    <th>ID</th>
+                    <th>EffettuataDa</th>
+                    <th>Data</th>
+                    <th>Ora</th>
+                    <th>Durata</th>
+                    <th>Costo</th>
+                </tr>
+                <?php
+                $i = 0;
+                foreach ($result as $riga) {
+                    $i++;
+                    $classRiga = ($i % 2 == 0) ? 'class="rowEven"' : 'class="rowOdd"';
+                    $EffettuataDa = $riga["EffettuataDa"];
+                    $ID = $riga["ID"];
+                    $Data = $riga["Data"];
+                    $Ora = $riga["Ora"];
+                    $Durata = $riga["Durata"];
+                    $Costo = $riga["Costo"];
+                    ?>
+                    <tr <?php echo $classRiga; ?> >
+                        <td><?php echo $ID; ?></td>
+                        <td><?php echo $EffettuataDa; ?></td>
+                        <td><?php echo $Data; ?></td>
+                        <td><?php echo $Ora; ?></td>
+                        <td><?php echo $Durata; ?></td>
+                        <td><?php echo $Costo; ?></td>
                     </tr>
                     <?php
-                    $i = 0;
-                    foreach ($result as $riga) {
-                        $i++;
-                        $classRiga = ($i % 2 == 0) ? 'class="rowEven"' : 'class="rowOdd"';
-                        $EffettuataDa = $riga["EffettuataDa"];
-                        $ID = $riga["ID"];
-                        $Data = $riga["Data"];
-                        $Ora = $riga["Ora"];
-                        $Durata = $riga["Durata"];
-                        $Costo = $riga["Costo"];
-                        ?>
-                        <tr <?php echo $classRiga; ?> >
-                            <td><?php echo $ID; ?></td>
-                            <td><?php echo $EffettuataDa; ?></td>
-                            <td><?php echo $Data; ?></td>
-                            <td><?php echo $Ora; ?></td>
-                            <td><?php echo $Durata; ?></td>
-                            <td><?php echo $Costo; ?></td>
-                        </tr>
-                        <?php
-                    }
-                    ?>
-                </table>
-                <?php
-            } catch (PDOException $e) {
-                echo "<p>Errore DB sulla query: " . $e->getMessage() . "</p>";
-            }
+                }
+                ?>
+            </table>
+            <?php
+        } catch (PDOException $e) {
+            echo "<p>Errore DB sulla query: " . $e->getMessage() . "</p>";
         }
-        ?>
-    </div>
+    }
+    ?>
 </div>
 </body>
 </html>
