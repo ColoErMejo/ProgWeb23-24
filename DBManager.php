@@ -1,6 +1,6 @@
 <?php      
-	function getContrattoTelefonicoQry ($Numero, $DataAttivazione, $Tipo, $MinutiResidui, $CreditoResiduo) : string {
-		$qry = "SELECT 	ContrattoTelefonico.Numero AS numero, ContrattoTelefonico.DataAttivazione AS DataAttivazione, ContrattoTelefonico.tipo AS tipo, ContrattoTelefonico.MinutiResidui AS MinutiResidui, ContrattoTelefonico.CreditoResiduo AS CreditoResiduo " .			
+	function getContrattoTelefonicoQry ($Numero, $DataAttivazione, $Tipo) : string {
+		$qry = "SELECT 	ContrattoTelefonico.Numero AS Numero, ContrattoTelefonico.DataAttivazione AS DataAttivazione, ContrattoTelefonico.Tipo AS Tipo, ContrattoTelefonico.MinutiResidui AS MinutiResidui, ContrattoTelefonico.CreditoResiduo AS CreditoResiduo " .			
 						"FROM ContrattoTelefonico ".
 						"WHERE 1=1 ";	
 		if ($Numero != "")
@@ -10,12 +10,7 @@
 			$qry = $qry . "AND ContrattoTelefonico.DataAttivazione LIKE '%" . $DataAttivazione . "%' ";
 
 		if ($Tipo != "")
-			$qry = $qry . "AND ContrattoTelefonico.Tipo = " . $Tipo . " ";
-
-		if ($MinutiResidui != "" || $CreditoResiduo != "") {
-    		$qry = $qry . "AND ContrattoTelefonico.MInutiResidui = " . $MinutiResidui . " ";
-    		$qry = $qry . "AND ContrattoTelefonico.CreditoResiduo = " . $CreditoResiduo . " ";	
-		}
+			$qry = $qry . "AND ContrattoTelefonico.Tipo LIKE '%" . $Tipo . "%' ";
 		return $qry;
 	}
 
@@ -43,21 +38,20 @@
 									"Telefonata.Ora AS Ora, " .
 									"Telefonata.Durata AS Durata, " .
 									"Telefonata.Costo AS Costo, " . 
-							"FROM Telefonata JOIN ContrattoTelefonico " .
-								"ON Telfonata.EffettuataDa=COntrattoTelefonico.Numero " .
+							"FROM Telefonata " .
 							"WHERE 1=1 ";
 		if ($ID != "")
 			$qry = $qry . "AND Telefonata.ID LIKE '%" . $ID . "%' ";
 		if ($EffettuataDa != "")
 			$qry = $qry . "AND Telefonata.EffettuataDa = " . $EffettuataDa . " ";
 		
-		$qry = $qry . 
+		/*$qry = $qry . 
 		 					"GROUP BY Telefonata.ID, Telefonata.EffettuataDa, " .
 									"Telefonata.Data, " . 
 									"Telefonata.Ora, " . 
 									"Telefonata.Durata " .
 									"Telefonata.Costo " .
-							"ORDER BY Telefonata.EffettuataDa";
+							"ORDER BY Telefonata.EffettuataDa";*/
 		return $qry;
 	}
 	

@@ -1,14 +1,18 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Telefonata DB</title>
-    <link rel="stylesheet" href="./css/trapPhone.css">
-    <script type="text/javascript" src="./js/script.js"></script>
-</head>
-<body onload="setH1telefonata()">
-<?php
-include 'index.html';
-include 'DBManager.php';
+<title>Telefonata DB</title>
+    <link rel="stylesheet" href="./css/style.css">
+		<script type="text/javascript" src="./js/script.js"></script>
+	</head>
+
+	<body onload="setH1artist()">
+<?php	
+	include 'header.html';
+	include 'nav.html';
+	include 'footer.html';
+	include 'DBManager.php';
+    include 'connectDB.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ora_inizio = $_POST["ora_inizio"];
@@ -16,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Intervalli di date dalle $ora_inizio alle $ora_fine:";
 }
 ?>
-<div id="">
+<div class="research-filter">
     <form name="myform" method="POST" action="<?php echo $_SERVER["PHP_SELF"];?>">
         <input id="num" name="EffettuataDa" type="text" placeholder="Numero di telefono"/>
         <input id="date" name="Data" type="text" placeholder="Data"/>
@@ -41,14 +45,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="submit" value="Cerca"/>
     </form>
     </div>
-<div id="results">
+    
+<div class="content-results">
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $ID = "";
         $EffettuataDa = $_POST["EffettuataDa"];
         $query = getTelefonataQry($ID, $EffettuataDa);
-
-        include 'connectDB.php';
 
         try {
             $result = $conn->query($query);
@@ -67,8 +70,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 foreach ($result as $riga) {
                     $i++;
                     $classRiga = ($i % 2 == 0) ? 'class="rowEven"' : 'class="rowOdd"';
-                    $EffettuataDa = $riga["EffettuataDa"];
                     $ID = $riga["ID"];
+                    $EffettuataDa = $riga["EffettuataDa"];
                     $Data = $riga["Data"];
                     $Ora = $riga["Ora"];
                     $Durata = $riga["Durata"];

@@ -16,7 +16,7 @@ h1 {
 	margin: 0px;
 	font-size : 48px;
 	background: #99eACA;
-	color:  #251382;
+	color:  white;
 	text-align: center;
 }
 
@@ -39,10 +39,6 @@ ol {
 	float:left;
 }
 
-
-
-li {
-}
 
 li a {
 	display: block;
@@ -99,7 +95,7 @@ footer{
 	border: 1px solid #a24014;	
 }
 .header{
-	background: #1239A1;
+	background: white;
 	color:yellow;
 }
 .rowEven { 
