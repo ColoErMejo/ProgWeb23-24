@@ -14,14 +14,18 @@
 		return $qry;
 	}
 
-	function getSIMQry ($Codice) : string {
-		$qry = "SELECT SIMAttiva.codice AS Acodice, SIMDisattiva.codice AS Dcodice, SIMNonAttiva.codice AS Ncodice, " . 
-							"FROM SIMAttiva
-							JOIN SIMDisattiva ON SIMAttiva.Codice = SIMDisattiva.Codice
-							JOIN SIMNonAttiva ON SIMAttiva.Codice = SIMNonAttiva.Codice";
+	function getSIMQry ($Codice, $TipoSIM) : string {
+		$qry = "SELECT * FROM SIMAttiva
+				UNION ALL
+				SELECT * FROM SIMDisattiva
+				UNION ALL
+				SELECT * FROM SIMNonAttiva;" .
 							"WHERE 1=1 ";	
 		if ($Codice != "")
-			$qry = $qry . "AND SIM.Codice = " . $Codice . " ";
+			$qry = $qry . "AND Codice = " . $Codice . " ";
+		if ($TipoSIM != "")
+			$qry = $qry . "AND TipoSIM = " . $TipoSIM . " ";
+
 		return $qry;
 	}
 	
