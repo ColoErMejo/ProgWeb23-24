@@ -37,10 +37,11 @@
 				$Codice = $_POST["Codice"];
                 $TipoSIM = $_POST["TipoSIM"];
 			} else if (count($_GET) > 0) {
+                $Codice = $_POST["Codice"];
 				$TipoSIM = $_POST["TipoSIM"];
 			}
 			$query = getSIMQry($Codice, $TipoSIM);
-			//-- echo "<p>ContrattoTelefonicoQuery: " . $query . "</p>"; 
+			echo "<p>SIMQuery: " . $query . "</p>"; 
 
 			try {
 				$result = $conn->query($query);
@@ -54,7 +55,7 @@
 				<table class="table">
 					<tr class="header">
 						<th>Codice</th> 
-						<th>Data Attivazione</th>
+						<th>Tipo</th>
                         <th>Associata a</th>
 						<th>Era Associata A</th>
 						<th>Data Attivazione</th>

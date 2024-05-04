@@ -22,9 +22,9 @@
 				SELECT * FROM SIMNonAttiva;" .
 							"WHERE 1=1 ";	
 		if ($Codice != "")
-			$qry = $qry . "AND Codice = " . $Codice . " ";
+			$qry = $qry . "AND SIMAttiva.Codice OR SIMNonAttiva.Codice OR SIMDisattiva.Codice= '%" . $Codice . "%' ";
 		if ($TipoSIM != "")
-			$qry = $qry . "AND TipoSIM = " . $TipoSIM . " ";
+			$qry = $qry . "AND SIMATTIVA.TipoSIM OR SIMNonAttiva.TipoSIM OR SIMDisattiva.TipoSIM= '%" . $TipoSIM . "%' ";
 
 		return $qry;
 	}
