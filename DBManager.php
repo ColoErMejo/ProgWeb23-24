@@ -14,18 +14,41 @@
 		return $qry;
 	}
 
-	function getSIMQry ($Codice, $TipoSIM) : string {
-		$qry = "SELECT * FROM SIMAttiva
-				UNION ALL
-				SELECT * FROM SIMDisattiva
-				UNION ALL
-				SELECT * FROM SIMNonAttiva;" .
-							"WHERE 1=1 ";	
-		if ($Codice != "")
-			$qry = $qry . "AND SIMAttiva.Codice OR SIMNonAttiva.Codice OR SIMDisattiva.Codice= '%" . $Codice . "%' ";
-		if ($TipoSIM != "")
-			$qry = $qry . "AND SIMATTIVA.TipoSIM OR SIMNonAttiva.TipoSIM OR SIMDisattiva.TipoSIM= '%" . $TipoSIM . "%' ";
-
+	function getSIMQry($Codice, $TipoSIM): string {
+		$qry = "SELECT * FROM SIMAttiva WHERE 1=1 ";
+		
+		if ($Codice != "") {
+			$qry .= "AND SIMAttiva.Codice LIKE '%" . $Codice . "%' ";
+		}
+	
+		if ($TipoSIM != "") {
+			$qry .= "AND SIMAttiva.TipoSIM LIKE '%" . $TipoSIM . "%' ";
+		}
+	
+		$qry .= "UNION ALL ";
+	
+		$qry .= "SELECT * FROM SIMDisattiva WHERE 1=1 ";
+		
+		if ($Codice != "") {
+			$qry .= "AND SIMDisattiva.Codice LIKE '%" . $Codice . "%' ";
+		}
+	
+		if ($TipoSIM != "") {
+			$qry .= "AND SIMDisattiva.TipoSIM LIKE '%" . $TipoSIM . "%' ";
+		}
+	
+		$qry .= "UNION ALL ";
+	
+		$qry .= "SELECT * FROM SIMNonAttiva WHERE 1=1 ";
+		
+		if ($Codice != "") {
+			$qry .= "AND SIMNonAttiva.Codice LIKE '%" . $Codice . "%' ";
+		}
+	
+		if ($TipoSIM != "") {
+			$qry .= "AND SIMNonAttiva.TipoSIM LIKE '%" . $TipoSIM . "%' ";
+		}
+	
 		return $qry;
 	}
 	
@@ -37,7 +60,7 @@
 			$qry = $qry . "AND Telefonata.ID LIKE '%" . $ID . "%' ";
 		
 		if ($EffettuataDa != "")
-			$qry = $qry . "AND Telefonata.EffettuataDa = '% " . $EffettuataDa . "%' ";
+			$qry = $qry . "AND Telefonata.EffettuataDa LIKE '% " . $EffettuataDa . "%' ";
 		
 		/*$qry = $qry . 
 		 					"GROUP BY Telefonata.ID, Telefonata.EffettuataDa, " .
