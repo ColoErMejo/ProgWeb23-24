@@ -14,31 +14,26 @@
 		return $qry;
 	}
 
-	function getSIMQry ($Codice, $TipoSIM, $AssociataA, $DataAttivazione, $EraAssociataA, $DataDisattivazione) : string {
+	function getSIMQry ($Codice) : string {
 		$qry = "SELECT SIMAttiva.codice AS Acodice, SIMDisattiva.codice AS Dcodice, SIMNonAttiva.codice AS Ncodice, " . 
-									"COUNT(*) AS nVideoclips " . 
-							"FROM Artist JOIN Video " .
-								"ON Artist.id=Video.idArtist " .
+							"FROM SIMAttiva
+							JOIN SIMDisattiva ON SIMAttiva.Codice = SIMDisattiva.Codice
+							JOIN SIMNonAttiva ON SIMAttiva.Codice = SIMNonAttiva.Codice";
 							"WHERE 1=1 ";	
 		if ($Codice != "")
 			$qry = $qry . "AND SIM.Codice = " . $Codice . " ";
-		if ($TipoSIM != "")
-			$qry = $qry . "AND SIM.TipoSIM LIKE '%" . $TipoSIM . "%' ";
-    	
-		$qry = $qry . "GROUP BY Artist.id, Artist.Name " .
-								" ORDER BY Artist.id ";
-
 		return $qry;
 	}
 	
 	function getTelefonataQry ($ID, $EffettuataDa) : string {
-		$qry = "SELECT Telefonata.ID AS ID, Telefonata.EffettuataDa AS EffettuataDa, Telefonata.Data AS Data, Telefonata.Ora AS Ora, Telefonata.Durata AS Durata,Telefonata.Costo AS Costo," . 
-							"FROM Telefonata " .
+		$qry = "SELECT Telefonata.ID AS ID, Telefonata.EffettuataDa AS EffettuataDa, Telefonata.Ora AS Ora, Telefonata.Durata AS Durata,Telefonata.Costo AS Costo," . 
+							"FROM Telefonata" .
 							"WHERE 1=1 ";
 		if ($ID != "")
 			$qry = $qry . "AND Telefonata.ID LIKE '%" . $ID . "%' ";
+		
 		if ($EffettuataDa != "")
-			$qry = $qry . "AND Telefonata.EffettuataDa = " . $EffettuataDa . " ";
+			$qry = $qry . "AND Telefonata.EffettuataDa = '% " . $EffettuataDa . "%' ";
 		
 		/*$qry = $qry . 
 		 					"GROUP BY Telefonata.ID, Telefonata.EffettuataDa, " .
