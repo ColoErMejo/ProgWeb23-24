@@ -2,8 +2,8 @@
 <html lang="it">
 
 <head>
-    <title>Telefonata DB</title>
-    <link rel="stylesheet" href="./css/style.css">
+	<title>Telefonata DB</title>
+	<link rel="stylesheet" href="./css/style.css">
 	<script type="text/javascript" src="./js/script.js"></script>
 </head>
 
@@ -14,17 +14,17 @@
 	include 'nav.html';
 	include 'footer.html';
 	include 'DBManager.php';
-    include 'connectDB.php';
+	include 'connectDB.php';
 	?>
-
-<div class="research-filter">
-		<form name="myform" method="POST">
-			<input id="Numero" name="Numero" type="text" placeholder="Numero di Telefono" />
-			<input id="DataAttivazione" name="DataAttivazione" type="text" placeholder="Data attivazione" />
-			<input id="Tipo" name="Tipo" type="text" placeholder="Tipo SIM" />
-			<input type="submit" value="Cerca" />
-		</form>
-
+	<div class="container">
+		<div class="research-filter">
+			<form name="myform" method="POST">
+				<input id="Numero" name="Numero" type="text" placeholder="Numero di Telefono" />
+				<input id="DataAttivazione" name="DataAttivazione" type="text" placeholder="Data attivazione" />
+				<input id="Tipo" name="Tipo" type="text" placeholder="Tipo SIM" />
+				<input type="submit" value="Cerca" />
+			</form>
+		</div>
 		<div class="content-results">
 			<?php
 			$Numero = "";
@@ -41,7 +41,7 @@
 			}
 			$query = getContrattoTelefonicoQry($Numero, $DataAttivazione, $Tipo);
 			//-- echo "<p>ContrattoTelefonicoQuery: " . $query . "</p>"; 
-
+			
 			try {
 				$result = $conn->query($query);
 			} catch (PDOException $e) {
@@ -53,7 +53,7 @@
 
 				<table class="table">
 					<tr class="header">
-						<th>Numero</th> 
+						<th>Numero</th>
 						<th>Data Attivazione</th>
 						<th>Tipo</th>
 						<th>Minuti Residui</th>
@@ -64,7 +64,7 @@
 					foreach ($result as $riga) {
 						$i = $i + 1;
 						$classRiga = 'class="rowOdd"';
-						if ($i %  2== 0) {
+						if ($i % 2 == 0) {
 							$classRiga = 'class="rowEven"';
 						}
 						$Numero = $riga["Numero"];
@@ -74,11 +74,11 @@
 						$CreditoResiduo = $riga["CreditoResiduo"];
 						?>
 						<tr <?php echo $classRiga; ?>>
-						    <td> <?php echo $Numero; ?> </td>
+							<td> <?php echo $Numero; ?> </td>
 							<td> <?php echo $DataAttivazione; ?> </td>
 							<td> <?php echo $Tipo; ?> </td>
-                            <td> <?php echo $MinutiResidui; ?> </td>
-                            <td> <?php echo $CreditoResiduo; ?> </td>
+							<td> <?php echo $MinutiResidui; ?> </td>
+							<td> <?php echo $CreditoResiduo; ?> </td>
 						</tr>
 					<?php } ?>
 				</table>
@@ -86,4 +86,5 @@
 		</div>
 	</div>
 </body>
+
 </html>
