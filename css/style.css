@@ -129,77 +129,31 @@ nav .animation {
 a:nth-child(1) {
   width: 230px;
 }
+
 a:nth-child(2) {
   width: 80px;
 }
+
 a:nth-child(3) {
   width: 130px;
 }
-nav .start-home,
-a:nth-child(1):hover ~ .animation {
+
+nav a:nth-child(1):hover ~ .animation {
   width: 230px;
   left: 0;
   background-color: #0abab5;
 }
-nav .start-about,
-a:nth-child(2):hover ~ .animation {
+
+nav a:nth-child(2):hover ~ .animation {
   width: 80px;
   left: 230px;
   background-color: #a94133;
 }
-nav .start-blog,
-a:nth-child(3):hover ~ .animation {
+
+nav a:nth-child(3):hover ~ .animation {
   width: 130px;
   left: 310px;
   background-color: #a578ab;
-}
-
-/* Aggiungi una classe active per il bottone cliccato */
-nav a.active.btn-clicked {
-  background-color: #b59410 !important;
-  color: #fff;
-  border-radius: 8px;
-}
-
-/* Rimani sull'animazione del bottone cliccato */
-nav .start-home.active ~ .animation {
-  width: 230px;
-  left: 0;
-}
-
-nav .start-about.active ~ .animation {
-  width: 80px;
-  left: 230px;
-}
-
-nav .start-blog.active ~ .animation {
-  width: 130px;
-  left: 310px;
-}
-/* Stile dell'animazione quando viene cliccato un bottone */
-nav .animation-hover {
-  transition: all 0.5s ease 0s;
-}
-
-nav a.active.cont_tel {
-  /* Stile del bottone 1 */
-  background-color: #a94133;
-  color: #fff;
-  border-radius: 8px;
-}
-
-nav a.active.sim {
-  /* Stile del bottone 2 */
-  background-color: #0abab5;
-  color: #fff;
-  border-radius: 8px;
-}
-
-nav a.active.tel {
-  /* Stile del bottone 3 */
-  background-color: #a578ab;
-  color: #fff;
-  border-radius: 8px;
 }
 
 /*Contenuto mid*/
