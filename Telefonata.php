@@ -53,11 +53,11 @@
 			$ID = "";
 			$EffettuataDa = "";
 			if (count($_POST) > 0) {
-				$ID = $_POST["Numero"];
-				$EffettuataDa = $_POST["DataAttivazione"];
+				$ID = $_POST["ID"];
+				$EffettuataDa = $_POST["EffettuataDa"];
 			} else if (count($_GET) > 0) {
-				$ID = $_POST["Numero"];
-				$EffettuataDa = $_POST["DataAttivazione"];
+				$ID = $_POST["ID"];
+				$EffettuataDa = $_POST["EffettuataDa"];
 			}
 			$query = getTelefonataQry($ID, $EffettuataDa);
 			//-- echo "<p>ContrattoTelefonicoQuery: " . $query . "</p>"; 
