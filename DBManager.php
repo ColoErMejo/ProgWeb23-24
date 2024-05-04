@@ -32,12 +32,7 @@
 	}
 	
 	function getTelefonataQry ($ID, $EffettuataDa) : string {
-		$qry = "SELECT Telefonata.ID AS ID, " . 
-									"Telefonata.EffettuataDa AS EffettuataDa, " . 
-									"Telefonata.Data AS Data, " .
-									"Telefonata.Ora AS Ora, " .
-									"Telefonata.Durata AS Durata, " .
-									"Telefonata.Costo AS Costo, " . 
+		$qry = "SELECT Telefonata.ID AS ID, Telefonata.EffettuataDa AS EffettuataDa, Telefonata.Data AS Data, Telefonata.Ora AS Ora, Telefonata.Durata AS Durata,Telefonata.Costo AS Costo," . 
 							"FROM Telefonata " .
 							"WHERE 1=1 ";
 		if ($ID != "")

@@ -6,7 +6,7 @@
 		<script type="text/javascript" src="./js/script.js"></script>
 	</head>
 
-	<body onload="setH1artist()">
+<body>
 <?php	
 	include 'header.html';
 	include 'nav.html';
@@ -20,11 +20,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Intervalli di date dalle $ora_inizio alle $ora_fine:";
 }
 ?>
-<div class="research-filter">
+    <div class="research-filter">
     <form name="myform" method="POST" action="<?php echo $_SERVER["PHP_SELF"];?>">
+        <input id="num" name="ID" type="text" placeholder="ID"/>
         <input id="num" name="EffettuataDa" type="text" placeholder="Numero di telefono"/>
         <input id="date" name="Data" type="text" placeholder="Data"/>
-        <input id="time" name="Ora" type="text" placeholder="Fascia Oraria"/>
         <label for="ora_inizio">Ora di inizio:</label>
         <select name="ora_inizio" id="ora_inizio">
             <?php
@@ -45,56 +45,61 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="submit" value="Cerca"/>
     </form>
     </div>
-    
-<div class="content-results">
-    <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $ID = "";
-        $EffettuataDa = $_POST["EffettuataDa"];
-        $query = getTelefonataQry($ID, $EffettuataDa);
 
-        try {
-            $result = $conn->query($query);
-            ?>
-            <table class="table">
-                <tr class="header">
-                    <th>ID</th>
-                    <th>EffettuataDa</th>
-                    <th>Data</th>
-                    <th>Ora</th>
-                    <th>Durata</th>
-                    <th>Costo</th>
-                </tr>
-                <?php
-                $i = 0;
-                foreach ($result as $riga) {
-                    $i++;
-                    $classRiga = ($i % 2 == 0) ? 'class="rowEven"' : 'class="rowOdd"';
-                    $ID = $riga["ID"];
-                    $EffettuataDa = $riga["EffettuataDa"];
-                    $Data = $riga["Data"];
-                    $Ora = $riga["Ora"];
-                    $Durata = $riga["Durata"];
-                    $Costo = $riga["Costo"];
-                    ?>
-                    <tr <?php echo $classRiga; ?> >
-                        <td><?php echo $ID; ?></td>
-                        <td><?php echo $EffettuataDa; ?></td>
-                        <td><?php echo $Data; ?></td>
-                        <td><?php echo $Ora; ?></td>
-                        <td><?php echo $Durata; ?></td>
-                        <td><?php echo $Costo; ?></td>
-                    </tr>
-                    <?php
-                }
-                ?>
-            </table>
-            <?php
-        } catch (PDOException $e) {
-            echo "<p>Errore DB sulla query: " . $e->getMessage() . "</p>";
-        }
-    }
-    ?>
-</div>
+    <div class="content-results">
+			<?php
+			$ID = "";
+			$EffettuataDa = "";
+			if (count($_POST) > 0) {
+				$ID = $_POST["Numero"];
+				$EffettuataDa = $_POST["DataAttivazione"];
+			} else if (count($_GET) > 0) {
+				$ID = $_POST["Numero"];
+				$EffettuataDa = $_POST["DataAttivazione"];
+			}
+			$query = getTelefonataQry($ID, $EffettuataDa);
+			//-- echo "<p>ContrattoTelefonicoQuery: " . $query . "</p>"; 
+
+			try {
+				$result = $conn->query($query);
+			} catch (PDOException $e) {
+				echo "<p>DB Error on Query: " . $e->getMessage() . "</p>";
+				$error = true;
+			}
+			if (!$error) {
+				?>
+				<table class="table">
+					<tr class="header">
+						<th>ID</th> 
+						<th>EffettuataDa</th>
+						<th>Data</th>
+						<th>Durata</th>
+						<th>Costo</th>
+					</tr>
+					<?php
+					$i = 0;
+					foreach ($result as $riga) {
+						$i = $i + 1;
+						$classRiga = 'class="rowOdd"';
+						if ($i %  2== 0) {
+							$classRiga = 'class="rowEven"';
+						}
+						$ID = $riga["ID"];
+						$EffettuataDa = $riga["EffettuataDa"];
+						$Data = $riga["Data"];
+						$Durata = $riga["Durata"];
+						$Costo = $riga["Costo"];
+						?>
+						<tr <?php echo $classRiga; ?>>
+						    <td> <?php echo $ID; ?> </td>
+							<td> <?php echo $EffettuataDa; ?> </td>
+							<td> <?php echo $Data ?> </td>
+                            <td> <?php echo $Durata; ?> </td>
+                            <td> <?php echo $Costo; ?> </td>
+						</tr>
+					<?php } ?>
+				</table>
+			<?php } ?>
+		</div>
 </body>
 </html>
