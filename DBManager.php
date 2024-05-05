@@ -9,7 +9,7 @@
 		if ($DataAttivazione != "")
 			$qry = $qry . "AND ContrattoTelefonico.DataAttivazione LIKE '%" . $DataAttivazione . "%' ";
 
-		if ($Tipo != "")
+		if ($Tipo != "" && $Tipo != "tutto")
 			$qry = $qry . "AND ContrattoTelefonico.Tipo LIKE '%" . $Tipo . "%' ";
 		return $qry;
 	}
@@ -21,7 +21,7 @@
 			$qry .= "AND SIMAttiva.Codice LIKE '%" . $Codice . "%' ";
 		}
 	
-		if ($TipoSIM != "") {
+		if ($TipoSIM != "" && $TipoSIM != "tutto") {
 			$qry .= "AND SIMAttiva.TipoSIM LIKE '%" . $TipoSIM . "%' ";
 		}
 	
@@ -33,7 +33,7 @@
 			$qry .= "AND SIMDisattiva.Codice LIKE '%" . $Codice . "%' ";
 		}
 	
-		if ($TipoSIM != "") {
+		if ($TipoSIM != "" && $TipoSIM != "tutto") {
 			$qry .= "AND SIMDisattiva.TipoSIM LIKE '%" . $TipoSIM . "%' ";
 		}
 	
@@ -45,13 +45,55 @@
 			$qry .= "AND SIMNonAttiva.Codice LIKE '%" . $Codice . "%' ";
 		}
 	
-		if ($TipoSIM != "") {
+		if ($TipoSIM != "" && $TipoSIM != "tutto") {
 			$qry .= "AND SIMNonAttiva.TipoSIM LIKE '%" . $TipoSIM . "%' ";
 		}
 	
 		return $qry;
 	}
+
+	function getSIMAttivaQry($Codice, $TipoSIM): string {
+		$qry = "SELECT * FROM SIMAttiva WHERE 1=1 ";
+		
+		if ($Codice != "") {
+			$qry .= "AND SIMAttiva.Codice LIKE '%" . $Codice . "%' ";
+		}
 	
+		if ($TipoSIM != "" && $TipoSIM != "tutto") {
+			$qry .= "AND SIMAttiva.TipoSIM LIKE '%" . $TipoSIM . "%' ";
+		}
+
+		return $qry;
+	}
+
+	function getSIMDisattivaQry($Codice, $TipoSIM): string {
+		$qry = "SELECT * FROM SIMDisattiva WHERE 1=1 ";
+		
+		if ($Codice != "") {
+			$qry .= "AND SIMDisattiva.Codice LIKE '%" . $Codice . "%' ";
+		}
+	
+		if ($TipoSIM != "" && $TipoSIM != "tutto") {
+			$qry .= "AND SIMDisattiva.TipoSIM LIKE '%" . $TipoSIM . "%' ";
+		}
+
+		return $qry;
+	}
+
+	function getSIMNonAttivaQry($Codice, $TipoSIM): string {
+		$qry = "SELECT * FROM SIMNonAttiva WHERE 1=1 ";
+		
+		if ($Codice != "") {
+			$qry .= "AND SIMNonAttiva.Codice LIKE '%" . $Codice . "%' ";
+		}
+	
+		if ($TipoSIM != "" && $TipoSIM != "tutto") {
+			$qry .= "AND SIMNonAttiva.TipoSIM LIKE '%" . $TipoSIM . "%' ";
+		}
+
+		return $qry;
+	}
+
 	function getTelefonataQry ($ID, $EffettuataDa) : string {
 		$qry = "SELECT * FROM Telefonata WHERE 1=1 ";
 		if ($ID != "")

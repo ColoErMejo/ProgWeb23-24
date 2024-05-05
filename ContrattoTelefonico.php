@@ -21,7 +21,11 @@
 		<form name="myform" method="POST">
 			<input id="Numero" name="Numero" type="text" placeholder="Numero di Telefono" />
 			<input id="DataAttivazione" name="DataAttivazione" type="text" placeholder="Data attivazione" />
-			<input id="Tipo" name="Tipo" type="text" placeholder="Tipo SIM" />
+			<select id="Tipo" name="Tipo" placeholder="Tipo Contratto" >
+				<option value="tutto">seleziona tipo contratto</option>
+				<option value="a consumo">a consumo</option>
+				<option value="a ricarica">a ricarica</option>
+			</select>
 			<input type="submit" value="Cerca" />
 		</form>
 
