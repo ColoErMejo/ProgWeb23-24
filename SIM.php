@@ -21,13 +21,31 @@
 		<form name="myform" method="POST">
 			<input id="Codice" name="Codice" type="text" placeholder="Codice" />
             <input id="TipoSIM" name="TipoSIM" type="text" placeholder="Tipo SIM" />
-            <input id="AssociataA" name="AssociataA" type="text" placeholder="AssociataA" />
-            <input id="EraAssociataA" name="EraAssociataA" type="text" placeholder="EraAssociataA" />
-			<input id="DataAttivazione" name="DataAttivazione" type="text" placeholder="Data attivazione" />
-            <input id="DataDisattivazione" name="DataDisattivazione" type="text" placeholder="Data disattivazione" />
-			
+            <input type="checkbox" id="simAttive" value="SIMAttiva" onchange="selectTable(this)"> SIM Attive
+            <input type="checkbox" id="simDisattive" value="SIMDisattiva" onchange="selectTable(this)"> SIM Disattive<br>
+            <input type="checkbox" id="simNonAttive" value="SIMNonAttiva" onchange="selectTable(this)"> SIM Non Attive
 			<input type="submit" value="Cerca" />
 		</form>
+        <div id="risultati"></div>
+
+<script>
+$(document).ready(function(){
+    // Quando la pagina è pronta, esegui la richiesta AJAX
+    $.ajax({
+        url: 'DBManager.php', // Il percorso del tuo file PHP principale
+        method: 'POST', // Utilizziamo il metodo POST per inviare dati al tuo file PHP principale
+        data: {action: 'visualizza_SIMAttive'}, // Passiamo un parametro 'action' per identificare quale azione eseguire nel file PHP principale
+        success: function(response){
+            // Se la richiesta ha avuto successo, visualizza i risultati nella pagina
+            $('#risultati').html(response);
+        },
+        error: function(xhr, status, error){
+            // In caso di errore durante la richiesta AJAX
+            console.error(error);
+        }
+    });
+});
+</script>
 
 		<div class="content-results">
 			<?php
