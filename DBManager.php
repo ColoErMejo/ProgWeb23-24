@@ -51,7 +51,6 @@
 	
 		return $qry;
 	}
-	$visualizza_SIMAttive = "SELECT * FROM SIMAttive";
 	
 	function getTelefonataQry ($ID, $EffettuataDa) : string {
 		$qry = "SELECT Telefonata.ID AS ID, Telefonata.EffettuataDa AS EffettuataDa, Telefonata.Ora AS Ora, Telefonata.Durata AS Durata,Telefonata.Costo AS Costo," . 
