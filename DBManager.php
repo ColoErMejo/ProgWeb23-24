@@ -53,9 +53,7 @@
 	}
 	
 	function getTelefonataQry ($ID, $EffettuataDa) : string {
-		$qry = "SELECT Telefonata.ID AS ID, Telefonata.EffettuataDa AS EffettuataDa, Telefonata.Ora AS Ora, Telefonata.Durata AS Durata,Telefonata.Costo AS Costo," . 
-							"FROM Telefonata" .
-							"WHERE 1=1 ";
+		$qry = "SELECT * FROM Telefonata WHERE 1=1 ";
 		if ($ID != "")
 			$qry = $qry . "AND Telefonata.ID LIKE '%" . $ID . "%' ";
 		

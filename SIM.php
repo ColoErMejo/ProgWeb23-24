@@ -20,12 +20,7 @@
 <div class="research-filter">
 		<form name="myform" method="POST">
 			<input id="Codice" name="Codice" type="text" placeholder="Codice" />
-            <input id="TipoSIM" name="TipoSIM" type="text" placeholder="Tipo SIM" />
-            <input id="AssociataA" name="AssociataA" type="text" placeholder="AssociataA" />
-            <input id="EraAssociataA" name="EraAssociataA" type="text" placeholder="EraAssociataA" />
-			<input id="DataAttivazione" name="DataAttivazione" type="text" placeholder="Data attivazione" />
-            <input id="DataDisattivazione" name="DataDisattivazione" type="text" placeholder="Data disattivazione" />
-			
+            <input id="TipoSIM" name="TipoSIM" type="text" placeholder="Tipo SIM" />			
 			<input type="submit" value="Cerca" />
 		</form>
 
