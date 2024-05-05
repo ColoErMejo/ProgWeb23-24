@@ -18,9 +18,8 @@
 	<div class="container">
 		<div class="research-filter">
 			<form name="myform" method="POST" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-				<input id="num" name="ID" type="text" placeholder="ID" />
-				<input id="num" name="EffettuataDa" type="text" placeholder="Numero di telefono" />
-				<input id="date" name="Data" type="text" placeholder="Data" />
+				<input id="EffettuataDa" name="EffettuataDa" type="text" placeholder="Effettuata Da" />
+				<input id="Data" name="Data" type="text" placeholder="Data" />
 				<input type="submit" value="Cerca" />
 			</form>
 		</div>
@@ -51,6 +50,7 @@
 					<tr class="header">
 						<th>ID</th>
 						<th>EffettuataDa</th>
+                        <th>Ora</th>
 						<th>Data</th>
 						<th>Durata</th>
 						<th>Costo</th>
@@ -66,6 +66,7 @@
 						$ID = $riga["ID"];
 						$EffettuataDa = $riga["EffettuataDa"];
 						$Data = $riga["Data"];
+                        $Ora = $riga["Ora"];
 						$Durata = $riga["Durata"];
 						$Costo = $riga["Costo"];
 						?>
@@ -73,6 +74,7 @@
 							<td> <?php echo $ID; ?> </td>
 							<td> <?php echo $EffettuataDa; ?> </td>
 							<td> <?php echo $Data ?> </td>
+                            <td> <?php echo $Ora ?> </td>
 							<td> <?php echo $Durata; ?> </td>
 							<td> <?php echo $Costo; ?> </td>
 						</tr>

@@ -55,10 +55,10 @@
 	function getTelefonataQry ($ID, $EffettuataDa) : string {
 		$qry = "SELECT * FROM Telefonata WHERE 1=1 ";
 		if ($ID != "")
-			$qry = $qry . "AND Telefonata.ID LIKE '%" . $ID . "%' ";
+			$qry = $qry . "AND Telefonata.ID =" . $ID . " ";
 		
 		if ($EffettuataDa != "")
-			$qry = $qry . "AND Telefonata.EffettuataDa LIKE '% " . $EffettuataDa . "%' ";
+			$qry = $qry . "AND Telefonata.EffettuataDa = " . $EffettuataDa . " ";
 		
 		/*$qry = $qry . 
 		 					"GROUP BY Telefonata.ID, Telefonata.EffettuataDa, " .
