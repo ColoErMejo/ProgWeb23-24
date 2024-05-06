@@ -182,7 +182,6 @@ nav a:nth-child(4):hover ~ .animation {
   margin: 6px;
   box-sizing: border-box;
   border-radius: 7px;
-  height: auto;
   text-align: center;
   line-height: 100px;
 }
@@ -238,6 +237,8 @@ nav a:nth-child(4):hover ~ .animation {
 .content-results {
   background-color: white;
   flex: 0 0 69%;
+  max-height: 400px; /* altezza massima del contenuto con scorrimento */
+  overflow: auto; /* abilita lo scorrimento all'interno del div se necessario */
 }
 
 @media (max-width: 768px) {
@@ -263,6 +264,7 @@ nav a:nth-child(4):hover ~ .animation {
 table {
   width: 100%;
   border-collapse: collapse;
+  line-height: 40px;
 }
 
 th,
