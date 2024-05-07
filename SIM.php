@@ -21,22 +21,42 @@
 			<form name="myform" method="POST">
 				<input id="Codice" name="Codice" type="text" placeholder="Codice" />
 
+<<<<<<< Updated upstream
 				<select id="TipoSIM" name="TipoSIM" />
 				<option value="tutto">seleziona tipo SIM</option>
 				<option value="standard">standard</option>
 				<option value="micro">micro</option>
 				<option value="elettronica">elettronica</option>
 				</select>
+=======
+<div class="research-filter">
+		<form name="myform" method="POST">
+			<input id="Codice" name="Codice" type="text" placeholder="Codice" /><br>
+			
+            <select id="TipoSIM" name="TipoSIM" />
+				<option value="tutto">seleziona tipo SIM</option>
+				<option value="standard">standard</option>
+				<option value="micro">micro</option>
+				<option value="elettronica">elettronica</option>			
+			</select><br>
+>>>>>>> Stashed changes
 
 				<select id="StatoSIM" name="StatoSIM" />
 				<option value="tutto">seleziona stato SIM</option>
 				<option value="SIMAttiva">attiva</option>
 				<option value="SIMDisattiva">disattiva</option>
+<<<<<<< Updated upstream
 				<option value="SIMNonAttiva">non attiva</option>
 				</select>
 				<input type="submit" value="Cerca" />
 			</form>
 		</div>
+=======
+				<option value="SIMNonAttiva">non attiva</option>	
+			</select><br>
+			<input type="submit" value="Cerca" />
+		</form>
+>>>>>>> Stashed changes
 
 		<div class="content-results">
 			<?php
@@ -155,6 +175,7 @@
 				if (!$error) {
 					?>
 
+<<<<<<< Updated upstream
 							<table class="table">
 								<tr class="header">
 									<th>Codice</th>
@@ -183,6 +204,37 @@
 										<td> <?php echo $EraAssociataA; ?> </td>
 										<td> <?php echo $DataAttivazione; ?> </td>
 									</tr>
+=======
+					<table class="table">
+						<tr class="header">
+							<th>Codice</th> 
+							<th>Tipo</th>
+							<th>Era Associata A</th>
+							<th>Data Attivazione</th>
+							<th>Data Disattivazione</th>
+						</tr>
+						<?php
+						$i = 0;
+						foreach ($result as $riga) {
+							$i = $i + 1;
+							$classRiga = 'class="rowOdd"';
+							if ($i %  2== 0) {
+								$classRiga = 'class="rowEven"';
+							}
+							$Codice = $riga["Codice"];
+							$TipoSIM = $riga["TipoSIM"];
+							$EraAssociataA = $riga["EraAssociataA"];
+							$DataAttivazione = $riga["DataAttivazione"];
+							$DataDisattivazione = $riga["DataDisattivazione"];
+							?>
+							<tr <?php echo $classRiga; ?>>
+						    	<td> <?php echo $Codice; ?> </td>
+								<td> <?php echo $TipoSIM; ?> </td>
+								<td> <?php echo $EraAssociataA; ?> </td>
+                            	<td> <?php echo $DataAttivazione; ?> </td>
+								<td> <?php echo $DataDisattivazione; ?> </td>
+							</tr>
+>>>>>>> Stashed changes
 						<?php } ?>
 							</table>
 				<?php }
