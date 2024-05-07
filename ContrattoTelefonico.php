@@ -39,7 +39,7 @@
 				</select>
 				<div class="buttons-container">
 					<input type="submit" value="Cerca" class="search-button" />
-					<input type="submit" value="Aggiungi SIM" class="add-button" />
+					<input type="submit" value="Aggiungi Contratto" class="add-button" />
 				</div>
 			</form>
 		</div>

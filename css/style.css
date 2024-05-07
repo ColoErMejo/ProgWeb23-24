@@ -216,13 +216,22 @@ nav a:nth-child(4):hover ~ .animation {
   align-items: center; /* Allineamento verticale */
 }
 
-.search-button,
+/*.search-button,
 .add-button {
-  padding: 8px 20px; /* Padding uniforme */
-  border-radius: 20px; /* Bordi molto arrotondati */
-  border: none; /* Rimuovi il bordo */
+  padding: 8px 20px; 
+  border-radius: 20px; 
+  border: none; 
   cursor: pointer;
   transition: all 0.5s ease 0s;
+}
+
+.search-button {
+  background-color: #9fd3c7;
+  color: black;
+}
+
+.search-button:hover {
+  background-color: #ececec;
 }
 
 .add-button {
@@ -232,6 +241,52 @@ nav a:nth-child(4):hover ~ .animation {
 
 .add-button:hover {
   background-color: #a94133;
+}*/
+.search-button {
+  border: 2px solid #590eca;
+  color: #590eca;
+}
+.add-button {
+  border: 2px solid #800000;
+  color: #800000;
+}
+.search-button,
+.add-button {
+  box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  border-radius: 0.6em;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  margin: 10px;
+  padding: 0.8em 1.8em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    outline: 0;
+  }
+}
+.add-button {
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  &:hover {
+    box-shadow: 0 0 40px 40px #800000 inset;
+  }
+}
+.search-button {
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  &:hover {
+    box-shadow: 0 0 40px 40px #590eca inset;
+  }
 }
 
 /* Stile generale del select */
