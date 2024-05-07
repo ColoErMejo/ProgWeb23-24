@@ -37,6 +37,7 @@
 				<input type="submit" value="Cerca" />
 			</form>
 		</div>
+
 		<div class="content-results">
 			<?php
 			$Codice = "";
