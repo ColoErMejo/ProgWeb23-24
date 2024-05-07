@@ -14,6 +14,21 @@
 		return $qry;
 	}
 
+	function getTelefonateContrattoQry($Numero) : string {
+		$qry = "SELECT distinct count(*) AS NumeroTelefonate FROM Telefonata WHERE EffettuataDa = " . $Numero . " ";
+		return $qry;
+	}
+
+	function getSIMAttivaContrattoQry($Numero) : string {
+		$qry = "SELECT Codice FROM SIMAttiva WHERE AssociataA = " . $Numero;
+		return $qry;
+	}
+
+	function getSIMDisattiveContrattoQry($Numero) : string {
+		$qry = "SELECT distinct count(Codice) AS NumeroSIMDisattive FROM SIMDisattiva WHERE EraAssociataA = " . $Numero . " ";
+		return $qry;
+	}
+
 	function getSIMQry($Codice, $TipoSIM): string {
 		$qry = "SELECT * FROM SIMAttiva WHERE 1=1 ";
 		
@@ -112,15 +127,6 @@
 		return $qry;
 	}
 
-	function getSIMAttivaContrattoQry($Numero) : string {
-		$qry = "SELECT Codice FROM SIMAttiva WHERE AssociataA = " . $Numero;
-		return $qry;
-	}
-
-	function getSIMDisattiveContrattoQry($Numero) : string {
-		$qry = "SELECT distinct count(Codice) AS NumeroSIMDisattive FROM SIMDisattiva WHERE EraAssociataA = " . $Numero . " ";
-		return $qry;
-	}
 	
 	function formatLink ($lnk) : string	{
 		if (is_null($lnk) || $lnk == "")
