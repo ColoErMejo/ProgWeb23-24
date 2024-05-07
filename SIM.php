@@ -21,14 +21,14 @@
 			<form name="myform" method="POST">
 				<input id="Codice" name="Codice" type="text" placeholder="Codice" /><br>
 
-				<select id="TipoSIM" name="TipoSIM" />
+				<select id="TipoSIM" name="TipoSIM" class="custom-select" />
 				<option value="tutto">seleziona tipo SIM</option>
 				<option value="standard">standard</option>
 				<option value="micro">micro</option>
 				<option value="elettronica">elettronica</option>
 				</select><br>
 
-				<select id="StatoSIM" name="StatoSIM" />
+				<select id="StatoSIM" name="StatoSIM" class="custom-select" />
 				<option value="tutto">seleziona stato SIM</option>
 				<option value="SIMAttiva">attiva</option>
 				<option value="SIMDisattiva">disattiva</option>
