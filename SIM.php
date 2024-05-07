@@ -19,7 +19,7 @@
 	<div class="container">
 		<div class="research-filter">
 			<form name="myform" method="POST">
-				<input id="Codice" name="Codice" type="text" placeholder="Codice" /><br>
+				<input id="Codice" name="Codice" type="text" placeholder="Codice" class="search-box" /><br>
 
 				<select id="TipoSIM" name="TipoSIM" class="custom-select" />
 				<option value="tutto">seleziona tipo SIM</option>
@@ -34,10 +34,11 @@
 				<option value="SIMDisattiva">disattiva</option>
 				<option value="SIMNonAttiva">non attiva</option>
 				</select>
-				<a href="InserimentoSIMNonAttiva.php">
+				<!--<a href="InserimentoSIMNonAttiva.php">
 					<img src="icons\plus.png" width="20px" height="20px">
-				</a><br>
-				<input type="submit" value="Cerca" />
+				</a><br>-->
+				<input type="submit" value="Cerca" class="search-button" />
+				<input type="submit" value="Aggiungi SIM" class="add-button" />
 			</form>
 		</div>
 

@@ -23,7 +23,7 @@
 	<div class="container">
 		<div class="research-filter">
 			<form name="myform" method="POST">
-				<input id="Numero" name="Numero" type="text" placeholder="Numero di Telefono" />
+				<input id="Numero" name="Numero" type="text" placeholder="Numero di Telefono" class="search-box" />
 				<input id="DataAttivazione" name="DataAttivazione" type="text" placeholder="Data attivazione" />
 				<script>
 					$(function () {
@@ -37,7 +37,8 @@
 					<option value="a consumo">a consumo</option>
 					<option value="a ricarica">a ricarica</option>
 				</select>
-				<input type="submit" value="Cerca" />
+				<input type="submit" value="Cerca" class="search-button" />
+				<input type="submit" value="Aggiungi SIM" class="add-button" />
 			</form>
 		</div>
 

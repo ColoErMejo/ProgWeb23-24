@@ -194,44 +194,30 @@ nav a:nth-child(4):hover ~ .animation {
   flex: 0 0 29%;
   display: flex;
   align-items: flex-start;
+  flex-direction: column; /* Allinea gli elementi verticalmente */
 }
-#research {
+
+.research-filter form {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 10px;
-  border-radius: 5px;
+  flex-direction: column;
+}
+.research-filter input[type="text"],
+.research-filter select {
+  padding: 8px; /* Padding uniforme */
 }
 
-#research form {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-#research input[type="text"] {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  font-size: 16px;
-  margin-right: 2%;
-}
-
-#research button {
-  padding: 10px 20px;
-  background-color: #a94133;
-  color: white;
-  border: none;
-  border-radius: 3px;
-  font-size: 16px;
+.search-button,
+.add-button {
+  margin-left: 10px; /* Spaziatura tra i pulsanti */
+  width: auto; /* Larghezza automatica per il pulsante di invio */
   cursor: pointer;
-  transition: background-color 0.3s;
+  padding: 8px; /* Padding uniforme */
 }
 
-#research button:hover {
-  background-color: #800000;
+.add-button {
+  color: #800000;
 }
+
 /* Stile generale del select */
 .custom-select {
   display: inline-block;
