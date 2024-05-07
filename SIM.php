@@ -39,6 +39,8 @@
 				</a><br>-->
 				<input type="submit" value="Cerca" class="search-button" />
 				<input type="submit" value="Aggiungi SIM" class="add-button" />
+				<input id="Contratto" name="Contratto" type="text" placeholder="Numero di telefono" /><br>
+
 			</form>
 		</div>
 
@@ -47,18 +49,21 @@
 			$Codice = "";
 			$TipoSIM = "";
 			$StatoSIM = "";
+			$Contratto = "";
 			if (count($_POST) > 0) {
 				$Codice = $_POST["Codice"];
 				$TipoSIM = $_POST["TipoSIM"];
 				$StatoSIM = $_POST["StatoSIM"];
+				$Contratto = $POST_["Contratto"];
 			} else if (count($_GET) > 0) {
-				$Codice = $_POST["Codice"];
-				$TipoSIM = $_POST["TipoSIM"];
-				$StatoSIM = $_POST["StatoSIM"];
+				$Codice = $_GET["Codice"];
+				$TipoSIM = $_GET["TipoSIM"];
+				$StatoSIM = $_GET["StatoSIM"];
+				$Contratto = $GET_["Contratto"];
 			}
 
 			if ($StatoSIM == "" || $StatoSIM == "tutto") {
-				$query = getSIMQry($Codice, $TipoSIM);
+				$query = getSIMQry($Codice, $TipoSIM, $Contratto);
 				echo "<p>SIMQuery: " . $query . "</p>";
 
 				try {
@@ -107,7 +112,7 @@
 				<?php }
 
 			} else if ($StatoSIM == "SIMAttiva") {
-				$query = getSIMAttivaQry($Codice, $TipoSIM);
+				$query = getSIMAttivaQry($Codice, $TipoSIM, $Contratto);
 				echo "<p>SIMQuery: " . $query . "</p>";
 				try {
 					$result = $conn->query($query);
@@ -149,7 +154,7 @@
 				<?php }
 
 			} else if ($StatoSIM == "SIMDisattiva") {
-				$query = getSIMDisattivaQry($Codice, $TipoSIM);
+				$query = getSIMDisattivaQry($Codice, $TipoSIM, $Contratto);
 				echo "<p>SIMQuery: " . $query . "</p>";
 				try {
 					$result = $conn->query($query);
@@ -194,7 +199,7 @@
 				<?php }
 
 			} else if ($StatoSIM == "SIMNonAttiva") {
-				$query = getSIMNonAttivaQry($Codice, $TipoSIM);
+				$query = getSIMNonAttivaQry($Codice, $TipoSIM, $Contratto);
 				echo "<p>SIMQuery: " . $query . "</p>";
 				try {
 					$result = $conn->query($query);

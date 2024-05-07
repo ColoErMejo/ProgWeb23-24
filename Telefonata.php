@@ -41,8 +41,8 @@
 				$ID = $_POST["ID"];
 				$EffettuataDa = $_POST["EffettuataDa"];
 			} else if (count($_GET) > 0) {
-				$ID = $_POST["ID"];
-				$EffettuataDa = $_POST["EffettuataDa"];
+				$ID = $_GET["ID"];
+				$EffettuataDa = $_GET["EffettuataDa"];
 			}
 			$query = getTelefonataQry($ID, $EffettuataDa);
 			//-- echo "<p>ContrattoTelefonicoQuery: " . $query . "</p>"; 

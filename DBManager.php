@@ -29,7 +29,7 @@
 		return $qry;
 	}
 
-	function getSIMQry($Codice, $TipoSIM): string {
+	function getSIMQry($Codice, $TipoSIM, $Contratto): string {
 		$qry = "SELECT * FROM SIMAttiva WHERE 1=1 ";
 		
 		if ($Codice != "") {
@@ -38,6 +38,10 @@
 	
 		if ($TipoSIM != "" && $TipoSIM != "tutto") {
 			$qry .= "AND SIMAttiva.TipoSIM LIKE '%" . $TipoSIM . "%' ";
+		}
+
+		if($Contratto != ""){
+			$qry .= "AND SIMAttiva.AssociataA = ". $Contratto. " ";
 		}
 	
 		$qry .= "UNION ALL ";
@@ -51,6 +55,10 @@
 		if ($TipoSIM != "" && $TipoSIM != "tutto") {
 			$qry .= "AND SIMDisattiva.TipoSIM LIKE '%" . $TipoSIM . "%' ";
 		}
+
+		if($Contratto != ""){
+			$qry .= "AND SIMDisattiva.EraAssociataA = ". $Contratto. " ";
+		}
 	
 		$qry .= "UNION ALL ";
 	
@@ -63,11 +71,15 @@
 		if ($TipoSIM != "" && $TipoSIM != "tutto") {
 			$qry .= "AND SIMNonAttiva.TipoSIM LIKE '%" . $TipoSIM . "%' ";
 		}
+
+		if($Contratto != ""){
+			$qry .= "AND SIMNonAttiva.EraAssociataA = ". $Contratto. " ";
+		}
 	
 		return $qry;
 	}
 
-	function getSIMAttivaQry($Codice, $TipoSIM): string {
+	function getSIMAttivaQry($Codice, $TipoSIM, $Contratto): string {
 		$qry = "SELECT * FROM SIMAttiva WHERE 1=1 ";
 		
 		if ($Codice != "") {
@@ -78,10 +90,14 @@
 			$qry .= "AND SIMAttiva.TipoSIM LIKE '%" . $TipoSIM . "%' ";
 		}
 
+		if($Contratto != ""){
+			$qry .= "AND SIMAttiva.AssociataA = ". $Contratto. " ";
+		}
+
 		return $qry;
 	}
 
-	function getSIMDisattivaQry($Codice, $TipoSIM): string {
+	function getSIMDisattivaQry($Codice, $TipoSIM, $Contratto): string {
 		$qry = "SELECT * FROM SIMDisattiva WHERE 1=1 ";
 		
 		if ($Codice != "") {
@@ -92,10 +108,14 @@
 			$qry .= "AND SIMDisattiva.TipoSIM LIKE '%" . $TipoSIM . "%' ";
 		}
 
+		if($Contratto != ""){
+			$qry .= "AND SIMDisattiva.EraAssociataA = ". $Contratto. " ";
+		}
+
 		return $qry;
 	}
 
-	function getSIMNonAttivaQry($Codice, $TipoSIM): string {
+	function getSIMNonAttivaQry($Codice, $TipoSIM, $Contratto): string {
 		$qry = "SELECT * FROM SIMNonAttiva WHERE 1=1 ";
 		
 		if ($Codice != "") {
@@ -104,6 +124,10 @@
 	
 		if ($TipoSIM != "" && $TipoSIM != "tutto") {
 			$qry .= "AND SIMNonAttiva.TipoSIM LIKE '%" . $TipoSIM . "%' ";
+		}
+
+		if($Contratto != ""){
+			$qry .= "AND SIMNonAttiva.EraAssociataA != NULL";
 		}
 
 		return $qry;
