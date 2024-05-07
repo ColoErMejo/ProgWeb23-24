@@ -28,7 +28,7 @@
 				<script>
 					$(function () {
 						$("#DataAttivazione").datepicker({
-							dateFormat: "dd-mm-y"
+							dateFormat: "dd/mm/y"
 						});
 					});
 				</script>
@@ -75,6 +75,7 @@
 							<th>Minuti Residui</th>
 							<th>Credito Residuo</th>
 							<th>SIM Attiva</th>
+							<th>SIM Disattive</th>
 						</tr>
 						<?php
 						$i = 0;
@@ -97,6 +98,8 @@
 									<td> <?php echo $MinutiResidui; ?> </td>
 									<td> <?php echo $CreditoResiduo; ?> </td>
 								<?php
+								
+
 								$query = getSIMAttivaContrattoQry($Numero);
 								try {
 									$result = $conn->query($query);
@@ -116,7 +119,6 @@
 										<td> <?php echo $SIMAttiva; ?> </td> <?php
 								}
 
-								/*
 								$query = getSIMDisattiveContrattoQry($Numero);
 								try {
 									$result = $conn->query($query);
@@ -129,7 +131,7 @@
 										$NumeroSIMDisattive = $riga["NumeroSIMDisattive"];
 										?> <td><a href=""><?php echo $NumeroSIMDisattive; ?></a></td> <?php
 									}
-								}*/
+								}
 
 								?></tr>
 

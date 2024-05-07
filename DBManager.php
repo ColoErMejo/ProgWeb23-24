@@ -118,7 +118,7 @@
 	}
 
 	function getSIMDisattiveContrattoQry($Numero) : string {
-		$qry = "SELECT distinct count(*) AS NumeroSIMDisattive FROM SIMAttiva WHERE EraAssociataA = " . $Numero;
+		$qry = "SELECT distinct count(Codice) AS NumeroSIMDisattive FROM SIMDisattiva WHERE EraAssociataA = " . $Numero . " ";
 		return $qry;
 	}
 	
