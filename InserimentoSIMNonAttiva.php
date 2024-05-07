@@ -3,7 +3,6 @@
 
 <head>
     <title>Inserimento SIMNonAttive</title>
-
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./css/style.css">
     <script type="text/javascript" src="./js/script.js"></script>
@@ -32,7 +31,7 @@
             echo "<h3 class='msg'>DB Error on Insert: " . $e->getMessage() . "</h3>";
             $error = true;
         }
-    $query = "SELECT DISTINCT Codice FROM Cliente";
+    $query = "SELECT DISTINCT Codice FROM SIMNonAttiva";
     try {
         $result = $conn->query($query);
     } catch (PDOException $e) {
