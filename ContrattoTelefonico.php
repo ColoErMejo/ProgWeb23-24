@@ -8,7 +8,7 @@
 
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>		
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 
 
@@ -20,12 +20,18 @@
 	include 'DBManager.php';
 	include 'connectDB.php';
 	?>
-<<<<<<< Updated upstream
 	<div class="container">
 		<div class="research-filter">
 			<form name="myform" method="POST">
 				<input id="Numero" name="Numero" type="text" placeholder="Numero di Telefono" />
 				<input id="DataAttivazione" name="DataAttivazione" type="text" placeholder="Data attivazione" />
+				<script>
+					$(function () {
+						$("#DataAttivazione").datepicker({
+							dateFormat: "dd-mm-y"
+						});
+					});
+				</script>
 				<select id="Tipo" name="Tipo" placeholder="Tipo Contratto">
 					<option value="tutto">seleziona tipo contratto</option>
 					<option value="a consumo">a consumo</option>
@@ -34,27 +40,6 @@
 				<input type="submit" value="Cerca" />
 			</form>
 		</div>
-=======
-
-<div class="research-filter">
-		<form name="myform" method="POST">
-			<input id="Numero" name="Numero" type="text" placeholder="Numero di Telefono" />
-			<input id="DataAttivazione" name="DataAttivazione" type="text" placeholder="Data attivazione" />
-			<script>
- 				$(function() {
-    			$("#DataAttivazione").datepicker({
-					dateFormat : "dd-mm-y"
-				});
-  			});
-			</script>
-			<select id="Tipo" name="Tipo" placeholder="Tipo Contratto" >
-				<option value="tutto">seleziona tipo contratto</option>
-				<option value="a consumo">a consumo</option>
-				<option value="a ricarica">a ricarica</option>
-			</select>
-			<input type="submit" value="Cerca" />
-		</form>
->>>>>>> Stashed changes
 
 		<div class="content-results">
 			<?php
@@ -104,20 +89,19 @@
 						$Tipo = $riga["Tipo"];
 						$MinutiResidui = $riga["MinutiResidui"];
 						$CreditoResiduo = $riga["CreditoResiduo"];
-					?>
+						?>
 						<tr <?php echo $classRiga; ?>>
 							<td> <?php echo $Numero; ?> </td>
 							<td> <?php echo $DataAttivazione; ?> </td>
 							<td> <?php echo $Tipo; ?> </td>
-<<<<<<< Updated upstream
-							<td> <?php echo $MinutiResidui; ?> </td>
-							<td> <?php echo $CreditoResiduo; ?> </td>
+							<<<<<<< Updated upstream <td> <?php echo $MinutiResidui; ?> </td>
+								<td> <?php echo $CreditoResiduo; ?> </td>
 						</tr>
-=======
-                            <td> <?php echo $MinutiResidui; ?> </td>
-                            <td> <?php echo $CreditoResiduo; ?> </td>
-						
-					<?php
+						=======
+						<td> <?php echo $MinutiResidui; ?> </td>
+						<td> <?php echo $CreditoResiduo; ?> </td>
+
+						<?php
 						$query = getSIMAttivaContrattoQry($Numero);
 						try {
 							$result = $conn->query($query);
@@ -126,41 +110,41 @@
 							$error = true;
 						}
 						if (!$error) {
-							if ($result->rowCount() > 0){
-								foreach($result as $riga){
+							if ($result->rowCount() > 0) {
+								foreach ($result as $riga) {
 									$SIMAttiva = $riga["Codice"];
 								}
-							} else{
+							} else {
 								$SIMAttiva = "";
 							}
-							?> <td> <?php echo $SIMAttiva; ?> </td> <?php
+							?>
+							<td> <?php echo $SIMAttiva; ?> </td> <?php
 						}
-						
-						/*
-						$query = getSIMDisattiveContrattoQry($Numero);
-						try {
-							$result = $conn->query($query);
-						} catch (PDOException $e) {
-							echo "<p>DB Error on Query: " . $e->getMessage() . "</p>";
-							$error = true;
-						}
-						if (!$error) {
-							foreach($result as $riga){
-								$NumeroSIMDisattive = $riga["NumeroSIMDisattive"];
-								?> <td><a href=""><?php echo $NumeroSIMDisattive; ?></a></td> <?php
-							}
-						}*/
 
-					?></tr>
-						
-						
->>>>>>> Stashed changes
+						/*
+																			  $query = getSIMDisattiveContrattoQry($Numero);
+																			  try {
+																				  $result = $conn->query($query);
+																			  } catch (PDOException $e) {
+																				  echo "<p>DB Error on Query: " . $e->getMessage() . "</p>";
+																				  $error = true;
+																			  }
+																			  if (!$error) {
+																				  foreach($result as $riga){
+																					  $NumeroSIMDisattive = $riga["NumeroSIMDisattive"];
+																					  ?> <td><a href=""><?php echo $NumeroSIMDisattive; ?></a></td> <?php
+																				  }
+																			  }*/
+
+						?></tr>
+
+
 					<?php } ?>
 				</table>
 			<?php } ?>
 		</div>
 	</div>
-	</div>
+
 </body>
 
 </html>
