@@ -114,8 +114,7 @@
 						if (!$error) {
 							foreach ($result as $riga) {
 								$NumeroTelefonate = $riga["NumeroTelefonate"];
-								?>
-								<td><a href="Telefonata.php?EffettuataDa=<?php echo $Numero?>"><?php echo $NumeroTelefonate; ?></a></td> <?php
+								?><td><a href="Telefonata.php?EffettuataDa=<?php echo $Numero?>"><?php echo $NumeroTelefonate; ?></a></td> <?php
 							}
 						}
 							
@@ -139,30 +138,23 @@
 						}
 
 
-					$query = getSIMDisattiveContrattoQry($Numero);
-					try {
-						$result = $conn->query($query);
-					} catch (PDOException $e) {
-						echo "<p>DB Error on Query: " . $e->getMessage() . "</p>";
-						$error = true;
-					}
-					if (!$error) {
-						foreach ($result as $riga) {
-							$NumeroSIMDisattive = $riga["NumeroSIMDisattive"];
-							?>
-								<td><a
-										href="SIM.php?StatoSIM=SIMDisattiva&Contratto=<?php echo $Numero ?>"><?php echo $NumeroTelefonate; ?></a>
-								</td> <?php
+						$query = getSIMDisattiveContrattoQry($Numero);
+						try {
+							$result = $conn->query($query);
+						} catch (PDOException $e) {
+							echo "<p>DB Error on Query: " . $e->getMessage() . "</p>";
+							$error = true;
 						}
-					}
-
-					?>
+						if (!$error) {
+							foreach ($result as $riga) {
+								$NumeroSIMDisattive = $riga["NumeroSIMDisattive"];
+								?><td><a href="SIM.php?StatoSIM=SIMDisattiva&Contratto=<?php echo $Numero ?>"><?php echo $NumeroSIMDisattive; ?></a></td> <?php
+						}
+						}?>
 					</tr>
-
-
 				<?php } ?>
-			</table>
-			<?php} ?>
+				</table>
+			<?php  } ?>
 		</div>
 	</div>
 
