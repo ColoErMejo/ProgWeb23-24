@@ -193,29 +193,45 @@ nav a:nth-child(4):hover ~ .animation {
   border-radius: 5px;
   flex: 0 0 29%;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column; /* Allinea gli elementi verticalmente */
 }
 
 .research-filter form {
+  /*contenitore filtri*/
   display: flex;
   flex-direction: column;
+  align-items: center; /* Centra gli elementi verticalmente */
 }
-.research-filter input[type="text"],
-.research-filter select {
-  padding: 8px; /* Padding uniforme */
+
+.research-filter .search-box,
+.research-filter .custom-select {
+  margin-bottom: 10px; /* Distanza tra i filtri */
+  width: 200px; /* Larghezza uniforme */
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between; /* Allineamento dei pulsanti Cerca e Aggiungi SIM */
+  align-items: center; /* Allineamento verticale */
 }
 
 .search-button,
 .add-button {
-  margin-left: 10px; /* Spaziatura tra i pulsanti */
-  width: auto; /* Larghezza automatica per il pulsante di invio */
+  padding: 8px 20px; /* Padding uniforme */
+  border-radius: 20px; /* Bordi molto arrotondati */
+  border: none; /* Rimuovi il bordo */
   cursor: pointer;
-  padding: 8px; /* Padding uniforme */
+  transition: all 0.5s ease 0s;
 }
 
 .add-button {
-  color: #800000;
+  background-color: #800000;
+  color: #ddd;
+}
+
+.add-button:hover {
+  background-color: #a94133;
 }
 
 /* Stile generale del select */

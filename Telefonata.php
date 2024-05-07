@@ -28,8 +28,10 @@
 						});
 					});
 				</script>
-				<input type="submit" value="Cerca" class="search-button" />
-				<input type="submit" value="Aggiungi Telefonata" class="add-button" />
+				<div class="buttons-container">
+					<input type="submit" value="Cerca" class="search-button" />
+					<input type="submit" value="Aggiungi Telefonata" class="add-button" />
+				</div>
 			</form>
 		</div>
 

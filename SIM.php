@@ -20,6 +20,8 @@
 		<div class="research-filter">
 			<form name="myform" method="POST">
 				<input id="Codice" name="Codice" type="text" placeholder="Codice" class="search-box" /><br>
+				<input id="Contratto" name="Contratto" type="text" placeholder="Numero di telefono"
+					class="search-box" /><br>
 
 				<select id="TipoSIM" name="TipoSIM" class="custom-select" />
 				<option value="tutto">seleziona tipo SIM</option>
@@ -37,9 +39,11 @@
 				<!--<a href="InserimentoSIMNonAttiva.php">
 					<img src="icons\plus.png" width="20px" height="20px">
 				</a><br>-->
-				<input type="submit" value="Cerca" class="search-button" />
-				<input type="submit" value="Aggiungi SIM" class="add-button" />
-				<input id="Contratto" name="Contratto" type="text" placeholder="Numero di telefono" /><br>
+				<div class="buttons-container">
+					<input type="submit" value="Cerca" class="search-button" />
+					<input type="submit" value="Aggiungi SIM" class="add-button" />
+				</div>
+
 
 			</form>
 		</div>
