@@ -48,13 +48,53 @@
                 <input type="text" name="Codice" id="Codice" required /> <br>
                 <label for="TipoSIM">Tipo SIM: </label>
                 <input type="text" name="TipoSIM" id="TipoSIM" required /> <br><br>
-                    <?php
-
-                    foreach ($result as $riga) {
-                        echo "<option value=" . $riga["Codice"] . ">" . $riga["Codice"] . "</option>";
-                    }
-                    ?>
             </form>
+        </div>
+        <div class="content-results">
+			<?php
+			$Codice = "";
+			$TipoSIM = "";
+			$StatoSIM = "";
+			if (count($_POST) > 0) {
+				$Codice = $_POST["Codice"];
+				$TipoSIM = $_POST["TipoSIM"];
+			} else if (count($_GET) > 0) {
+				$Codice = $_POST["Codice"];
+				$TipoSIM = $_POST["TipoSIM"];
+			}
+            $query = getSIMNonAttivaQry($Codice, $TipoSIM);
+				echo "<p>SIMQuery: " . $query . "</p>";
+			try {
+				$result = $conn->query($query);
+			} catch (PDOException $e) {
+				echo "<p>DB Error on Query: " . $e->getMessage() . "</p>";
+				$error = true;
+			}
+			if (!$error) {
+			?>
+				<table class="table">
+					<tr class="header">
+						<th>Codice</th>
+						<th>Tipo</th>
+					</tr>
+					<?php
+					$i = 0;
+					foreach ($result as $riga) {
+						$i = $i + 1;
+						$classRiga = 'class="rowOdd"';
+						if ($i % 2 == 0) {
+							$classRiga = 'class="rowEven"';
+						}
+						$Codice = $riga["Codice"];
+						$TipoSIM = $riga["TipoSIM"];
+						?>
+								<tr <?php echo $classRiga; ?>>
+									<td> <?php echo $Codice; ?> </td>
+									<td> <?php echo $TipoSIM; ?> </td>
+								</tr>
+                        <?php } ?>
+				</table>
+				<?php }?>
         </div>
     </div>
 </body>
