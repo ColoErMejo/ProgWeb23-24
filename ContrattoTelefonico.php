@@ -107,6 +107,13 @@
 								echo "<p>DB Error on Query: " . $e->getMessage() . "</p>";
 								$error = true;
 							}
+<<<<<<< Updated upstream
+							if (!$error) {
+								foreach ($result as $riga) {
+									$NumeroTelefonate = $riga["NumeroTelefonate"];
+									?>
+									<td><a href=""><?php echo $NumeroTelefonate; ?></a></td> <?php
+=======
 							$Numero = $riga["Numero"];
 							$DataAttivazione = $riga["DataAttivazione"];
 							$Tipo = $riga["Tipo"];
@@ -133,6 +140,7 @@
 										$NumeroTelefonate = $riga["NumeroTelefonate"];
 										?> <td><a href="Telefonata.php?EffettuataDa=<?php echo $Numero ?>"><?php echo $NumeroTelefonate; ?></a></td> <?php
 									}
+>>>>>>> Stashed changes
 								}
 							}
 
@@ -171,7 +179,10 @@
 								}
 							}
 
-
+<<<<<<< Updated upstream
+							?>
+						</tr>
+=======
 								$query = getSIMDisattiveContrattoQry($Numero);
 								try {
 									$result = $conn->query($query);
@@ -187,6 +198,7 @@
 								}
 
 								?></tr>
+>>>>>>> Stashed changes
 
 
 					<?php } ?>
