@@ -148,7 +148,7 @@
 								foreach ($result as $riga) {
 									$NumeroSIMDisattive = $riga["NumeroSIMDisattive"];
 									?>
-									<td><a href=""><?php echo $NumeroSIMDisattive; ?></a></td> <?php
+									<td><a href="SIM.php?StatoSIM=SIMDisattiva&Contratto=<?php echo $Numero ?>"><?php echo $NumeroSIMDisattive; ?></a></td> <?php
 								}
 							}
 

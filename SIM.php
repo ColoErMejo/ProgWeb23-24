@@ -52,12 +52,12 @@
 				$Codice = $_POST["Codice"];
 				$TipoSIM = $_POST["TipoSIM"];
 				$StatoSIM = $_POST["StatoSIM"];
-				$Contratto = $POST_["Contratto"];
+				$Contratto = $_POST["Contratto"];
 			} else if (count($_GET) > 0) {
 				$Codice = $_GET["Codice"];
 				$TipoSIM = $_GET["TipoSIM"];
 				$StatoSIM = $_GET["StatoSIM"];
-				$Contratto = $GET_["Contratto"];
+				$Contratto = $_GET["Contratto"];
 			}
 
 			if ($StatoSIM == "" || $StatoSIM == "tutto") {
