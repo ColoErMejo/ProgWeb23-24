@@ -103,78 +103,40 @@
 							<td> <?php echo $CreditoResiduo; ?> </td>
 							<?php
 
-							$query = getTelefonateContrattoQry($Numero);
-							try {
-								$result = $conn->query($query);
-							} catch (PDOException $e) {
-								echo "<p>DB Error on Query: " . $e->getMessage() . "</p>";
-								$error = true;
-							}
-							$Numero = $riga["Numero"];
-							$DataAttivazione = $riga["DataAttivazione"];
-							$Tipo = $riga["Tipo"];
-							$MinutiResidui = $riga["MinutiResidui"];
-							$CreditoResiduo = $riga["CreditoResiduo"];
-							?>
-						<tr <?php echo $classRiga; ?>>
-							<td> <?php echo $Numero; ?> </td>
-							<td> <?php echo $DataAttivazione; ?> </td>
-							<td> <?php echo $Tipo; ?> </td>
-							<td> <?php echo $MinutiResidui; ?> </td>
-							<td> <?php echo $CreditoResiduo; ?> </td>
-							<?php
+						$query = getTelefonateContrattoQry($Numero);
+						try {
+							$result = $conn->query($query);
+						} catch (PDOException $e) {
+							echo "<p>DB Error on Query: " . $e->getMessage() . "</p>";
+							$error = true;
+						}
 
-							$query = getTelefonateContrattoQry($Numero);
-							try {
-								$result = $conn->query($query);
-							} catch (PDOException $e) {
-								echo "<p>DB Error on Query: " . $e->getMessage() . "</p>";
-								$error = true;
-							}
-							if (!$error) {
-								foreach ($result as $riga) {
-									$NumeroTelefonate = $riga["NumeroTelefonate"];
-									?>
-									<td><a href="Telefonata.php?EffettuataDa=<?php echo $Numero ?>"><?php echo $NumeroTelefonate; ?></a>
-									</td> <?php
-								}
-							}
-					}
-
-
-					$query = getSIMAttivaContrattoQry($Numero);
-					try {
-						$result = $conn->query($query);
-					} catch (PDOException $e) {
-						echo "<p>DB Error on Query: " . $e->getMessage() . "</p>";
-						$error = true;
-					}
-					if (!$error) {
-						if ($result->rowCount() > 0) {
+						if (!$error) {
 							foreach ($result as $riga) {
-								$SIMAttiva = $riga["Codice"];
+								$NumeroTelefonate = $riga["NumeroTelefonate"];
+								?>
+								<td><a href="Telefonata.php?EffettuataDa=<?php echo $Numero?>"><?php echo $NumeroTelefonate; ?></a></td> <?php
 							}
-						} else {
-							$SIMAttiva = "";
 						}
-						?>
-							<td> <?php echo $SIMAttiva; ?> </td> <?php
-					}
+							
 
-					$query = getSIMDisattiveContrattoQry($Numero);
-					try {
-						$result = $conn->query($query);
-					} catch (PDOException $e) {
-						echo "<p>DB Error on Query: " . $e->getMessage() . "</p>";
-						$error = true;
-					}
-					if (!$error) {
-						foreach ($result as $riga) {
-							$NumeroSIMDisattive = $riga["NumeroSIMDisattive"];
-							?>
-								<td><a href=""><?php echo $NumeroSIMDisattive; ?></a></td> <?php
+						$query = getSIMAttivaContrattoQry($Numero);
+						try {
+							$result = $conn->query($query);
+						} catch (PDOException $e) {
+							echo "<p>DB Error on Query: " . $e->getMessage() . "</p>";
+							$error = true;
 						}
-					}
+						if (!$error) {
+							if ($result->rowCount() > 0) {
+								foreach ($result as $riga) {
+									$SIMAttiva = $riga["Codice"];
+								}
+							} else {
+								$SIMAttiva = "";
+							}
+							?><td> <?php echo $SIMAttiva; ?> </td> <?php
+						}
 
 
 					$query = getSIMDisattiveContrattoQry($Numero);
@@ -200,7 +162,7 @@
 
 				<?php } ?>
 			</table>
-			<?php ?>
+			<?php} ?>
 		</div>
 	</div>
 
