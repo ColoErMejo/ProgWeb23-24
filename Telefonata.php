@@ -55,32 +55,30 @@
 						<th>Durata</th>
 						<th>Costo</th>
 					</tr>
-					<tbody class="body">
-						<?php
-						$i = 0;
-						foreach ($result as $riga) {
-							$i = $i + 1;
-							$classRiga = 'class="rowOdd"';
-							if ($i % 2 == 0) {
-								$classRiga = 'class="rowEven"';
-							}
-							$ID = $riga["ID"];
-							$EffettuataDa = $riga["EffettuataDa"];
-							$Data = $riga["Data"];
-							$Ora = $riga["Ora"];
-							$Durata = $riga["Durata"];
-							$Costo = $riga["Costo"];
-							?>
-							<tr <?php echo $classRiga; ?>>
-								<td> <?php echo $ID; ?> </td>
-								<td> <?php echo $EffettuataDa; ?> </td>
-								<td> <?php echo $Data ?> </td>
-								<td> <?php echo $Ora ?> </td>
-								<td> <?php echo $Durata; ?> </td>
-								<td> <?php echo $Costo; ?> </td>
-							</tr>
-						<?php } ?>
-					</tbody>
+					<?php
+					$i = 0;
+					foreach ($result as $riga) {
+						$i = $i + 1;
+						$classRiga = 'class="rowOdd"';
+						if ($i % 2 == 0) {
+							$classRiga = 'class="rowEven"';
+						}
+						$ID = $riga["ID"];
+						$EffettuataDa = $riga["EffettuataDa"];
+						$Data = $riga["Data"];
+						$Ora = $riga["Ora"];
+						$Durata = $riga["Durata"];
+						$Costo = $riga["Costo"];
+						?>
+						<tr <?php echo $classRiga; ?>>
+							<td> <?php echo $ID; ?> </td>
+							<td> <?php echo $EffettuataDa; ?> </td>
+							<td> <?php echo $Data ?> </td>
+							<td> <?php echo $Ora ?> </td>
+							<td> <?php echo $Durata; ?> </td>
+							<td> <?php echo $Costo; ?> </td>
+						</tr>
+					<?php } ?>
 				</table>
 			<?php } ?>
 		</div>

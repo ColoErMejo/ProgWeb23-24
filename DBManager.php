@@ -111,6 +111,16 @@
 							"ORDER BY Telefonata.EffettuataDa";*/
 		return $qry;
 	}
+
+	function getSIMAttivaContrattoQry($Numero) : string {
+		$qry = "SELECT Codice FROM SIMAttiva WHERE AssociataA = " . $Numero;
+		return $qry;
+	}
+
+	function getSIMDisattiveContrattoQry($Numero) : string {
+		$qry = "SELECT distinct count(*) AS NumeroSIMDisattive FROM SIMAttiva WHERE EraAssociataA = " . $Numero;
+		return $qry;
+	}
 	
 	function formatLink ($lnk) : string	{
 		if (is_null($lnk) || $lnk == "")
