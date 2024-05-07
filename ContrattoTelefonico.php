@@ -64,33 +64,30 @@
 						<th>Minuti Residui</th>
 						<th>Credito Residuo</th>
 					</tr>
-					<tbody class="body">
-						<?php
-						$i = 0;
-						foreach ($result as $riga) {
-							$i = $i + 1;
-							$classRiga = 'class="rowOdd"';
-							if ($i % 2 == 0) {
-								$classRiga = 'class="rowEven"';
-							}
-							$Numero = $riga["Numero"];
-							$DataAttivazione = $riga["DataAttivazione"];
-							$Tipo = $riga["Tipo"];
-							$MinutiResidui = $riga["MinutiResidui"];
-							$CreditoResiduo = $riga["CreditoResiduo"];
-							?>
-							<tr <?php echo $classRiga; ?>>
-								<td> <?php echo $Numero; ?> </td>
-								<td> <?php echo $DataAttivazione; ?> </td>
-								<td> <?php echo $Tipo; ?> </td>
-								<td> <?php echo $MinutiResidui; ?> </td>
-								<td> <?php echo $CreditoResiduo; ?> </td>
-							</tr>
-						<?php } ?>
-					</tbody>
+					<?php
+					$i = 0;
+					foreach ($result as $riga) {
+						$i = $i + 1;
+						$classRiga = 'class="rowOdd"';
+						if ($i % 2 == 0) {
+							$classRiga = 'class="rowEven"';
+						}
+						$Numero = $riga["Numero"];
+						$DataAttivazione = $riga["DataAttivazione"];
+						$Tipo = $riga["Tipo"];
+						$MinutiResidui = $riga["MinutiResidui"];
+						$CreditoResiduo = $riga["CreditoResiduo"];
+						?>
+						<tr <?php echo $classRiga; ?>>
+							<td> <?php echo $Numero; ?> </td>
+							<td> <?php echo $DataAttivazione; ?> </td>
+							<td> <?php echo $Tipo; ?> </td>
+							<td> <?php echo $MinutiResidui; ?> </td>
+							<td> <?php echo $CreditoResiduo; ?> </td>
+						</tr>
+					<?php } ?>
 				</table>
 			<?php } ?>
-
 		</div>
 	</div>
 	</div>

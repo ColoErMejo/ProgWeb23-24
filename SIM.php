@@ -74,31 +74,29 @@
 							<th>Data Attivazione</th>
 							<th>Data Disattivazione</th>
 						</tr>
-						<tbody class="body">
-							<?php
-							$i = 0;
-							foreach ($result as $riga) {
-								$i = $i + 1;
-								$classRiga = 'class="rowOdd"';
-								if ($i % 2 == 0) {
-									$classRiga = 'class="rowEven"';
-								}
-								$Codice = $riga["Codice"];
-								$TipoSIM = $riga["TipoSIM"];
-								$AssociataA = $riga["AssociataA"];
-								$EraAssociataA = $riga["EraAssociataA"];
-								$DataAttivazione = $riga["DataAttivazione"];
-								$DataDisattivazione = $riga["DataDisattivazione"];
-								?>
-								<tr <?php echo $classRiga; ?>>
-									<td> <?php echo $Codice; ?> </td>
-									<td> <?php echo $TipoSIM; ?> </td>
-									<td> <?php echo $AssociataA; ?> </td>
-									<td> <?php echo $EraAssociataA; ?> </td>
-									<td> <?php echo $DataAttivazione; ?> </td>
-								</tr>
-							<?php } ?>
-						<tbody class="body">
+						<?php
+						$i = 0;
+						foreach ($result as $riga) {
+							$i = $i + 1;
+							$classRiga = 'class="rowOdd"';
+							if ($i % 2 == 0) {
+								$classRiga = 'class="rowEven"';
+							}
+							$Codice = $riga["Codice"];
+							$TipoSIM = $riga["TipoSIM"];
+							$AssociataA = $riga["AssociataA"];
+							$EraAssociataA = $riga["EraAssociataA"];
+							$DataAttivazione = $riga["DataAttivazione"];
+							$DataDisattivazione = $riga["DataDisattivazione"];
+							?>
+							<tr <?php echo $classRiga; ?>>
+								<td> <?php echo $Codice; ?> </td>
+								<td> <?php echo $TipoSIM; ?> </td>
+								<td> <?php echo $AssociataA; ?> </td>
+								<td> <?php echo $EraAssociataA; ?> </td>
+								<td> <?php echo $DataAttivazione; ?> </td>
+							</tr>
+						<?php } ?>
 					</table>
 				<?php }
 
