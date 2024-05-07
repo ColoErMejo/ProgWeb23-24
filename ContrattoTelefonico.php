@@ -20,21 +20,7 @@
 	include 'DBManager.php';
 	include 'connectDB.php';
 	?>
-<<<<<<< Updated upstream
-	<div class="container">
-		<div class="research-filter">
-			<form name="myform" method="POST">
-				<input id="Numero" name="Numero" type="text" placeholder="Numero di Telefono" />
-				<input id="DataAttivazione" name="DataAttivazione" type="text" placeholder="Data attivazione" />
-				<select id="Tipo" name="Tipo" placeholder="Tipo Contratto">
-					<option value="tutto">seleziona tipo contratto</option>
-					<option value="a consumo">a consumo</option>
-					<option value="a ricarica">a ricarica</option>
-				</select>
-				<input type="submit" value="Cerca" />
-			</form>
-		</div>
-=======
+
 
 <div class="research-filter">
 		<form name="myform" method="POST">
@@ -54,7 +40,6 @@
 			</select>
 			<input type="submit" value="Cerca" />
 		</form>
->>>>>>> Stashed changes
 
 		<div class="content-results">
 			<?php
@@ -109,11 +94,7 @@
 							<td> <?php echo $Numero; ?> </td>
 							<td> <?php echo $DataAttivazione; ?> </td>
 							<td> <?php echo $Tipo; ?> </td>
-<<<<<<< Updated upstream
-							<td> <?php echo $MinutiResidui; ?> </td>
-							<td> <?php echo $CreditoResiduo; ?> </td>
-						</tr>
-=======
+
                             <td> <?php echo $MinutiResidui; ?> </td>
                             <td> <?php echo $CreditoResiduo; ?> </td>
 						
@@ -154,7 +135,7 @@
 					?></tr>
 						
 						
->>>>>>> Stashed changes
+
 					<?php } ?>
 				</table>
 			<?php } ?>
