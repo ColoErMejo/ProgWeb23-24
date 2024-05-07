@@ -74,6 +74,7 @@
 						<th>Tipo</th>
 						<th>Minuti Residui</th>
 						<th>Credito Residuo</th>
+						<th>Telefonate</th>
 						<th>SIM Attiva</th>
 						<th>SIM Disattive</th>
 					</tr>
@@ -98,6 +99,21 @@
 							<td> <?php echo $MinutiResidui; ?> </td>
 							<td> <?php echo $CreditoResiduo; ?> </td>
 							<?php
+
+							$query = getTelefonateContrattoQry($Numero);
+							try {
+								$result = $conn->query($query);
+							} catch (PDOException $e) {
+								echo "<p>DB Error on Query: " . $e->getMessage() . "</p>";
+								$error = true;
+							}
+							if (!$error) {
+								foreach ($result as $riga) {
+									$NumeroTelefonate = $riga["NumeroTelefonate"];
+									?>
+									<td><a href=""><?php echo $NumeroTelefonate; ?></a></td> <?php
+								}
+							}
 
 
 							$query = getSIMAttivaContrattoQry($Numero);
