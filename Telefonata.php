@@ -14,7 +14,7 @@
 	include 'footer.html';
 	include 'DBManager.php';
 	include 'connectDB.php';
-    ?>
+	?>
 	<div class="container">
 		<div class="research-filter">
 			<form name="myform" method="POST" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
@@ -50,35 +50,37 @@
 					<tr class="header">
 						<th>ID</th>
 						<th>EffettuataDa</th>
-                        <th>Ora</th>
+						<th>Ora</th>
 						<th>Data</th>
 						<th>Durata</th>
 						<th>Costo</th>
 					</tr>
-					<?php
-					$i = 0;
-					foreach ($result as $riga) {
-						$i = $i + 1;
-						$classRiga = 'class="rowOdd"';
-						if ($i % 2 == 0) {
-							$classRiga = 'class="rowEven"';
-						}
-						$ID = $riga["ID"];
-						$EffettuataDa = $riga["EffettuataDa"];
-						$Data = $riga["Data"];
-                        $Ora = $riga["Ora"];
-						$Durata = $riga["Durata"];
-						$Costo = $riga["Costo"];
-						?>
-						<tr <?php echo $classRiga; ?>>
-							<td> <?php echo $ID; ?> </td>
-							<td> <?php echo $EffettuataDa; ?> </td>
-							<td> <?php echo $Data ?> </td>
-                            <td> <?php echo $Ora ?> </td>
-							<td> <?php echo $Durata; ?> </td>
-							<td> <?php echo $Costo; ?> </td>
-						</tr>
-					<?php } ?>
+					<tbody class="body">
+						<?php
+						$i = 0;
+						foreach ($result as $riga) {
+							$i = $i + 1;
+							$classRiga = 'class="rowOdd"';
+							if ($i % 2 == 0) {
+								$classRiga = 'class="rowEven"';
+							}
+							$ID = $riga["ID"];
+							$EffettuataDa = $riga["EffettuataDa"];
+							$Data = $riga["Data"];
+							$Ora = $riga["Ora"];
+							$Durata = $riga["Durata"];
+							$Costo = $riga["Costo"];
+							?>
+							<tr <?php echo $classRiga; ?>>
+								<td> <?php echo $ID; ?> </td>
+								<td> <?php echo $EffettuataDa; ?> </td>
+								<td> <?php echo $Data ?> </td>
+								<td> <?php echo $Ora ?> </td>
+								<td> <?php echo $Durata; ?> </td>
+								<td> <?php echo $Costo; ?> </td>
+							</tr>
+						<?php } ?>
+					</tbody>
 				</table>
 			<?php } ?>
 		</div>
