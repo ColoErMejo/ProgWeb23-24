@@ -94,13 +94,8 @@
 									<td> <?php echo $Numero; ?> </td>
 									<td> <?php echo $DataAttivazione; ?> </td>
 									<td> <?php echo $Tipo; ?> </td>
-									<<<<<<< Updated upstream <td> <?php echo $MinutiResidui; ?> </td>
-										<td> <?php echo $CreditoResiduo; ?> </td>
-								</tr>
-								=======
-								<td> <?php echo $MinutiResidui; ?> </td>
-								<td> <?php echo $CreditoResiduo; ?> </td>
-
+									<td> <?php echo $MinutiResidui; ?> </td>
+									<td> <?php echo $CreditoResiduo; ?> </td>
 								<?php
 								$query = getSIMAttivaContrattoQry($Numero);
 								try {
@@ -117,28 +112,24 @@
 									} else {
 										$SIMAttiva = "";
 									}
-									?>
+								?>
 										<td> <?php echo $SIMAttiva; ?> </td> <?php
 								}
 
 								/*
-																										$query = getSIMDisattiveContrattoQry($Numero);
-																										try {
-																											$result = $conn->query($query);
-																										} catch (PDOException $e) {
-																											echo "<p>DB Error on Query: " . $e->getMessage() . "</p>";
-																											$error = true;
-																										}
-																										if (!$error) {
-																											foreach($result as $riga){
-																												$NumeroSIMDisattive = $riga["NumeroSIMDisattive"];
-																												?> <td><a href=""><?php echo $NumeroSIMDisattive; ?></a></td> <?php
-																											}
-																										}*/
-
-								?></tr>
-						
-						
+								$query = getSIMDisattiveContrattoQry($Numero);
+								try {
+									$result = $conn->query($query);
+								} catch (PDOException $e) {
+									echo "<p>DB Error on Query: " . $e->getMessage() . "</p>";
+									$error = true;
+								}
+									if (!$error) {
+										foreach($result as $riga){
+										$NumeroSIMDisattive = $riga["NumeroSIMDisattive"];
+										?> <td><a href=""><?php echo $NumeroSIMDisattive; ?></a></td> <?php
+									}
+								}*/
 
 								?></tr>
 
