@@ -99,6 +99,7 @@
 								<td> <?php echo $AssociataA; ?> </td>
 								<td> <?php echo $EraAssociataA; ?> </td>
 								<td> <?php echo $DataAttivazione; ?> </td>
+								<td> <?php echo $DataDisattivazione; ?> </td>
 							</tr>
 						<?php } ?>
 					</table>
