@@ -171,7 +171,7 @@ nav a:nth-child(4):hover ~ .animation {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  height: 100vh;
+  height: 90vh;
   padding: 4px;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -261,16 +261,26 @@ nav a:nth-child(4):hover ~ .animation {
   }
 }
 
-table {
+/* Stile per la tabella */
+.table {
   width: 100%;
   border-collapse: collapse;
+  overflow: auto; /* Abilita lo scorrimento orizzontale e verticale */
   line-height: 40px;
 }
 
-th,
-td {
+/* Stile per l'header della tabella */
+.table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+/* Stile per il contenuto della tabella */
+.table th,
+.table td {
+  border: 1px solid #ddd;
   padding: 6px;
-  border: 1px solid #ccc;
   text-align: center;
 }
 
@@ -295,7 +305,13 @@ td {
     display: block;
     font-weight: bold;
   }
+  th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
 }
+
 /* footer */
 footer {
   position: fixed;
@@ -309,6 +325,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 
 .email-section {
