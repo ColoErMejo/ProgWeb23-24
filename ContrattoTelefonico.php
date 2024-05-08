@@ -24,23 +24,9 @@
 		<div class="research-filter">
 			<form name="myform" method="POST">
 				<input id="Numero" name="Numero" type="text" placeholder="Numero di Telefono" class="search-box" />
-				<input id="DataAttivazione" name="DataAttivazione" type="text" placeholder="Data attivazione"
-					class="date-pick" />
-				<script>
-					$(function () {
-						$("#DataAttivazione").datepicker({
-							dateFormat: "dd/mm/y"
-						});
-					});
-				</script>
-				<select id="Tipo" name="Tipo" placeholder="Tipo Contratto" class="custom-select">
-					<option value="tutto">seleziona tipo contratto</option>
-					<option value="a consumo">a consumo</option>
-					<option value="a ricarica">a ricarica</option>
-				</select>
+				<input id="Data" name="Data" type="date" placeholder="gg/mm/aa" class="search-box" />
 				<div class="buttons-container">
 					<input type="submit" value="Cerca" class="search-button" />
-					<input type="submit" value="Aggiungi Contratto" class="add-button" />
 				</div>
 			</form>
 		</div>

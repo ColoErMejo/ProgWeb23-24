@@ -35,16 +35,9 @@
 				<option value="SIMAttiva">attiva</option>
 				<option value="SIMDisattiva">disattiva</option>
 				<option value="SIMNonAttiva">non attiva</option>
-				</select>
-				<!--<a href="InserimentoSIMNonAttiva.php">
-					<img src="icons\plus.png" width="20px" height="20px">
-				</a><br>-->
 				<div class="buttons-container">
 					<input type="submit" value="Cerca" class="search-button" />
-					<input type="submit" value="Aggiungi SIM" class="add-button" />
 				</div>
-
-
 			</form>
 		</div>
 

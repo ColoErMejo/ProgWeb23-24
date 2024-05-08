@@ -6,8 +6,19 @@
 		if ($Numero != "")
 			$qry = $qry . "AND ContrattoTelefonico.Numero = " . $Numero . " ";
 
-		if ($DataAttivazione != "")
-			$qry = $qry . "AND ContrattoTelefonico.DataAttivazione LIKE '%" . $DataAttivazione . "%' ";
+			if ($DataAttivazione != "") {
+				if (!empty($DataAttivazione)) {
+					// Dividi la data in giorno, mese e anno
+						$partiData = explode('-', $DataAttivazione);
+						$annoCompleto = $partiData[0];
+						$mese = $partiData[1];
+						$giorno = $partiData[2];
+						$anno = substr($annoCompleto, -2);
+				// Formatta la data nel formato richiesto per la query SQL
+				$DataSQL = "$giorno/$mese/$anno";
+					}
+				$qry .= "AND ContrattoTelefonico.DataAttivazione LIKE '%" . $DataSQL . "%' ";
+			}
 
 		if ($Tipo != "" && $Tipo != "tutto")
 			$qry = $qry . "AND ContrattoTelefonico.Tipo LIKE '%" . $Tipo . "%' ";
@@ -133,7 +144,8 @@
 		return $qry;
 	}
 
-	function getTelefonataQry ($ID, $EffettuataDa) : string {
+	function getTelefonataQry ($ID, $EffettuataDa, $Data) : string {
+		
 		$qry = "SELECT * FROM Telefonata WHERE 1=1 ";
 		if ($ID != "")
 			$qry = $qry . "AND Telefonata.ID =" . $ID . " ";
@@ -141,6 +153,20 @@
 		if ($EffettuataDa != "")
 			$qry = $qry . "AND Telefonata.EffettuataDa = " . $EffettuataDa . " ";
 		
+		if ($Data != "") {
+			if (!empty($Data)) {
+				// Dividi la data in giorno, mese e anno
+					$partiData = explode('-', $Data);
+					$annoCompleto = $partiData[0];
+					$mese = $partiData[1];
+					$giorno = $partiData[2];
+					$anno = substr($annoCompleto, -2);
+			// Formatta la data nel formato richiesto per la query SQL
+			$DataSQL = "$giorno/$mese/$anno";
+				}
+			$qry .= "AND Telefonata.Data LIKE '%" . $DataSQL . "%' ";
+		}
+	
 		/*$qry = $qry . 
 		 					"GROUP BY Telefonata.ID, Telefonata.EffettuataDa, " .
 									"Telefonata.Data, " . 

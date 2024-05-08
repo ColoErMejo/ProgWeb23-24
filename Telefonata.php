@@ -20,18 +20,9 @@
 			<form name="myform" method="POST" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
 				<input id="EffettuataDa" name="EffettuataDa" type="text" placeholder="Effettuata Da"
 					class="search-box" />
-				<input id="Data" name="Data" type="text" placeholder="Data" class="search-box" />
-				<script>
-					$(function () {
-						$("#Data").datepicker({
-							dateFormat: "dd/mm/y"
-						});
-						
-					});
-				</script>
+				<input id="Data" name="Data" type="date" placeholder="gg/mm/aa" class="search-box" />
 				<div class="buttons-container">
 					<input type="submit" value="Cerca" class="search-button" />
-					<input type="submit" value="Aggiungi Telefonata" class="add-button" />
 				</div>
 			</form>
 		</div>
@@ -40,15 +31,18 @@
 			<?php
 			$ID = "";
 			$EffettuataDa = "";
+			$Data="";
 			if (count($_POST) > 0) {
 				$ID = $_POST["ID"];
 				$EffettuataDa = $_POST["EffettuataDa"];
+				$Data = $_POST["Data"];
 			} else if (count($_GET) > 0) {
 				$ID = $_GET["ID"];
 				$EffettuataDa = $_GET["EffettuataDa"];
+				$Data = $_GET["Data"];
 			}
-			$query = getTelefonataQry($ID, $EffettuataDa);
-			//-- echo "<p>ContrattoTelefonicoQuery: " . $query . "</p>"; 
+			$query = getTelefonataQry($ID, $EffettuataDa, $Data);
+			echo "<p>ContrattoTelefonicoQuery: " . $query . "</p>"; 
 			
 			try {
 				$result = $conn->query($query);
