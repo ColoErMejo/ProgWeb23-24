@@ -28,15 +28,20 @@
 					<option id="tutto" value="tutto">seleziona tipo contratto</option>
 					<option id="a ricarica" value="a ricarica"> A ricarica </option>
 					<option id="a consumo" value="a consumo"> A Consumo </option>
-
-
 				</select>
 				<input id="Data" name="Data" type="date" placeholder="gg/mm/aa" class="search-box" />
 				<div class="buttons-container">
-					<input type="submit" value="Cerca" class="search-button" />
-				</div>
-			</form>
+    			<form name="myform" method="POST">
+        			<input type="submit" value="Cerca" class="search-button" />
+    			</form>
+    			<div>
+        		<a href="InserimentoContratto.php"><img src="icons/plus.png" width="20px" height="20px"></a>
+        		<a href="InserimentoContratto.php"><img src="icons/pencil.png" width="20px" height="20px"></a>
+        		<a href="InserimentoContratto.php"><img src="icons/bin.png" width="20px" height="20px"></a>
+    			</div>
 		</div>
+			</form>
+	</div>
 
 		<div class="content-results">
 			<?php
