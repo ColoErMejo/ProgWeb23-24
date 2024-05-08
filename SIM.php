@@ -106,8 +106,17 @@
 							<tr <?php echo $classRiga; ?>>
 								<td> <?php echo $Codice; ?> </td>
 								<td> <?php echo $TipoSIM; ?> </td>
-								<td> <?php echo $AssociataA; ?> </td>
-								<td> <?php echo $EraAssociataA; ?> </td>
+								<?php if($AssociataA == ""){ ?>
+									<td> <?php echo $AssociataA; ?> </td>
+								<?php } else{ ?>
+									<td> <a href="ContrattoTelefonico.php?Numero=<?php echo $AssociataA ?>"><?php echo $AssociataA; ?></a></td>
+								<?php }
+
+								if($EraAssociataA == ""){ ?>
+									<td> <?php echo $EraAssociataA; ?> </td>
+								<?php } else{ ?>
+									<td> <a href="ContrattoTelefonico.php?Numero=<?php echo $EraAssociataA ?>"><?php echo $EraAssociataA; ?></a> </td>
+								<?php } ?>
 								<td> <?php echo $DataAttivazione; ?> </td>
 								<td> <?php echo $DataDisattivazione; ?> </td>
 							</tr>
@@ -150,7 +159,7 @@
 								<tr <?php echo $classRiga; ?>>
 									<td> <?php echo $Codice; ?> </td>
 									<td> <?php echo $TipoSIM; ?> </td>
-									<td> <?php echo $AssociataA; ?> </td>
+									<td> <a href="ContrattoTelefonico.php?Numero=<?php echo $AssociataA ?>"><?php echo $AssociataA; ?></a></td>
 									<td> <?php echo $DataAttivazione; ?> </td>
 								</tr>
 						<?php } ?>
@@ -194,7 +203,7 @@
 									<tr <?php echo $classRiga; ?>>
 										<td> <?php echo $Codice; ?> </td>
 										<td> <?php echo $TipoSIM; ?> </td>
-										<td> <?php echo $EraAssociataA; ?> </td>
+										<td> <a href="ContrattoTelefonico.php?Numero=<?php echo $EraAssociataA ?>"><?php echo $EraAssociataA; ?></a> </td>
 										<td> <?php echo $DataAttivazione; ?> </td>
 										<td> <?php echo $DataDisattivazione; ?> </td>
 									</tr>
