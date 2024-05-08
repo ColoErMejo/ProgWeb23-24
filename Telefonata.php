@@ -49,8 +49,8 @@
 					<tr class="header">
 						<th>ID</th>
 						<th>EffettuataDa</th>
-						<th>Ora</th>
 						<th>Data</th>
+						<th>Ora</th>
 						<th>Durata</th>
 						<th>Costo</th>
 					</tr>
