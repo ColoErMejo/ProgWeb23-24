@@ -24,6 +24,13 @@
 		<div class="research-filter">
 			<form name="myform" method="POST">
 				<input id="Numero" name="Numero" type="text" placeholder="Numero di Telefono" class="search-box" />
+				<select id="Tipo" name="Tipo"> 
+					<option id="tutto" value="tutto">seleziona tipo contratto</option>
+					<option id="a ricarica" value="a ricarica"> A ricarica </option>
+					<option id="a consumo" value="a consumo"> A Consumo </option>
+
+
+				</select>
 				<input id="Data" name="Data" type="date" placeholder="gg/mm/aa" class="search-box" />
 				<div class="buttons-container">
 					<input type="submit" value="Cerca" class="search-button" />
