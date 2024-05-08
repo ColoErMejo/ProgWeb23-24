@@ -18,8 +18,21 @@
 	<div class="container">
 		<div class="research-filter">
 			<form name="myform" method="POST" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-				<input id="EffettuataDa" name="EffettuataDa" type="text" placeholder="Effettuata Da"/>
-				<input id="Data" name="Data" type="date" placeholder="gg/mm/aa"/>
+				<input id="EffettuataDa" name="EffettuataDa" type="text" placeholder="Effettuata Da"
+					class="search-box" />
+				<input id="Data" name="Data" type="text" placeholder="Data" class="search-box" />
+				<script>
+					$(function () {
+						$("#Data").datepicker({
+							dateFormat: "dd/mm/y"
+						});
+						
+					});
+				</script>
+				<div class="buttons-container">
+					<input type="submit" value="Cerca" class="search-button" />
+					<input type="submit" value="Aggiungi Telefonata" class="add-button" />
+				</div>
 			</form>
 		</div>
 
