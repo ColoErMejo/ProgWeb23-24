@@ -205,9 +205,18 @@ nav a:nth-child(4):hover ~ .animation {
 }
 
 .research-filter .search-box,
-.research-filter .custom-select {
+.research-filter .custom-select,
+.research-filter .date-pick {
   margin-bottom: 10px; /* Distanza tra i filtri */
   width: 200px; /* Larghezza uniforme */
+}
+
+.ui-datepicker-calendar {
+  font-size: 12px; /* Cambia la dimensione del testo */
+}
+.ui-datepicker-calendar select.ui-datepicker-month,
+.ui-datepicker-calendar select.ui-datepicker-year {
+  width: 50px; /* Ridimensiona i menu a discesa del mese e dell'anno */
 }
 
 .buttons-container {

@@ -19,16 +19,16 @@
 	<div class="container">
 		<div class="research-filter">
 			<form name="myform" method="POST">
-				<input id="Codice" name="Codice" type="text" placeholder="Codice" class="search-box" /><br>
+				<input id="Codice" name="Codice" type="text" placeholder="Codice" class="search-box" />
 				<input id="Contratto" name="Contratto" type="text" placeholder="Numero di telefono"
-					class="search-box" /><br>
+					class="search-box" />
 
 				<select id="TipoSIM" name="TipoSIM" class="custom-select" />
 				<option value="tutto">seleziona tipo SIM</option>
 				<option value="standard">standard</option>
 				<option value="micro">micro</option>
 				<option value="elettronica">elettronica</option>
-				</select><br>
+				</select>
 
 				<select id="StatoSIM" name="StatoSIM" class="custom-select" />
 				<option value="tutto">seleziona stato SIM</option>
