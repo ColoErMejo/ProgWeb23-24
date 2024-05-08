@@ -26,6 +26,7 @@
 						$("#Data").datepicker({
 							dateFormat: "dd/mm/y"
 						});
+						
 					});
 				</script>
 				<div class="buttons-container">
