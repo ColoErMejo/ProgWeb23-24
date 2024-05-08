@@ -133,12 +133,14 @@
 								if ($result->rowCount() > 0) {
 									foreach ($result as $riga) {
 										$SIMAttiva = $riga["Codice"];
+										?><td><a href= "SIM.php?StatoSIM=SIMAttiva&Codice=<?php echo $SIMAttiva ?>"><?php echo $SIMAttiva; ?></a> </td> <?php
 									}
 								} else {
 									$SIMAttiva = "";
+									?><td> <?php echo $SIMAttiva; ?> </td> <?php
 								}
-								?>
-								<td> <?php echo $SIMAttiva; ?> </td> <?php
+								
+								
 							}
 
 
