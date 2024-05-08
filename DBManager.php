@@ -176,7 +176,25 @@
 							"ORDER BY Telefonata.EffettuataDa";*/
 		return $qry;
 	}
+	function insertContratto($Numero, $DataAttivazione, $Tipo, $MinutiResidui, $Creditoresiduo): string
+	{
+		$qry = "INSERT INTO ContrattoTelefonico(DataAp, Indirizzo, Città, CodCliente, Attiva, DataCh) VALUES(";
 
+		$qry .= "'" . $Numero . "', ";
+		$qry .= "'" . $DataAttivazione . "', ";
+		$qry .= "'" . $Tipo . "', ";
+		$qry .= "'" . $MinutiResidui . "', ";
+		$qry .= "'" . $Creditoresiduo . "', ";
+
+		if ($DataAttivazione != "NULL") {
+			$qry .= "'" . $DataAttivazione . "'";
+		} else {
+			$qry .= "NULL";
+		}
+		$qry .= ")";
+		echo "<script> alert(". $qry .")</script>";
+	return $qry;
+}
 	
 	function formatLink ($lnk) : string	{
 		if (is_null($lnk) || $lnk == "")
