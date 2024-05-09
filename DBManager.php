@@ -24,7 +24,13 @@
 			$qry = $qry . "AND ContrattoTelefonico.Tipo LIKE '%" . $Tipo . "%' ";
 		return $qry;
 	}
-
+	function linkEliminaContratto($Numero)
+	{
+	if (is_null($Numero) || $Numero == "")
+		return "";
+	return "<a href='EliminaContratto.php?Numero=" . $Numero . "'> Elimina </a>";
+	}
+	
 	function getTelefonateContrattoQry($Numero) : string {
 		$qry = "SELECT distinct count(*) AS NumeroTelefonate FROM Telefonata WHERE EffettuataDa = " . $Numero . " ";
 		return $qry;
