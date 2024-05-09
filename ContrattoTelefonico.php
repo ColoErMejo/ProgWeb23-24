@@ -19,6 +19,7 @@
 	include 'footer.html';
 	include 'DBManager.php';
 	include 'connectDB.php';
+	
 	?>
 	<div class="container">
 		<div class="research-filter">
@@ -37,7 +38,7 @@
     			<div>
         		<a href="InserimentoContratto.php"><img src="icons/plus.png" width="20px" height="20px"></a>
         		<a href="InserimentoContratto.php"><img src="icons/pencil.png" width="20px" height="20px"></a>
-        		<a href="InserimentoContratto.php"><img src="icons/bin.png" width="20px" height="20px"></a>
+        		<a href="EliminazioneContratto.php"><img src="icons/bin.png" width="20px" height="20px"></a>
     			</div>
 		</div>
 			</form>

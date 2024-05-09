@@ -16,10 +16,12 @@
     $qry = "DELETE FROM ContrattoTelefonico WHERE ";	
     
     if ($Numero != ""){
-        $qry = $qry . "ContrattoTelefonico.Numero = '" . $Codice . "';";
-        $qry = $qry ." DELETE FROM Lettura WHERE ";
-        $qry = $qry . "Lettura.CodUtenza = '" . $Codice . "';";
-    }
+        $qry = $qry . "Telefonata.EffettuataDa = '" . $Numero . "';";
+        $qry = $qry . "SIMAttiva.AssociataA = '" . $Numero . "';";
+        $qry = $qry . "SIMDisattiva.EraAssociataA = '" . $Numero . "';";
+        $qry = $qry . "ContrattoTelefonico.Numero = '" . $Numero . "';";
+        $qry = $qry ." DELETE FROM ContrattoTelefonico WHERE ";
+    }    
 
     try {   
         $result = $conn->query($qry);
@@ -34,11 +36,11 @@
     }
     #anche questo potrebbe non servire
     if(!$error) {
-        echo("<script>alert('Utenza'".$Codice."' eliminata correttamente)</script>");
+        echo("<script>alert('Numero di telefono'".$Numero."' eliminato correttamente)</script>");
 
     }
-    header('Location: '."Utenza.php");
+    header('Location: '."ContrattoTelefonico.php");
     echo $qry;
-    echo("<script>alert('Utenza'".$Codice."' eliminata correttamente)</script>");
+    echo("<script>alert('Numero di telefono'".$Numero."' eliminato correttamente)</script>");
     die();
 ?>
