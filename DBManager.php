@@ -176,22 +176,37 @@
 							"ORDER BY Telefonata.EffettuataDa";*/
 		return $qry;
 	}
-	function insertContratto($Numero, $DataAttivazione, $Tipo, $MinutiResidui, $Creditoresiduo): string
+	function insertContratto($Numero, $DataAttivazione, $Tipo, $MinutiResidui, $CreditoResiduo): string
 	{
-		$qry = "INSERT INTO ContrattoTelefonico(DataAp, Indirizzo, Città, CodCliente, Attiva, DataCh) VALUES(";
-
-		$qry .= "'" . $Numero . "', ";
-		$qry .= "'" . $DataAttivazione . "', ";
-		$qry .= "'" . $Tipo . "', ";
-		$qry .= "'" . $MinutiResidui . "', ";
-		$qry .= "'" . $Creditoresiduo . "', ";
-
-		if ($DataAttivazione != "NULL") {
-			$qry .= "'" . $DataAttivazione . "'";
-		} else {
-			$qry .= "NULL";
+		$DataSQL="";
+		if ($DataAttivazione != "") {
+			if (!empty($DataAttivazione)) {
+				// Dividi la data in giorno, mese e anno
+					$partiData = explode('-', $DataAttivazione);
+					$annoCompleto = $partiData[0];
+					$mese = $partiData[1];
+					$giorno = $partiData[2];
+					$anno = substr($annoCompleto, -2);
+			// Formatta la data nel formato richiesto per la query SQL
+			$DataSQL = "$giorno/$mese/$anno";
+				}
 		}
-		$qry .= ")";
+		$qry = "INSERT INTO ContrattoTelefonico(Numero, DataAttivazione, Tipo, MinutiResidui, CreditoResiduo) VALUES(";
+
+		$qry .= "\"" . $Numero . "\", ";
+		if ($DataSQL != "") {
+			$qry .= "\"" . $DataSQL . "\", ";
+		} else {
+			$qry .= "\"NULL\", ";
+		}
+		$qry .= "\"" . $Tipo . "\", ";
+		if ($MinutiResidui != "") {
+			$qry .= "\"" . $MinutiResidui . "\", ";
+			$qry .= "NULL )";
+		}  elseif ($CreditoResiduo != "") {
+			$qry .= "NULL, ";
+			$qry .= "\"" . $CreditoResiduo . "\") ";
+		} 
 		echo "<script> alert(". $qry .")</script>";
 	return $qry;
 }
