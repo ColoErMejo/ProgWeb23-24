@@ -24,23 +24,21 @@
 					class="search-box" />
 
 				<select id="TipoSIM" name="TipoSIM" class="custom-select">
-					<option value="tutto">seleziona tipo SIM</option>
-					<option value="standard">standard</option>
-					<option value="micro">micro</option>
-					<option value="elettronica">elettronica</option>
+					<option value="tutto">Seleziona tipo SIM</option>
+					<option value="standard">Standard</option>
+					<option value="micro">Micro</option>
+					<option value="elettronica">Elettronica</option>
 				</select>
 
 				<select id="StatoSIM" name="StatoSIM" class="custom-select">
-					<option value="tutto">seleziona stato SIM</option>
-					<option value="SIMAttiva">attiva</option>
-					<option value="SIMDisattiva">disattiva</option>
-					<option value="SIMNonAttiva">non attiva</option>
+					<option value="tutto">Seleziona stato SIM</option>
+					<option value="SIMAttiva">Attiva</option>
+					<option value="SIMDisattiva">Disattiva</option>
+					<option value="SIMNonAttiva">Non attiva</option>
 				</select>
-
-			</form>
-			<div class="buttons-container">
-				<input type="submit" value="Cerca" class="search-button" />
-			</div>
+				<div class="buttons-container">
+					<input type="submit" value="Cerca" class="search-button" />
+				</div>
 			</form>
 		</div>
 
