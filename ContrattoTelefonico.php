@@ -80,6 +80,7 @@
 						<th>Telefonate</th>
 						<th>SIM Attiva</th>
 						<th>SIM Disattive</th>
+						<th>Elimina</th>
 					</tr>
 					<?php
 					$i = 0;
@@ -159,6 +160,7 @@
 									</td> <?php
 								}
 							} ?>
+							<td> <?php echo linkEliminaContratto($Numero) ?></td>
 						</tr>
 					<?php } ?>
 				</table>
