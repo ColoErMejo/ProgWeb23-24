@@ -30,12 +30,11 @@
 					<option value="elettronica">Elettronica</option>
 				</select>
 
-				<select id="StatoSIM" name="StatoSIM" class="custom-select">
-					<option value="tutto">Seleziona stato SIM</option>
-					<option value="SIMAttiva">Attiva</option>
-					<option value="SIMDisattiva">Disattiva</option>
-					<option value="SIMNonAttiva">Non attiva</option>
-				</select>
+				<select id="StatoSIM" name="StatoSIM" class="custom-select" />
+				<option value="tutto">seleziona stato SIM</option>
+				<option value="SIMAttiva">attiva</option>
+				<option value="SIMDisattiva">disattiva</option>
+				<option value="SIMNonAttiva">non attiva</option>
 				<div class="buttons-container">
 					<input type="submit" value="Cerca" class="search-button" />
 				</div>
