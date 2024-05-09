@@ -35,6 +35,7 @@
 				<option value="SIMAttiva">attiva</option>
 				<option value="SIMDisattiva">disattiva</option>
 				<option value="SIMNonAttiva">non attiva</option>
+				</select>
 				<div class="buttons-container">
 					<input type="submit" value="Cerca" class="search-button" />
 				</div>
