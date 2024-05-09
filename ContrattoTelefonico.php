@@ -19,30 +19,34 @@
 	include 'footer.html';
 	include 'DBManager.php';
 	include 'connectDB.php';
-	
+
 	?>
 	<div class="container">
 		<div class="research-filter">
 			<form name="myform" method="POST">
 				<input id="Numero" name="Numero" type="text" placeholder="Numero di Telefono" class="search-box" />
-				<select id="Tipo" name="Tipo"> 
+				<select id="Tipo" name="Tipo">
 					<option id="tutto" value="tutto">seleziona tipo contratto</option>
 					<option id="a ricarica" value="a ricarica"> A ricarica </option>
 					<option id="a consumo" value="a consumo"> A Consumo </option>
 				</select>
 				<input id="Data" name="Data" type="date" placeholder="gg/mm/aa" class="search-box" />
 				<div class="buttons-container">
-    			<form name="myform" method="POST">
-        			<input type="submit" value="Cerca" class="search-button" />
-    			</form>
-    			<div>
-        		<a href="InserimentoContratto.php"><img src="icons/plus.png" width="20px" height="20px"></a>
-        		<a href="InserimentoContratto.php"><img src="icons/pencil.png" width="20px" height="20px"></a>
-        		<a href="EliminazioneContratto.php"><img src="icons/bin.png" width="20px" height="20px"></a>
-    			</div>
-		</div>
+					<div class="buttons-operation">
+						<a id="InsCont" href="InserimentoContratto.php"><img src="icons/plus.png" width="20px"
+								height="20px"></a>
+						<a id="ModCont" href="InserimentoContratto.php"><img src="icons/pencil.png" width="20px"
+								height="20px"></a>
+						<a id="ElimCont" href="EliminazioneContratto.php"><img src="icons/bin.png" width="20px"
+								height="20px"></a>
+					</div>
+					<form name="myform" method="POST">
+						<input type="submit" value="Cerca" class="search-button" />
+					</form>
+
+				</div>
 			</form>
-	</div>
+		</div>
 
 		<div class="content-results">
 			<?php
@@ -133,14 +137,18 @@
 								if ($result->rowCount() > 0) {
 									foreach ($result as $riga) {
 										$SIMAttiva = $riga["Codice"];
-										?><td><a href= "SIM.php?StatoSIM=SIMAttiva&Codice=<?php echo $SIMAttiva ?>"><?php echo $SIMAttiva; ?></a> </td> <?php
+										?>
+										<td><a
+												href="SIM.php?StatoSIM=SIMAttiva&Codice=<?php echo $SIMAttiva ?>"><?php echo $SIMAttiva; ?></a>
+										</td> <?php
 									}
 								} else {
 									$SIMAttiva = "";
-									?><td> <?php echo $SIMAttiva; ?> </td> <?php
+									?>
+									<td> <?php echo $SIMAttiva; ?> </td> <?php
 								}
-								
-								
+
+
 							}
 
 
