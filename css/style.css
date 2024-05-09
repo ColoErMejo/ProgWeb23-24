@@ -204,6 +204,11 @@ nav a:nth-child(4):hover ~ .animation {
   align-items: center; /* Centra gli elementi verticalmente */
 }
 
+.research-filter form * {
+  /*tutti gli elementi figlio nel form*/
+  margin: 20px; /* Distanza tra i filtri */
+}
+
 .research-filter .search-box,
 .research-filter .custom-select,
 .research-filter .date-pick {
@@ -324,7 +329,7 @@ nav a:nth-child(4):hover ~ .animation {
 .content-results {
   background-color: white;
   flex: 0 0 69%;
-  max-height: 400px; /* altezza massima del contenuto con scorrimento */
+  max-height: 80vh; /* altezza massima del contenuto con scorrimento */
   overflow: auto; /* abilita lo scorrimento all'interno del div se necessario */
 }
 
@@ -365,9 +370,24 @@ table tr.header {
 /* Stile per il contenuto della tabella */
 .table th,
 .table td {
-  border: 1px solid #ddd;
   padding: 6px;
   text-align: center;
+}
+/* prova, stile più minimal
+.table td {
+  border: 1px solid #ddd; 
+}
+*/
+.table th:first-child {
+  border-top-left-radius: 10px; /* Arrotonda l'angolo superiore sinistro */
+}
+
+.table th:last-child {
+  border-top-right-radius: 10px; /* Arrotonda l'angolo superiore destro */
+}
+
+tbody tr:first-child td {
+  border-top: none; /* Rimuove il bordo superiore dalla prima riga dei dati */
 }
 
 @media screen and (max-width: 760px) {

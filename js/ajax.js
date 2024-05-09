@@ -26,9 +26,9 @@ $(document).ready(function () {
     caricaContenuti("ContrattoTelefonico.php");
   });
 
-  /* $('#sim').click(function(){
-      caricaContenuti('sim.php'); non ancora implementata
-  });*/
+  $("#sim").click(function () {
+    caricaContenuti("SIM.php");
+  });
 
   $("#tel").click(function () {
     caricaContenuti("Telefonata.php");
