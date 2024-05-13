@@ -28,9 +28,9 @@
 	{
 	if (is_null($Numero) || $Numero == "")
 		return "";
-	return "<a href='EliminaContratto.php?Numero=" . $Numero . "'> Elimina </a>";
+	return "<a href='EliminazioneContratto.php?Numero=" . $Numero . "'> Elimina </a>";
 	}
-	
+
 	function getTelefonateContrattoQry($Numero) : string {
 		$qry = "SELECT distinct count(*) AS NumeroTelefonate FROM Telefonata WHERE EffettuataDa = " . $Numero . " ";
 		return $qry;

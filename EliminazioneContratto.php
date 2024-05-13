@@ -16,11 +16,15 @@
     $qry = "DELETE FROM ContrattoTelefonico WHERE ";	
     
     if ($Numero != ""){
-        $qry = $qry . "Telefonata.EffettuataDa = '" . $Numero . "';";
-        $qry = $qry . "SIMAttiva.AssociataA = '" . $Numero . "';";
-        $qry = $qry . "SIMDisattiva.EraAssociataA = '" . $Numero . "';";
         $qry = $qry . "ContrattoTelefonico.Numero = '" . $Numero . "';";
-        $qry = $qry ." DELETE FROM ContrattoTelefonico WHERE ";
+        $qry = $qry ." DELETE FROM Telefonata WHERE ";
+        $qry = $qry . "Telefonata.EffettuataDa = '" . $Numero . "';";
+        $qry = $qry ." DELETE FROM SIMAttiva WHERE ";
+        $qry = $qry . "SIMAttiva.AssociataA = '" . $Numero . "';";
+        $qry = $qry ." DELETE FROM SIMDisattiva WHERE ";
+        $qry = $qry . "SIMDisattiva.EraAssociataA = '" . $Numero . "';";
+        
+
     }    
 
     try {   
@@ -31,7 +35,6 @@
         $error = true;
         echo("<script>alert(".$e->getMessage().")</script>");
 
-        echo("ecco la ".$qry);
         echo $qry;
     }
     #anche questo potrebbe non servire
