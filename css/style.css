@@ -1,9 +1,9 @@
 body {
   font-family: Arial, sans-serif;
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
   margin: 0;
+  height: 100vh;
 }
 /* Header*/
 
@@ -170,7 +170,7 @@ nav a:nth-child(4):hover ~ .animation {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  height: 90vh;
+  height: calc(100vh - 300px);
   padding: 4px;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -190,7 +190,7 @@ nav a:nth-child(4):hover ~ .animation {
   background-color: transparent;
   /*border: 1px solid #ccc;*/
   border-radius: 5px;
-  flex: 0 0 29%;
+  flex: 0 0 25%;
   display: flex;
   align-items: center;
   flex-direction: column; /* Allinea gli elementi verticalmente */
@@ -244,35 +244,7 @@ nav a:nth-child(4):hover ~ .animation {
 .buttons-container {
   display: flex; /* Utilizza Flexbox */
   justify-content: space-between; /* Spazia gli elementi uniformemente lungo la riga */
-  width: 100%; /* Assicura che il div occupi l'intera larghezza disponibile */
 }
-
-/*.search-button,
-.add-button {
-  padding: 8px 20px; 
-  border-radius: 20px; 
-  border: none; 
-  cursor: pointer;
-  transition: all 0.5s ease 0s;
-}
-
-.search-button {
-  background-color: #9fd3c7;
-  color: black;
-}
-
-.search-button:hover {
-  background-color: #ececec;
-}
-
-.add-button {
-  background-color: #800000;
-  color: #ddd;
-}
-
-.add-button:hover {
-  background-color: #a94133;
-}*/
 
 .search-button,
 .add-button {
@@ -354,8 +326,8 @@ nav a:nth-child(4):hover ~ .animation {
 /*Zona di contenuto (tabelle) a dx*/
 .content-results {
   background-color: white;
-  flex: 0 0 69%;
-  max-height: 80vh; /* altezza massima del contenuto con scorrimento */
+  flex: 0 0 70%;
+  height: 95%;
   overflow: auto; /* abilita lo scorrimento all'interno del div se necessario */
 }
 

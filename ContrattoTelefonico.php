@@ -33,8 +33,9 @@
 				<input id="Data" name="Data" type="date" placeholder="gg/mm/aa" class="search-box" />
 				<div class="buttons-container">
 					<div class="buttons-operation">
+						<!--
 						<a id="InsCont" href="InserimentoContratto.php"><img src="icons/plus.png" width="20px"
-								height="20px"></a>
+								height="20px"></a> -->
 					</div>
 					<form name="myform" method="POST">
 						<input type="submit" value="Cerca" class="search-button" />
