@@ -39,7 +39,8 @@
 					</div>
 					<form name="myform" method="POST">
 						<input type="submit" value="Cerca" class="search-button" />
-						<input type="submit" value="Aggiungi" class="add-button" />
+						<input type="button" value="Aggiungi" class="add-button"
+							onclick="window.location.href='InserimentoContratto.php'" />
 					</form>
 					<!--<a id="InsCont" href="InserimentoContratto.php"><img src="icons/plus.png" width="20px"
 								height="20px"></a>-->
