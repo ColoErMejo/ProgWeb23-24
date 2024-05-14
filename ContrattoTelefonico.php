@@ -35,7 +35,7 @@
 					<div class="buttons-operation">
 						<a id="InsCont" href="InserimentoContratto.php"><img src="icons/plus.png" width="20px"
 								height="20px"></a>
-				</div>
+					</div>
 					<form name="myform" method="POST">
 						<input type="submit" value="Cerca" class="search-button" />
 					</form>
@@ -61,7 +61,7 @@
 			}
 
 			$query = getContrattoTelefonicoQry($Numero, $DataAttivazione, $Tipo);
-			echo "<p>ContrattoTelefonicoQuery: " . $query . "</p>";
+			//echo "<p>ContrattoTelefonicoQuery: " . $query . "</p>";
 
 			try {
 				$result = $conn->query($query);
@@ -167,7 +167,7 @@
 									</td> <?php
 								}
 							} ?>
-							<td> <img src="pencil\pencil.png" height="20px" width="20px" onclick=<?php linkEliminaContratto($Numero) ?>></td>
+							<td> <img src="icons\pencil.png" height="20px" width="20px" onclick=<?php linkEliminaContratto($Numero) ?>></td>
 							<td> <img src="icons\bin.png" height="20px" width="20px" onclick=<?php linkEliminaContratto($Numero) ?>></td>
 						</tr>
 					<?php } ?>
