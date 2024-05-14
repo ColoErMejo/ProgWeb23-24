@@ -53,6 +53,7 @@
 			$Numero = "";
 			$DataAttivazione = "";
 			$Tipo = "";
+			
 			if (count($_POST) > 0) {
 				$Numero = $_POST["Numero"];
 				$DataAttivazione = $_POST["DataAttivazione"];
@@ -62,6 +63,7 @@
 				$DataAttivazione = $_GET["DataAttivazione"];
 				$Tipo = $_GET["Tipo"];
 			}
+
 			$query = getContrattoTelefonicoQry($Numero, $DataAttivazione, $Tipo);
 			echo "<p>ContrattoTelefonicoQuery: " . $query . "</p>";
 

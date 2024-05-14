@@ -22,6 +22,8 @@
 
 		if ($Tipo != "" && $Tipo != "tutto")
 			$qry = $qry . "AND ContrattoTelefonico.Tipo LIKE '%" . $Tipo . "%' ";
+		
+		$qry = $qry . "ORDER BY ContrattoTelefonico.Numero ASC";
 		return $qry;
 	}
 	function linkEliminaContratto($Numero)
