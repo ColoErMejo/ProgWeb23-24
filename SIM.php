@@ -62,7 +62,7 @@
 
 			if ($StatoSIM == "" || $StatoSIM == "tutto") {
 				$query = getSIMQry($Codice, $TipoSIM, $Contratto);
-				echo "<p>SIMQuery: " . $query . "</p>";
+				//echo "<p>SIMQuery: " . $query . "</p>";
 
 				try {
 					$result = $conn->query($query);

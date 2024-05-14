@@ -19,16 +19,8 @@ h1 {
   font-style: normal;
 }
 
-.logo {
-  width: 50px;
-  fill: white;
-  padding-right: 15px;
-  display: inline-block;
-  vertical-align: middle;
-}
-
 .inner-header {
-  height: 35vh;
+  height: 16vh;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -45,10 +37,10 @@ h1 {
 .waves {
   position: relative;
   width: 100%;
-  height: 15vh;
+  height: 10vh;
   margin-bottom: -7px; /*Fix for safari gap*/
-  min-height: 100px;
-  max-height: 150px;
+  min-height: 60px;
+  max-height: 110px;
 }
 
 .content {
@@ -109,6 +101,7 @@ nav {
   background-color: #800000;
   border-radius: 8px;
   font-size: 0;
+  font-family: "LCD2";
 }
 nav a {
   line-height: 50px;
@@ -459,7 +452,7 @@ footer {
   width: 100%;
   background-color: #800000;
   color: white;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -476,7 +469,7 @@ footer {
 .email-section p {
   /*mail*/
   display: inline-block;
-  margin: 0 20px;
+  margin: 0 10px;
   vertical-align: middle;
 }
 .email-section svg {
