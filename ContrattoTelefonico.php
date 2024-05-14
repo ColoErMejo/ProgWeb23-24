@@ -170,7 +170,7 @@
 									</td> <?php
 								}
 							} ?>
-							<td> <?php echo linkEliminaContratto($Numero) ?></td>
+							<td> <img src="icons\bin.png" height="20px" width="20px" onclick=<?php linkEliminaContratto($Numero) ?>></td>
 						</tr>
 					<?php } ?>
 				</table>

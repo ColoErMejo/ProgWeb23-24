@@ -133,42 +133,42 @@ nav .animation {
   background-color: #800000; /* Colore di sfondo predefinito */
 }
 nav a:nth-child(1) {
-  width: 230px;
-}
-
-nav a:nth-child(2) {
-  width: 80px;
-}
-
-nav a:nth-child(3) {
-  width: 130px;
-}
-
-nav a:nth-child(4) {
   width: 100px;
 }
 
-nav a:nth-child(1):hover ~ .animation {
+nav a:nth-child(2) {
   width: 230px;
+}
+
+nav a:nth-child(3) {
+  width: 80px;
+}
+
+nav a:nth-child(4) {
+  width: 130px;
+}
+
+nav a:nth-child(1):hover ~ .animation {
+  width: 100px;
   left: 0;
   background-color: #0abab5;
 }
 
 nav a:nth-child(2):hover ~ .animation {
-  width: 80px;
-  left: 230px;
+  width: 230px;
+  left: 100px;
   background-color: #a94133;
 }
 
 nav a:nth-child(3):hover ~ .animation {
-  width: 130px;
-  left: 310px;
+  width: 80px;
+  left: 330px;
   background-color: #a578ab;
 }
 
 nav a:nth-child(4):hover ~ .animation {
-  width: 100px;
-  left: 440px;
+  width: 130px;
+  left: 410px;
   background-color: #590eca;
 }
 
@@ -287,8 +287,8 @@ nav a:nth-child(4):hover ~ .animation {
   background-color: #a94133;
 }*/
 .search-button {
-  border: 2px solid #590eca;
-  color: #590eca;
+  border: 2px solid #800000;
+  color: #800000;
 }
 .add-button {
   border: 2px solid #800000;
@@ -329,7 +329,7 @@ nav a:nth-child(4):hover ~ .animation {
 .search-button {
   transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
   &:hover {
-    box-shadow: 0 0 40px 40px #590eca inset;
+    box-shadow: 0 0 40px 40px #800000 inset;
   }
 }
 
