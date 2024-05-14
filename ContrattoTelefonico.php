@@ -35,10 +35,6 @@
 					<div class="buttons-operation">
 						<a id="InsCont" href="InserimentoContratto.php"><img src="icons/plus.png" width="20px"
 								height="20px"></a>
-						<a id="ModCont" href="InserimentoContratto.php"><img src="icons/pencil.png" width="20px"
-								height="20px"></a>
-						<a id="ElimCont" href="EliminazioneContratto.php"><img src="icons/bin.png" width="20px"
-								height="20px"></a>
 					</div>
 					<form name="myform" method="POST">
 						<input type="submit" value="Cerca" class="search-button" />
@@ -86,6 +82,7 @@
 						<th>Telefonate</th>
 						<th>SIM Attiva</th>
 						<th>SIM Disattive</th>
+						<th>Modifica</th>
 						<th>Elimina</th>
 					</tr>
 					<?php

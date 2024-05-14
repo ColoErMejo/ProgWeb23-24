@@ -151,25 +151,25 @@ nav a:nth-child(4) {
 nav a:nth-child(1):hover ~ .animation {
   width: 100px;
   left: 0;
-  background-color: #0abab5;
+  background-color: #cb8777;
 }
 
 nav a:nth-child(2):hover ~ .animation {
   width: 230px;
   left: 100px;
-  background-color: #a94133;
+  background-color: #cb8777;
 }
 
 nav a:nth-child(3):hover ~ .animation {
   width: 80px;
   left: 330px;
-  background-color: #a578ab;
+  background-color: #cb8777;
 }
 
 nav a:nth-child(4):hover ~ .animation {
   width: 130px;
   left: 410px;
-  background-color: #590eca;
+  background-color: #cb8777;
 }
 
 /*Contenuto mid*/
@@ -481,7 +481,7 @@ footer {
 .email-section p {
   /*mail*/
   display: inline-block;
-  margin: 0 50px;
+  margin: 0 20px;
   vertical-align: middle;
 }
 .email-section svg {
