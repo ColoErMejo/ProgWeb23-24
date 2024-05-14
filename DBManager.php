@@ -20,10 +20,12 @@
 				$qry .= "AND ContrattoTelefonico.DataAttivazione LIKE '%" . $DataSQL . "%' ";
 			}
 
-		if ($Tipo != "" && $Tipo != "tutto")
+		if ($Tipo != "" && $Tipo != "tutto"){
 			$qry = $qry . "AND ContrattoTelefonico.Tipo LIKE '%" . $Tipo . "%' ";
+		}
 		
 		$qry = $qry . "ORDER BY ContrattoTelefonico.Numero ASC";
+
 		return $qry;
 	}
 	function linkEliminaContratto($Numero)
@@ -45,6 +47,7 @@
 
 	function getSIMDisattiveContrattoQry($Numero) : string {
 		$qry = "SELECT distinct count(Codice) AS NumeroSIMDisattive FROM SIMDisattiva WHERE EraAssociataA = " . $Numero . " ";
+
 		return $qry;
 	}
 
@@ -94,7 +97,9 @@
 		if($Contratto != ""){
 			$qry .= "AND SIMNonAttiva.EraAssociataA = ". $Contratto. " ";
 		}
-	
+		
+		$qry = $qry . "ORDER BY Codice ASC";
+
 		return $qry;
 	}
 
@@ -112,6 +117,8 @@
 		if($Contratto != ""){
 			$qry .= "AND SIMAttiva.AssociataA = ". $Contratto. " ";
 		}
+
+		$qry = $qry . "ORDER BY SIMAttiva.Codice ASC";
 
 		return $qry;
 	}
@@ -131,6 +138,8 @@
 			$qry .= "AND SIMDisattiva.EraAssociataA = ". $Contratto. " ";
 		}
 
+		$qry = $qry . "ORDER BY SIMDisattiva.Codice ASC";
+
 		return $qry;
 	}
 
@@ -148,6 +157,8 @@
 		if($Contratto != ""){
 			$qry .= "AND SIMNonAttiva.EraAssociataA != NULL";
 		}
+
+		$qry = $qry . "ORDER BY SIMNonAttiva.Codice ASC";
 
 		return $qry;
 	}
@@ -175,15 +186,11 @@
 			$qry .= "AND Telefonata.Data LIKE '%" . $DataSQL . "%' ";
 		}
 	
-		/*$qry = $qry . 
-		 					"GROUP BY Telefonata.ID, Telefonata.EffettuataDa, " .
-									"Telefonata.Data, " . 
-									"Telefonata.Ora, " . 
-									"Telefonata.Durata " .
-									"Telefonata.Costo " .
-							"ORDER BY Telefonata.EffettuataDa";*/
+		$qry = $qry . "ORDER BY Telefonata.EffettuataDa, Telefonata.ID";
+		
 		return $qry;
 	}
+
 	function insertContratto($Numero, $DataAttivazione, $Tipo, $MinutiResidui, $CreditoResiduo): string
 	{
 		$DataSQL="";
