@@ -19,13 +19,12 @@
 	?>
 	<div class="container">
 		<div class="research-filter">
-			<!--Filtri di ricerca-->
-			<p>Filtri</p>
+			<img src="icons\trapgif.gif" width="300px">
 		</div>
 
 		<div class="content-results">
-			<!--visualizzazione tabelle-->
-			<p>Contenuti</p>
+			<h3>Introduzione</h3>
+			<p>Questo gestionale è stato progettato per amministrare facilmente il database di una compagnia telefonica: 3mm</p>
 		</div>
 	</div>
 

@@ -18,9 +18,14 @@ h1 {
   font-weight: normal;
   font-style: normal;
 }
+h3 {
+  font-family: "LCD2";
+  font-weight: normal;
+  font-style: normal;
+}
 
 .inner-header {
-  height: 16vh;
+  height: 14vh;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -40,7 +45,7 @@ h1 {
   height: 10vh;
   margin-bottom: -7px; /*Fix for safari gap*/
   min-height: 60px;
-  max-height: 110px;
+  max-height: 100px;
 }
 
 .content {
@@ -282,14 +287,14 @@ nav a:nth-child(4):hover ~ .animation {
 }
 
 .search-button {
-  border: 2px solid blue;
+  border: 2px solid #800000;
   color: #fff;
-  box-shadow: 0 0 40px 40px blue inset, 0 0 0 0 blue;
+  box-shadow: 0 0 30px 30px #800000 inset, 0 0 0 0 #800000;
   transition: all 150ms ease-in-out;
 
   &:hover {
-    box-shadow: 0 0 10px 0 blue inset, 0 0 10px 4px blue;
-    color: blue;
+    box-shadow: 0 0 3px 0 #800000 inset, 0 0 3px 1px #800000;
+    color: #800000;
   }
 }
 
