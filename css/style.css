@@ -249,12 +249,6 @@ nav a:nth-child(4):hover ~ .animation {
 }
 
 .buttons-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Allineamento verticale */
-}
-
-.buttons-operation {
   display: flex; /* Utilizza Flexbox */
   justify-content: space-between; /* Spazia gli elementi uniformemente lungo la riga */
   width: 100%; /* Assicura che il div occupi l'intera larghezza disponibile */
@@ -286,14 +280,7 @@ nav a:nth-child(4):hover ~ .animation {
 .add-button:hover {
   background-color: #a94133;
 }*/
-.search-button {
-  border: 2px solid #800000;
-  color: #800000;
-}
-.add-button {
-  border: 2px solid #800000;
-  color: #800000;
-}
+
 .search-button,
 .add-button {
   box-sizing: border-box;
@@ -320,16 +307,24 @@ nav a:nth-child(4):hover ~ .animation {
     outline: 0;
   }
 }
+
 .add-button {
+  border: 2px solid #800000;
   transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
   &:hover {
     box-shadow: 0 0 40px 40px #800000 inset;
   }
 }
+
 .search-button {
-  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  border: 2px solid blue;
+  color: #fff;
+  box-shadow: 0 0 40px 40px blue inset, 0 0 0 0 blue;
+  transition: all 150ms ease-in-out;
+
   &:hover {
-    box-shadow: 0 0 40px 40px #800000 inset;
+    box-shadow: 0 0 10px 0 blue inset, 0 0 10px 4px blue;
+    color: blue;
   }
 }
 

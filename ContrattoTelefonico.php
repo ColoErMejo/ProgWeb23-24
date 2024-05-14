@@ -32,14 +32,12 @@
 				</select>
 				<input id="Data" name="Data" type="date" placeholder="gg/mm/aa" class="search-box" />
 				<div class="buttons-container">
-					<div class="buttons-operation">
-						<a id="InsCont" href="InserimentoContratto.php"><img src="icons/plus.png" width="20px"
-								height="20px"></a>
-				</div>
 					<form name="myform" method="POST">
 						<input type="submit" value="Cerca" class="search-button" />
+						<input type="submit" value="Aggiungi" class="add-button" />
 					</form>
-
+					<!--<a id="InsCont" href="InserimentoContratto.php"><img src="icons/plus.png" width="20px"
+								height="20px"></a>-->
 				</div>
 			</form>
 		</div>
@@ -49,7 +47,7 @@
 			$Numero = "";
 			$DataAttivazione = "";
 			$Tipo = "";
-			
+
 			if (count($_POST) > 0) {
 				$Numero = $_POST["Numero"];
 				$DataAttivazione = $_POST["DataAttivazione"];
