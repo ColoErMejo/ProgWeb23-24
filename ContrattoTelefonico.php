@@ -31,10 +31,7 @@
 				<span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-red w3-xlarge w3-display-topright">&times;</span>
 				<h2>ATTENZIONE!</h2>
 			</header>
-
 			<div class="w3-bar w3-border-bottom">
-
-
 				<div class="w3-container city">
 					<p>Sei veramente sicuro di voler elimare questa utenza?</p>
 					<p>Non si torna più indietro</p>
@@ -103,10 +100,10 @@
 			if (!$error) {
 				?>
 		
-				<table class="table">
+				<table class="table" id="myTable">
 					<tr class="header">
 						<th onclick="ordinatabella(0)">Numero</th>
-						<th onclick="rdinatabella(1)">Data Attivazione</th>
+						<th onclick="ordinatabella(1)">Data Attivazione</th>
 						<th onclick="ordinatabella(2)">Tipo</th>
 						<th onclick="ordinatabella(3)">Minuti Residui</th>
 						<th onclick="ordinatabella(4)">Credito Residuo</th>

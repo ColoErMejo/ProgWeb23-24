@@ -12,6 +12,7 @@ body {
   text-align: center;
   background: #800000; /*BORDEAUX*/
   color: white;
+  margin-top: "20px";
 }
 h1 {
   font-family: "LCD2", sans-serif;
@@ -22,6 +23,9 @@ h3 {
   font-family: "LCD2";
   font-weight: normal;
   font-style: normal;
+}
+.change-color:hover {
+  color: #800000; 
 }
 
 .inner-header {

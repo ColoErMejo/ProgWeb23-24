@@ -42,7 +42,7 @@
 				$Data = $_GET["Data"];
 			}
 			$query = getTelefonataQry($ID, $EffettuataDa, $Data);
-			echo "<p>ContrattoTelefonicoQuery: " . $query . "</p>"; 
+			//echo "<p>ContrattoTelefonicoQuery: " . $query . "</p>"; 
 			
 			try {
 				$result = $conn->query($query);
@@ -52,14 +52,14 @@
 			}
 			if (!$error) {
 				?>
-				<table class="table">
+				<table class="table" id="myTable">
 					<tr class="header">
-						<th>ID</th>
-						<th>EffettuataDa</th>
-						<th>Data</th>
-						<th>Ora</th>
-						<th>Durata</th>
-						<th>Costo</th>
+						<th onclick="ordinatabella(0)">ID</th>
+						<th onclick="ordinatabella(1)">EffettuataDa</th>
+						<th onclick="ordinatabella(2)">Data</th>
+						<th onclick="ordinatabella(3)">Ora</th>
+						<th onclick="ordinatabella(4)">Durata</th>
+						<th onclick="ordinatabella(5)">Costo</th>
 					</tr>
 					<?php
 					$i = 0;
