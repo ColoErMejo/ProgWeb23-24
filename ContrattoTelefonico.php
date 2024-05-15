@@ -3,12 +3,15 @@
 
 <head>
 	<title>Contratto Telefonico DB</title>
-	<link rel="stylesheet" href="./css/style.css">
+	
 	<script type="text/javascript" src="./js/script.js"></script>
 
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="./css/style.css">
+
 </head>
 
 
@@ -22,6 +25,30 @@
 	
 	?>
 	<div class="container">
+	<div id="id01" class="w3-modal">
+		<div class="w3-modal-content w3-card-4 w3-animate-zoom modal-dimension-custom">
+			<header class="w3-container w3-red">
+				<span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-red w3-xlarge w3-display-topright">&times;</span>
+				<h2>ATTENZIONE!</h2>
+			</header>
+
+			<div class="w3-bar w3-border-bottom">
+
+
+				<div class="w3-container city">
+					<p>Sei veramente sicuro di voler elimare questa utenza?</p>
+					<p>Non si torna più indietro</p>
+				</div>
+
+				<div class="w3-container w3-light-gre w3-padding">
+					<button class="w3-button w3-right w3-red w3-border  " onclick="document.getElementById('id01').style.display='none'"> <span id="eliminare_contratto"></span> </button>
+					<button class="w3-button w3-right w3-white w3-border w3-margin-right-custom" onclick="document.getElementById('id01').style.display='none'">Close</button>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
 		<div class="research-filter">
 			<form name="myform" method="POST">
 				<input id="Numero" name="Numero" type="text" placeholder="Numero di Telefono" class="search-box" />
@@ -172,7 +199,7 @@
 								}
 							} ?>
 							<td> <img src="icons\pencil.png" height="20px" width="20px" onclick=<?php linkEliminaContratto($Numero) ?>></td>
-							<td><a onclick="document.getElementById('id01').style.display='block'; document.getElementById('eliminare_contratto').innerHTML=setEliminazione(<?php echo $Numero ?>); " class='centerIcon'"><i class='icons\bin-png'></i> </button></a>
+							<td><a onclick="document.getElementById('id01').style.display='block'; document.getElementById('eliminare_contratto').innerHTML=setEliminazione(<?php echo $Numero ?>); " class='centerIcon'"><img src="icons\bin.png" height="20px" width="20px"></button></a>
 						</tr>
 					<?php } ?>
 				</table>

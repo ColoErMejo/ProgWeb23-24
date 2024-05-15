@@ -54,8 +54,6 @@ window.onclick = function(event) {
   }
 }
 
-
-
 function setEliminazione(numero){
     return "<a href='EliminazioneContratto.php?Numero=" + numero + "' class='modal'  >Elimina</a>";
   }
