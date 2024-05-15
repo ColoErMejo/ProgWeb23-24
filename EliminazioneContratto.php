@@ -34,5 +34,7 @@
     }    
 
     header('Location: '."ContrattoTelefonico.php");
+    echo $qry;
+    echo("<script>alert('Contratto telefonico'".$Numero."' eliminato correttamente)</script>");
     die();
 ?>

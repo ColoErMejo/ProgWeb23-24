@@ -25,7 +25,7 @@ h3 {
 }
 
 .inner-header {
-  height: 14vh;
+  height: 12vh;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -44,7 +44,7 @@ h3 {
   width: 100%;
   height: 10vh;
   margin-bottom: -7px; /*Fix for safari gap*/
-  min-height: 60px;
+  min-height: 70px;
   max-height: 100px;
 }
 
@@ -149,25 +149,26 @@ nav a:nth-child(4) {
 nav a:nth-child(1):hover ~ .animation {
   width: 100px;
   left: 0;
-  background-color: #cb8777;
+  background-color: #ECD9D9;
+  color: #800000;
 }
 
 nav a:nth-child(2):hover ~ .animation {
   width: 230px;
   left: 100px;
-  background-color: #cb8777;
+  background-color: #ECD9D9;
 }
 
 nav a:nth-child(3):hover ~ .animation {
   width: 80px;
   left: 330px;
-  background-color: #cb8777;
+  background-color: #ECD9D9;
 }
 
 nav a:nth-child(4):hover ~ .animation {
   width: 130px;
   left: 410px;
-  background-color: #cb8777;
+  background-color: #ECD9D9;
 }
 
 /*Contenuto mid*/
@@ -192,9 +193,9 @@ nav a:nth-child(4):hover ~ .animation {
 
 /*zona di ricerca a sx*/
 .research-filter {
-  background-color: transparent;
+  background-color: #ECD9D9;
   /*border: 1px solid #ccc;*/
-  border-radius: 5px;
+  border-radius: 15px;
   flex: 0 0 25%;
   display: flex;
   align-items: center;
@@ -236,14 +237,6 @@ nav a:nth-child(4):hover ~ .animation {
   border-bottom: 1px solid #800000;
   -webkit-transition: 0.1s;
   transition: 0.5s;
-}
-
-.ui-datepicker-calendar {
-  font-size: 12px; /* Cambia la dimensione del testo */
-}
-.ui-datepicker-calendar select.ui-datepicker-month,
-.ui-datepicker-calendar select.ui-datepicker-year {
-  width: 50px; /* Ridimensiona i menu a discesa del mese e dell'anno */
 }
 
 .buttons-container {
@@ -429,12 +422,13 @@ footer {
   width: 100%;
   background-color: #800000;
   color: white;
-  padding: 10px;
+  padding: 9px;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 3;
+  margin-top: 35px;
 }
 
 .email-section {

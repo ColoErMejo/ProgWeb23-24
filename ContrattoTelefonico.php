@@ -19,7 +19,7 @@
 	include 'footer.html';
 	include 'DBManager.php';
 	include 'connectDB.php';
-
+	
 	?>
 	<div class="container">
 		<div class="research-filter">
@@ -75,17 +75,17 @@
 			}
 			if (!$error) {
 				?>
-
+		
 				<table class="table">
 					<tr class="header">
-						<th>Numero</th>
-						<th>Data Attivazione</th>
-						<th>Tipo</th>
-						<th>Minuti Residui</th>
-						<th>Credito Residuo</th>
-						<th>Telefonate</th>
-						<th>SIM Attiva</th>
-						<th>SIM Disattive</th>
+						<th onclick="ordinatabella(0)">Numero</th>
+						<th onclick="rdinatabella(1)">Data Attivazione</th>
+						<th onclick="ordinatabella(2)">Tipo</th>
+						<th onclick="ordinatabella(3)">Minuti Residui</th>
+						<th onclick="ordinatabella(4)">Credito Residuo</th>
+						<th onclick="ordinatabella(5)">Telefonate</th>
+						<th onclick="ordinatabella(6)">SIM Attiva</th>
+						<th onclick="ordinatabella(7)">SIM Disattive</th>
 						<th>Modifica</th>
 						<th>Elimina</th>
 					</tr>
@@ -172,7 +172,7 @@
 								}
 							} ?>
 							<td> <img src="icons\pencil.png" height="20px" width="20px" onclick=<?php linkEliminaContratto($Numero) ?>></td>
-							<td> <img src="icons\bin.png" height="20px" width="20px" onclick=<?php linkEliminaContratto($Numero) ?>></td>
+							<td><a onclick="document.getElementById('id01').style.display='block'; document.getElementById('eliminare_contratto').innerHTML=setEliminazione(<?php echo $Numero ?>); " class='centerIcon'"><i class='icons\bin-png'></i> </button></a>
 						</tr>
 					<?php } ?>
 				</table>
