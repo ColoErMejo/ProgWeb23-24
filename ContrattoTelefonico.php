@@ -82,8 +82,9 @@
 		</div>
 		<div class="research-filter">
 			<form name="myform" method="POST">
-				<input id="Numero" name="Numero" type="text" placeholder="Numero di Telefono" class="search-box" />
-				<select id="Tipo" name="Tipo">
+			<input id="Numero" name="Numero" type="text" placeholder="Numero di Telefono" 
+			class="search-box" pattern="[0-9]+" title="Inserisci un numero di telefono valido">
+			<select id="Tipo" name="Tipo">
 					<option id="tutto" value="tutto">seleziona tipo contratto</option>
 					<option id="a ricarica" value="a ricarica"> A ricarica </option>
 					<option id="a consumo" value="a consumo"> A Consumo </option>
