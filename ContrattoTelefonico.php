@@ -5,6 +5,7 @@
 	<title>Contratto Telefonico DB</title>
 
 	<script type="text/javascript" src="./js/script.js"></script>
+
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -56,20 +57,24 @@
 					<label for="Numero">Numero:</label>
 					<input type="text" id="Numero" name="Numero" class="search-box">
 					<label for="DataAttivazione">Data Attivazione:</label>
-					<input type="date" id="DataAttivazione" name="DataAttivazione" class="search-box">
+					<input type="date" id="DataAttivazione" name="DataAttivazione" class="search-box" >
 					<label for="Tipo">Tipo:</label>
-					<select id="Tipo" name="Tipo" onchange="showHideFields()">
+					<select id="Tipo" name="Tipo">
 						<option id="a ricarica" value="a ricarica"> A ricarica </option>
 						<option id="a consumo" value="a consumo"> A Consumo </option>
 					</select>
 					<label id="minutiResiduiLabel" style="display: none;" for="MinutiResidui">Minuti Residui: </label>
 					<input type="text" name="MinutiResidui" id="MinutiResidui" style="display: none;" />
-					<label id="creditoResiduoLabel" style="display: none;" for="CreditoResiduo">Credito Residuo:</label>
+					<label id="creditoResiduoLabel" style="display: none;" for="CreditoResiduo">Credito Residuo:
+					</label>
 					<input type="text" name="CreditoResiduo" id="CreditoResiduo" style="display: none;" /> <br>
 					<button type="button" onclick="updateData()" class="search-button">Aggiorna</button>
 				</form>
 			</div>
 		</div>
+
+
+
 
 		<div class="research-filter">
 			<form name="myform" method="POST">
@@ -80,16 +85,20 @@
 					<option id="a ricarica" value="a ricarica"> A ricarica </option>
 					<option id="a consumo" value="a consumo"> A Consumo </option>
 				</select>
-				<input id="Data" name="Data" type="date" placeholder="gg/mm/aaaa" class="search-box" />
+				<input id="Data" name="Data" type="date" placeholder="gg/mm/aa" class="search-box" />
 				<div class="buttons-container">
 					<div class="buttons-operation">
-	
+						<!--
+						<a id="InsCont" href="InserimentoContratto.php"><img src="icons/plus.png" width="20px"
+								height="20px"></a> -->
 					</div>
 					<form name="myform" method="POST">
 						<input type="submit" value="Cerca" class="search-button" />
 						<input type="button" value="Aggiungi" class="add-button"
 							onclick="window.location.href='InserimentoContratto.php'" />
 					</form>
+					<!--<a id="InsCont" href="InserimentoContratto.php"><img src="icons/plus.png" width="20px"
+								height="20px"></a>-->
 				</div>
 			</form>
 		</div>
@@ -217,7 +226,7 @@
 									</td> <?php
 								}
 							} ?>
-							<td> <a onclick="displayModal()">
+							<td> <a onclick="updateModal()">
 									<img src="icons\pencil.png" height="20px" width="20px">
 								</a>
 							</td>

@@ -58,7 +58,7 @@ function setEliminazione(numero) {
   return "<a href='EliminazioneContratto.php?Numero=" + numero + "' class='modal'  >Elimina</a>";
 }
 
-function displayModal() {
+function updateModal() {
   document.getElementById('myModal').style.display = "block";
   document.getElementById('myTable').classList.add('table-blur');
 }
@@ -69,7 +69,6 @@ function closeModal() {
 }
 
 function updateData() {
-  var nome = document.getElementById('nome').value;
-  var cognome = document.getElementById('cognome').value;
+ 
   closeModal();
 }
