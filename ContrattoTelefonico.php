@@ -3,7 +3,7 @@
 
 <head>
 	<title>Contratto Telefonico DB</title>
-	
+
 	<script type="text/javascript" src="./js/script.js"></script>
 
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -22,46 +22,51 @@
 	include 'footer.html';
 	include 'DBManager.php';
 	include 'connectDB.php';
-	
+
 	?>
 	<div class="container">
-	<div id="id01" class="w3-modal">
-		<div class="w3-modal-content w3-card-4 w3-animate-zoom modal-dimension-custom">
-			<header class="w3-container w3-red">
-				<span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-red w3-xlarge w3-display-topright">&times;</span>
-				<h2>ATTENZIONE!</h2>
-			</header>
-			<div class="w3-bar w3-border-bottom">
-				<div class="w3-container city">
-					<p>Sei veramente sicuro di voler elimare questa utenza?</p>
-					<p>Non si torna più indietro</p>
-				</div>
+		<div id="id01" class="w3-modal">
+			<div class="w3-modal-content w3-card-4 w3-animate-zoom modal-dimension-custom">
+				<header class="w3-container w3-red">
+					<span onclick="document.getElementById('id01').style.display='none'"
+						class="w3-button w3-red w3-xlarge w3-display-topright">&times;</span>
+					<h2>ATTENZIONE!</h2>
+				</header>
+				<div class="w3-bar w3-border-bottom">
+					<div class="w3-container city">
+						<p>Sei veramente sicuro di voler eliminare questa utenza?</p>
+						<p>Non si torna più indietro</p>
+					</div>
 
-				<div class="w3-container w3-light-gre w3-padding">
-					<button class="w3-button w3-right w3-red w3-border  " onclick="document.getElementById('id01').style.display='none'"> <span id="eliminare_contratto"></span> </button>
-					<button class="w3-button w3-right w3-white w3-border w3-margin-right-custom" onclick="document.getElementById('id01').style.display='none'">Close</button>
-				</div>
+					<div class="w3-container w3-light-gre w3-padding">
+						<button class="w3-button w3-right w3-red w3-border  "
+							onclick="document.getElementById('id01').style.display='none'"> <span
+								id="eliminare_contratto"></span> </button>
+						<button class="w3-button w3-right w3-white w3-border w3-margin-right-custom"
+							onclick="document.getElementById('id01').style.display='none'">Close</button>
+					</div>
 
+				</div>
 			</div>
-		</div>
 
-	</div>
+		</div>
 		<div class="research-filter">
 			<form name="myform" method="POST">
-			<input id="Numero" name="Numero" type="text" placeholder="Numero di Telefono" 
-			class="search-box" pattern="[0-9]+" title="Inserisci un numero di telefono valido">
-			<select id="Tipo" name="Tipo">
-					<option id="tutto" value="tutto">seleziona tipo contratto</option>
+				<input id="Numero" name="Numero" type="text" placeholder="Numero di Telefono" class="search-box"
+					pattern="[0-9]+" title="Inserisci un numero di telefono valido">
+				<select id="Tipo" name="Tipo" class="select-box">
+					<option id="tutto" value="" selected disabled>Seleziona tipo contratto</option>
 					<option id="a ricarica" value="a ricarica"> A ricarica </option>
 					<option id="a consumo" value="a consumo"> A Consumo </option>
 				</select>
 				<input id="Data" name="Data" type="date" placeholder="gg/mm/aa" class="search-box" />
 				<div class="buttons-container">
+					<!--
 					<div class="buttons-operation">
-						<!--
+						
 						<a id="InsCont" href="InserimentoContratto.php"><img src="icons/plus.png" width="20px"
-								height="20px"></a> -->
-					</div>
+								height="20px"></a> 
+					</div> -->
 					<form name="myform" method="POST">
 						<input type="submit" value="Cerca" class="search-button" />
 						<input type="button" value="Aggiungi" class="add-button"
@@ -100,7 +105,7 @@
 			}
 			if (!$error) {
 				?>
-		
+
 				<table class="table" id="myTable">
 					<tr class="header">
 						<th>Numero</th>
@@ -196,8 +201,10 @@
 									</td> <?php
 								}
 							} ?>
-							<td> <a href="ModificaContratto.php"> <img src="icons\pencil.png" height="20px" width="20px"></a></td>
-							<td><a onclick="document.getElementById('id01').style.display='block'; document.getElementById('eliminare_contratto').innerHTML=setEliminazione(<?php echo $Numero ?>); " class='cliccabile'"><img src="icons\bin.png" height="20px" width="20px"></button></a>
+							<td> <a href="ModificaContratto.php"> <img src="icons\pencil.png" height="20px" width="20px"></a>
+							</td>
+							<td><a onclick="document.getElementById('id01').style.display='block'; document.getElementById('eliminare_contratto').innerHTML=setEliminazione(<?php echo $Numero ?>); "
+									class='cliccabile'"><img src=" icons\bin.png" height="20px" width="20px"></button></a>
 						</tr>
 					<?php } ?>
 				</table>
