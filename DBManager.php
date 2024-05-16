@@ -1,5 +1,5 @@
 <?php      
-	function getContrattoTelefonicoQry ($Numero, $DataAttivazione, $Tipo) : string {
+	function getContrattoTelefonicoQry ($Numero, $DataAttivazione, $Tipo,$MinutiResidui, $CreditoResiduo) : string {
 		$qry = "SELECT 	ContrattoTelefonico.Numero AS Numero, ContrattoTelefonico.DataAttivazione AS DataAttivazione, ContrattoTelefonico.Tipo AS Tipo, ContrattoTelefonico.MinutiResidui AS MinutiResidui, ContrattoTelefonico.CreditoResiduo AS CreditoResiduo " .			
 						"FROM ContrattoTelefonico ".
 						"WHERE 1=1 ";	
@@ -28,6 +28,41 @@
 
 		return $qry;
 	}
+
+	function insertContratto($Numero, $DataAttivazione, $Tipo, $MinutiResidui, $CreditoResiduo): string
+	{
+		$DataSQL="";
+		if ($DataAttivazione != "") {
+			if (!empty($DataAttivazione)) {
+				// Dividi la data in giorno, mese e anno
+					$partiData = explode('-', $DataAttivazione);
+					$annoCompleto = $partiData[0];
+					$mese = $partiData[1];
+					$giorno = $partiData[2];
+					$anno = substr($annoCompleto, -2);
+			// Formatta la data nel formato richiesto per la query SQL
+			$DataSQL = "$giorno/$mese/$anno";
+				}
+		}
+		$qry = "INSERT INTO ContrattoTelefonico(Numero, DataAttivazione, Tipo, MinutiResidui, CreditoResiduo) VALUES(";
+
+		$qry .= "\"" . $Numero . "\", ";
+		if ($DataSQL != "") {
+			$qry .= "\"" . $DataSQL . "\", ";
+		} else {
+			$qry .= "\"NULL\", ";
+		}
+		$qry .= "\"" . $Tipo . "\", ";
+		if ($MinutiResidui != "") {
+			$qry .= "\"" . $MinutiResidui . "\", ";
+			$qry .= "NULL )";
+		}  elseif ($CreditoResiduo != "") {
+			$qry .= "NULL, ";
+			$qry .= "\"" . $CreditoResiduo . "\") ";
+		} 
+		echo "<script> alert(". $qry .")</script>";
+	return $qry;
+}
 	function linkEliminaContratto($Numero)
 	{
 	if (is_null($Numero) || $Numero == "")
@@ -190,69 +225,3 @@
 		
 		return $qry;
 	}
-
-	function insertContratto($Numero, $DataAttivazione, $Tipo, $MinutiResidui, $CreditoResiduo): string
-	{
-		$DataSQL="";
-		if ($DataAttivazione != "") {
-			if (!empty($DataAttivazione)) {
-				// Dividi la data in giorno, mese e anno
-					$partiData = explode('-', $DataAttivazione);
-					$annoCompleto = $partiData[0];
-					$mese = $partiData[1];
-					$giorno = $partiData[2];
-					$anno = substr($annoCompleto, -2);
-			// Formatta la data nel formato richiesto per la query SQL
-			$DataSQL = "$giorno/$mese/$anno";
-				}
-		}
-		$qry = "INSERT INTO ContrattoTelefonico(Numero, DataAttivazione, Tipo, MinutiResidui, CreditoResiduo) VALUES(";
-
-		$qry .= "\"" . $Numero . "\", ";
-		if ($DataSQL != "") {
-			$qry .= "\"" . $DataSQL . "\", ";
-		} else {
-			$qry .= "\"NULL\", ";
-		}
-		$qry .= "\"" . $Tipo . "\", ";
-		if ($MinutiResidui != "") {
-			$qry .= "\"" . $MinutiResidui . "\", ";
-			$qry .= "NULL )";
-		}  elseif ($CreditoResiduo != "") {
-			$qry .= "NULL, ";
-			$qry .= "\"" . $CreditoResiduo . "\") ";
-		} 
-		echo "<script> alert(". $qry .")</script>";
-	return $qry;
-}
-	
-	function formatLink ($lnk) : string	{
-		if (is_null($lnk) || $lnk == "")
-			return "";
-		return "<a href='" . $lnk . "'>Click here</a>";
-	}					
-	function formatYoutubeLink ($lnk) : string	{
-		if (is_null($lnk) || $lnk == "")
-			return "";
-		return "<a href='" . $lnk . "'>YouTube: Click here</a>";
-	}					
-	function formatDirectorLink ($lnk, $name) : string	{
-		if (is_null($lnk) || $lnk == "")
-			return "";
-		return "<a href='directors.php?id=" . $lnk . "'>" . $name . "</a>";
-	}					
-	function formatArtistLink ($lnk, $name) : string	{
-		if (is_null($lnk) || $lnk == "")
-			return "";
-		return "<a href='artists.php?id=" . $lnk . "'>" . $name . "</a>";
-	}	
-	function formatVideoDirectorLink ($lnk, $n) : string	{
-		if (is_null($lnk) || $lnk == "")
-			return "";
-		return "<a href='index.php?idDir=" . $lnk . "'>" . $n . "</a>";
-	}	
-	function formatVideoArtistLink ($lnk, $n) : string	{
-		if (is_null($lnk) || $lnk == "")
-			return "";
-		return "<a href='index.php?idArt=" . $lnk . "'>" . $n . "</a>";
-	}	

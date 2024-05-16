@@ -3,7 +3,7 @@
 
 <head>
 	<title>Contratto Telefonico DB</title>
-	
+
 	<script type="text/javascript" src="./js/script.js"></script>
 
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -22,30 +22,64 @@
 	include 'footer.html';
 	include 'DBManager.php';
 	include 'connectDB.php';
-	
+
 	?>
 	<div class="container">
-	<div id="id01" class="w3-modal">
-		<div class="w3-modal-content w3-card-4 w3-animate-zoom modal-dimension-custom">
-			<header class="w3-container w3-red">
-				<span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-red w3-xlarge w3-display-topright">&times;</span>
-				<h2>ATTENZIONE!</h2>
-			</header>
-			<div class="w3-bar w3-border-bottom">
-				<div class="w3-container city">
-					<p>Sei veramente sicuro di voler elimare questa utenza?</p>
-					<p>Non si torna più indietro</p>
-				</div>
+		<div id="id01" class="w3-modal">
+			<div class="w3-modal-content w3-card-4 w3-animate-zoom modal-dimension-custom">
+				<header class="w3-container w3-red">
+					<span onclick="document.getElementById('id01').style.display='none'"
+						class="w3-button w3-red w3-xlarge w3-display-topright">&times;</span>
+					<h2>ATTENZIONE!</h2>
+				</header>
+				<div class="w3-bar w3-border-bottom">
+					<div class="w3-container city">
+						<p>Sei veramente sicuro di voler elimare questa utenza?</p>
+						<p>Non si torna più indietro</p>
+					</div>
 
-				<div class="w3-container w3-light-gre w3-padding">
-					<button class="w3-button w3-right w3-red w3-border  " onclick="document.getElementById('id01').style.display='none'"> <span id="eliminare_contratto"></span> </button>
-					<button class="w3-button w3-right w3-white w3-border w3-margin-right-custom" onclick="document.getElementById('id01').style.display='none'">Close</button>
-				</div>
+					<div class="w3-container w3-light-gre w3-padding">
+						<button class="w3-button w3-right w3-red w3-border  "
+							onclick="document.getElementById('id01').style.display='none'"> <span
+								id="eliminare_contratto"></span> </button>
+						<button class="w3-button w3-right w3-white w3-border w3-margin-right-custom"
+							onclick="document.getElementById('id01').style.display='none'">Close</button>
+					</div>
 
+				</div>
 			</div>
 		</div>
-
-	</div>
+		<!-- Modal per la modifica del contratto -->
+		<div id="modificaContratto" class="w3-modal">
+			<div class="w3-modal-content w3-card-4 w3-animate-zoom modal-dimension-custom">
+				<header class="w3-container w3-blue">
+					<span onclick="document.getElementById('modificaContratto').style.display='none'"
+						class="w3-button w3-blue w3-xlarge w3-display-topright">&times;</span>
+					<h2>Modifica Contratto Telefonico</h2>
+				</header>
+				<div class="w3-bar w3-border-bottom">
+					<div class="w3-container city">
+						<!-- Form per la modifica del contratto -->
+						<form id="modificaContrattoForm">
+							<label for="numero">Numero:</label>
+							<input type="text" id="numero" name="numero" readonly><br><br>
+							<label for="dataAttivazione">Data Attivazione:</label>
+							<input type="text" id="dataAttivazione" name="dataAttivazione" readonly><br><br>
+							<label for="tipo">Tipo:</label>
+							<select id="tipo" name="tipo">
+								<option value="a ricarica">A ricarica</option>
+								<option value="a consumo">A consumo</option>
+							</select><br><br>
+							<label for="minutiResidui">Minuti Residui:</label>
+							<input type="text" id="minutiResidui" name="minutiResidui"><br><br>
+							<label for="creditoResiduo">Credito Residuo:</label>
+							<input type="text" id="creditoResiduo" name="creditoResiduo"><br><br>
+							<input type="button" value="Conferma Modifica" onclick="confermaModifica()">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="research-filter">
 			<form name="myform" method="POST">
 				<input id="Numero" name="Numero" type="text" placeholder="Numero di Telefono" class="search-box" />
@@ -77,18 +111,24 @@
 			$Numero = "";
 			$DataAttivazione = "";
 			$Tipo = "";
+			$MinutiResidui = "";
+			$Creditoresiduo = "";
 
 			if (count($_POST) > 0) {
 				$Numero = $_POST["Numero"];
 				$DataAttivazione = $_POST["DataAttivazione"];
 				$Tipo = $_POST["Tipo"];
+				$MinutiResidui = $_POST["MinutiResidui"];
+				$CreditoResiduo = $_POST["CreditoResiduo"];
 			} else if (count($_GET) > 0) {
 				$Numero = $_GET["Numero"];
 				$DataAttivazione = $_GET["DataAttivazione"];
 				$Tipo = $_GET["Tipo"];
+				$MinutiResidui = $_GET["MinutiResidui"];
+				$CreditoResiduo = $_GET["CreditoResiduo"];
 			}
 
-			$query = getContrattoTelefonicoQry($Numero, $DataAttivazione, $Tipo);
+			$query = getContrattoTelefonicoQry($Numero, $DataAttivazione, $Tipo, $MinutiResidui, $Creditoresiduo);
 			//echo "<p>ContrattoTelefonicoQuery: " . $query . "</p>";
 			
 			try {
@@ -99,7 +139,7 @@
 			}
 			if (!$error) {
 				?>
-		
+
 				<table class="table" id="myTable">
 					<tr class="header">
 						<th>Numero</th>
@@ -195,8 +235,14 @@
 									</td> <?php
 								}
 							} ?>
-							<td> <a href="ModificaContratto.php"> <img src="icons\pencil.png" height="20px" width="20px"></a></td>
-							<td><a onclick="document.getElementById('id01').style.display='block'; document.getElementById('eliminare_contratto').innerHTML=setEliminazione(<?php echo $Numero ?>); " class='cliccabile'"><img src="icons\bin.png" height="20px" width="20px"></button></a>
+							<td>
+								<a onclick="document.getElementById('modificaContratto').style.display='block'; class="cliccabile"
+									data-numero-contratto="<?php echo $Numero; ?>">
+									<img src="icons/pencil.png" height="20px" width="20px">
+								</a>
+							</td>
+							<td><a onclick="document.getElementById('id01').style.display='block'; document.getElementById('eliminare_contratto').innerHTML=setEliminazione(<?php echo $Numero ?>); "
+									class='cliccabile'><img src=" icons\bin.png" height="20px" width="20px"></button></a>
 						</tr>
 					<?php } ?>
 				</table>
