@@ -33,44 +33,40 @@
 						class="w3-button w3-red w3-xlarge w3-display-topright">&times;</span>
 					<h2>ATTENZIONE!</h2>
 				</header>
+
 				<div class="w3-bar w3-border-bottom">
+
 					<div class="w3-container city">
-						<<<<<<< HEAD <p>Sei veramente sicuro di voler eliminare questa utenza?</p>
-							<p>Non si torna più indietro</p>
+						<p>Sei veramente sicuro di voler elimare questa utenza?</p>
+						<p>Non si torna più indietro</p>
 					</div>
 
 					<div class="w3-container w3-light-gre w3-padding">
 						<button class="w3-button w3-right w3-red w3-border  "
 							onclick="document.getElementById('id01').style.display='none'"> <span
-								id="eliminare_contratto"></span> </button>
+								id="utente_eliminare"></span> </button>
 						<button class="w3-button w3-right w3-white w3-border w3-margin-right-custom"
 							onclick="document.getElementById('id01').style.display='none'">Close</button>
 					</div>
 
-					<p>Sei veramente sicuro di voler elimare questa utenza?</p>
-					<p>Non si torna più indietro</p>
-				</div>
-				<div class="w3-container w3-light-gre w3-padding">
-					<button class="w3-button w3-right w3-red w3-border  "
-						onclick="document.getElementById('id01').style.display='none'"> <span
-							id="eliminare_contratto"></span> </button>
-					<button class="w3-button w3-right w3-white w3-border w3-margin-right-custom"
-						onclick="document.getElementById('id01').style.display='none'">Close</button>
 				</div>
 			</div>
+
 		</div>
 
 		<div id="myModal" class="modal">
 			<div class="modal-content">
 				<span class="close" onclick="closeModal()">&times;</span>
 				<h3 class="modal-title">Modifica Contratto Telefonico</h3>
+				<p>Numero: <span id="numero"><?php echo $Numero; ?></span></p>
+				<p>Data Attivazione: <span id="dataAttivazione"><?php echo $DataAttivazione; ?></span></p>
 				<form id="updateForm">
-					<label for="Numero">Numero:</label>
+					<!--<label for="Numero">Numero:</label>
 					<input type="text" id="Numero" name="Numero" class="search-box">
 					<label for="DataAttivazione">Data Attivazione:</label>
 					<input type="date" id="DataAttivazione" name="DataAttivazione" class="search-box">
-					<label for="Tipo">Tipo:</label>
-					<select id="Tipo" name="Tipo">
+-->					<label for="Tipo">Tipo:</label>
+					<select id="Tipo" name="Tipo" onchange="showHideFields()">
 						<option id="a ricarica" value="a ricarica"> A ricarica </option>
 						<option id="a consumo" value="a consumo"> A Consumo </option>
 					</select>
@@ -238,7 +234,7 @@
 									</td> <?php
 								}
 							} ?>
-							<td> <a onclick="updateModal()">
+							<td> <a onclick="updateModal('<?php echo $Numero; ?>', '<?php echo $DataAttivazione; ?>')">
 									<img src="icons\pencil.png" height="20px" width="20px">
 								</a>
 							</td>

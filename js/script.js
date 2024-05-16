@@ -34,33 +34,15 @@ function mostraInserimento(numero) {
   window.location.href = nextPage;
 }
 
-document.getElementsByClassName("tablink")[0].click();
-function openCity(evt, cityName) {
-  var i, x, tablinks;
-  x = document.getElementsByClassName("city");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < x.length; i++) {
-    tablinks[i].classList.remove("w3-light-grey");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.classList.add("w3-light-grey");
-}
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-
 function setEliminazione(numero) {
   return "<a href='EliminazioneContratto.php?Numero=" + numero + "' class='modal'  >Elimina</a>";
 }
 
-function updateModal() {
+function updateModal(numero,dataAttivazione) {
   document.getElementById('myModal').style.display = "block";
   document.getElementById('myTable').classList.add('table-blur');
+  document.getElementById('numero').innerText = numero;
+  document.getElementById('dataAttivazione').innerText = dataAttivazione;
 }
 
 function closeModal() {
