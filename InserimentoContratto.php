@@ -80,11 +80,11 @@
                 <label for="Numero">Numero di telefono: </label>
                 <input name="Numero" id="Numero" required><br><br>
                 <label for="DataAttivazione">Data Attivazione: </label>
-                <input type="date" name="DataAttivazione" id="DataAttivazione" required /> <br><br>
+                <input type="date" name="DataAttivazione" id="DataAttivazione" value="<?php echo date('Y-m-d'); ?>" required /> <br><br>
                 <select id="Tipo" name="Tipo" onchange="showHideFields()">
                     <option value="" disabled selected hidden>Tipologia Contratto</option>
-                    <option value="a ricarica"> a ricarica </option>
-                    <option value="a consumo"> a consumo </option>
+                    <option value="a ricarica"> A ricarica </option>
+                    <option value="a consumo"> A consumo </option>
                 </select><br><br>
                 <label id="minutiResiduiLabel" style="display: none;" for="MinutiResidui">Minuti Residui: </label>
                 <input type="text" name="MinutiResidui" id="MinutiResidui" style="display: none;" />
@@ -92,8 +92,6 @@
                 <input type="text" name="CreditoResiduo" id="CreditoResiduo" style="display: none;" /> <br>
                 <input type="submit" value="Aggiungi" />
             </form>
-            <button onclick="window.location.href='ContrattoTelefonico.php?Numero=<?php echo $Numero; ?>'">Visualizza
-                ultimo risultato</button>
         </div>
     </div>
    
