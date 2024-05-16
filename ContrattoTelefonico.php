@@ -47,7 +47,6 @@
 							onclick="document.getElementById('id01').style.display='none'">Close</button>
 					</div>
 
-					=======
 					<p>Sei veramente sicuro di voler elimare questa utenza?</p>
 					<p>Non si torna più indietro</p>
 				</div>
@@ -58,8 +57,6 @@
 					<button class="w3-button w3-right w3-white w3-border w3-margin-right-custom"
 						onclick="document.getElementById('id01').style.display='none'">Close</button>
 				</div>
-
-				>>>>>>> 30a02864d1d3a48d7d49db31673ade12aa20f951
 			</div>
 		</div>
 
