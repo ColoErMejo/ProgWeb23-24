@@ -57,3 +57,18 @@ window.onclick = function (event) {
 function setEliminazione(numero) {
   return "<a href='EliminazioneContratto.php?Numero=" + numero + "' class='modal'  >Elimina</a>";
 }
+
+function updateModal() {
+  document.getElementById('myModal').style.display = "block";
+  document.getElementById('myTable').classList.add('table-blur');
+}
+
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+  document.getElementById('myTable').classList.remove('table-blur');
+}
+
+function updateData() {
+ 
+  closeModal();
+}

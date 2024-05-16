@@ -4,6 +4,7 @@
 <head>
 	<title>Contratto Telefonico DB</title>
 
+
 	<script type="text/javascript" src="./js/script.js"></script>
 
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -34,8 +35,8 @@
 				</header>
 				<div class="w3-bar w3-border-bottom">
 					<div class="w3-container city">
-						<p>Sei veramente sicuro di voler eliminare questa utenza?</p>
-						<p>Non si torna più indietro</p>
+						<<<<<<< HEAD <p>Sei veramente sicuro di voler eliminare questa utenza?</p>
+							<p>Non si torna più indietro</p>
 					</div>
 
 					<div class="w3-container w3-light-gre w3-padding">
@@ -46,10 +47,49 @@
 							onclick="document.getElementById('id01').style.display='none'">Close</button>
 					</div>
 
+					=======
+					<p>Sei veramente sicuro di voler elimare questa utenza?</p>
+					<p>Non si torna più indietro</p>
 				</div>
-			</div>
+				<div class="w3-container w3-light-gre w3-padding">
+					<button class="w3-button w3-right w3-red w3-border  "
+						onclick="document.getElementById('id01').style.display='none'"> <span
+							id="eliminare_contratto"></span> </button>
+					<button class="w3-button w3-right w3-white w3-border w3-margin-right-custom"
+						onclick="document.getElementById('id01').style.display='none'">Close</button>
+				</div>
 
+				>>>>>>> 30a02864d1d3a48d7d49db31673ade12aa20f951
+			</div>
 		</div>
+
+		<div id="myModal" class="modal">
+			<div class="modal-content">
+				<span class="close" onclick="closeModal()">&times;</span>
+				<h3 class="modal-title">Modifica Contratto Telefonico</h3>
+				<form id="updateForm">
+					<label for="Numero">Numero:</label>
+					<input type="text" id="Numero" name="Numero" class="search-box">
+					<label for="DataAttivazione">Data Attivazione:</label>
+					<input type="date" id="DataAttivazione" name="DataAttivazione" class="search-box">
+					<label for="Tipo">Tipo:</label>
+					<select id="Tipo" name="Tipo">
+						<option id="a ricarica" value="a ricarica"> A ricarica </option>
+						<option id="a consumo" value="a consumo"> A Consumo </option>
+					</select>
+					<label id="minutiResiduiLabel" style="display: none;" for="MinutiResidui">Minuti Residui: </label>
+					<input type="text" name="MinutiResidui" id="MinutiResidui" style="display: none;" />
+					<label id="creditoResiduoLabel" style="display: none;" for="CreditoResiduo">Credito Residuo:
+					</label>
+					<input type="text" name="CreditoResiduo" id="CreditoResiduo" style="display: none;" /> <br>
+					<button type="button" onclick="updateData()" class="search-button">Aggiorna</button>
+				</form>
+			</div>
+		</div>
+
+
+
+
 		<div class="research-filter">
 			<form name="myform" method="POST">
 				<input id="Numero" name="Numero" type="text" placeholder="Numero di Telefono" class="search-box"
@@ -201,7 +241,9 @@
 									</td> <?php
 								}
 							} ?>
-							<td> <a href="ModificaContratto.php"> <img src="icons\pencil.png" height="20px" width="20px"></a>
+							<td> <a onclick="updateModal()">
+									<img src="icons\pencil.png" height="20px" width="20px">
+								</a>
 							</td>
 							<td><a onclick="document.getElementById('id01').style.display='block'; document.getElementById('eliminare_contratto').innerHTML=setEliminazione(<?php echo $Numero ?>); "
 									class='cliccabile'"><img src=" icons\bin.png" height="20px" width="20px"></button></a>
