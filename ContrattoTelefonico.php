@@ -35,6 +35,18 @@
 				</header>
 				<div class="w3-bar w3-border-bottom">
 					<div class="w3-container city">
+						<<<<<<< HEAD <p>Sei veramente sicuro di voler eliminare questa utenza?</p>
+							<p>Non si torna più indietro</p>
+					</div>
+
+					<div class="w3-container w3-light-gre w3-padding">
+						<button class="w3-button w3-right w3-red w3-border  "
+							onclick="document.getElementById('id01').style.display='none'"> <span
+								id="eliminare_contratto"></span> </button>
+						<button class="w3-button w3-right w3-white w3-border w3-margin-right-custom"
+							onclick="document.getElementById('id01').style.display='none'">Close</button>
+					</div>
+
 					<p>Sei veramente sicuro di voler elimare questa utenza?</p>
 					<p>Non si torna più indietro</p>
 				</div>
