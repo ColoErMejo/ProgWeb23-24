@@ -1,18 +1,3 @@
-<?php
-// Controlla se sono stati inviati dati tramite POST
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Recupera i dati inviati tramite POST
-    $tipo = $_POST['Tipo'];
-    $minutiResidui = $_POST['MinutiResidui'];
-    $creditoResiduo = $_POST['CreditoResiduo'];
-	$query = getContrattoTelefonicoQry($Numero, $DataAttivazione, $Tipo);
-
-    $response = "Dati aggiornati con successo!";
-    echo $response;
-    exit; 
-}
-?>
-
 <!DOCTYPE HTML>
 <html lang="it">
 
@@ -34,8 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	include 'footer.html';
 	include 'DBManager.php';
 	include 'connectDB.php';
-
 	?>
+
 	<div class="container">
 		<div id="id01" class="w3-modal">
 			<div class="w3-modal-content w3-card-4 w3-animate-zoom modal-dimension-custom">
@@ -69,7 +54,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			<div class="modal-content">
 				<span class="close" onclick="closeModal()">&times;</span>
 				<h3 class="modal-title">Modifica Contratto Telefonico</h3>
-				<p>Numero: <span id="numero"><?php echo $Numero; ?></span> Data Attivazione: <span id="dataAttivazione"><?php echo $DataAttivazione; ?></span></p>
+				<p>Numero: <span id="numero"><?php echo $Numero; ?></span> Data Attivazione: <span
+						id="dataAttivazione"><?php echo $DataAttivazione; ?></span></p>
 				<p></p>
 				<form id="updateForm">
 					<label for="Tipo">Tipo:</label>
@@ -81,7 +67,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					<input type="text" name="MinutiResidui" id="MinutiResidui" style="display: none;" />
 					<label id="creditoResiduoLabel" style="display: none;" for="CreditoResiduo">Credito Residuo:</label>
 					<input type="text" name="CreditoResiduo" id="CreditoResiduo" style="display: none;" /> <br>
-					<button type="button" onclick="updateData('<?php echo $Tipo; ?>', '<?php echo $MinutiResidui; ?>', '<?php echo $CreditoResiduo; ?>')" class="search-button">Aggiorna</button>
+					<button type="button"
+						onclick="updateData('<?php echo $Tipo; ?>', '<?php echo $MinutiResidui; ?>', '<?php echo $CreditoResiduo; ?>')"
+						class="search-button">Aggiorna</button>
 				</form>
 			</div>
 		</div>
