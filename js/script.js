@@ -50,13 +50,15 @@ function closeModal() {
   document.getElementById('myTable').classList.remove('table-blur');
 }
 
-function updateData(tipo, minutiResidui, creditoResiduo) {
+function updateData(numero, tipo, minutiResidui, creditoResiduo) {
+  var numero=docuemnt.getElementById("Numero").value;
   var tipo = document.getElementById("Tipo").value;
   var minutiResidui = document.getElementById("MinutiResidui").value;
   var creditoResiduo = document.getElementById("CreditoResiduo").value;
 
   // Dati da inviare al backend
   var data = {
+      Numero: numero,
       Tipo: tipo,
       MinutiResidui: minutiResidui,
       CreditoResiduo: creditoResiduo

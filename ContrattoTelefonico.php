@@ -68,7 +68,7 @@
 					<label id="creditoResiduoLabel" style="display: none;" for="CreditoResiduo">Credito Residuo:</label>
 					<input type="text" name="CreditoResiduo" id="CreditoResiduo" style="display: none;" /> <br>
 					<button type="button"
-						onclick="updateData('<?php echo $Tipo; ?>', '<?php echo $MinutiResidui; ?>', '<?php echo $CreditoResiduo; ?>')"
+						onclick="updateData('<?php echo $Numero; ?>','<?php echo $Tipo; ?>', '<?php echo $MinutiResidui; ?>', '<?php echo $CreditoResiduo; ?>')"
 						class="search-button">Aggiorna</button>
 				</form>
 			</div>
