@@ -49,8 +49,38 @@ function closeModal() {
   document.getElementById('myModal').style.display = "none";
   document.getElementById('myTable').classList.remove('table-blur');
 }
+function updateData(tipo, minutiResidui, creditoResiduo) {
+  var tipo = document.getElementById("Tipo").value;
+  var minutiResidui = document.getElementById("MinutiResidui").value;
+  var creditoResiduo = document.getElementById("CreditoResiduo").value;
 
-function updateData() {
- 
+  // Dati da inviare al backend
+  var data = {
+      Tipo: tipo,
+      MinutiResidui: minutiResidui,
+      CreditoResiduo: creditoResiduo
+  };
+
+  // Esegui una richiesta AJAX POST al backend PHP
+  $.ajax({
+      type: "POST",
+      url: "ContrattoTelefonico.php",
+      data: data,
+      success: function(response) {
+          // Gestisci la risposta del backend qui
+          console.log("Aggiornamento completato!");
+          console.log(response); // Puoi mostrare la risposta del backend nella console per debug
+          
+          // Aggiorna la pagina corrente con i nuovi dati ottenuti dal backend
+          // Puoi decidere come desideri aggiornare la pagina, ad esempio, ricaricandola completamente o aggiornando solo parti specifiche
+          window.location.reload(); // Ricarica la pagina per mostrare i nuovi dati
+      },
+      error: function(xhr, status, error) {
+          // Gestisci gli errori qui
+          console.error("Si è verificato un errore durante l'aggiornamento:", error);
+      }
+  });
+
+  // Chiudi il modal dopo l'aggiornamento
   closeModal();
 }

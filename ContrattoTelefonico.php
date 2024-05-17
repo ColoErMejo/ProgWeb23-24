@@ -1,18 +1,29 @@
+<?php
+// Controlla se sono stati inviati dati tramite POST
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recupera i dati inviati tramite POST
+    $tipo = $_POST['Tipo'];
+    $minutiResidui = $_POST['MinutiResidui'];
+    $creditoResiduo = $_POST['CreditoResiduo'];
+	$query = getContrattoTelefonicoQry($Numero, $DataAttivazione, $Tipo);
+
+    $response = "Dati aggiornati con successo!";
+    echo $response;
+    exit; 
+}
+?>
+
 <!DOCTYPE HTML>
 <html lang="it">
 
 <head>
 	<title>Contratto Telefonico DB</title>
-
-
 	<script type="text/javascript" src="./js/script.js"></script>
-
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="./css/style.css">
-
 </head>
 
 
@@ -58,30 +69,22 @@
 			<div class="modal-content">
 				<span class="close" onclick="closeModal()">&times;</span>
 				<h3 class="modal-title">Modifica Contratto Telefonico</h3>
-				<p>Numero: <span id="numero"><?php echo $Numero; ?></span></p>
-				<p>Data Attivazione: <span id="dataAttivazione"><?php echo $DataAttivazione; ?></span></p>
+				<p>Numero: <span id="numero"><?php echo $Numero; ?></span> Data Attivazione: <span id="dataAttivazione"><?php echo $DataAttivazione; ?></span></p>
+				<p></p>
 				<form id="updateForm">
-					<!--<label for="Numero">Numero:</label>
-					<input type="text" id="Numero" name="Numero" class="search-box">
-					<label for="DataAttivazione">Data Attivazione:</label>
-					<input type="date" id="DataAttivazione" name="DataAttivazione" class="search-box">
--->					<label for="Tipo">Tipo:</label>
+					<label for="Tipo">Tipo:</label>
 					<select id="Tipo" name="Tipo" onchange="showHideFields()">
 						<option id="a ricarica" value="a ricarica"> A ricarica </option>
 						<option id="a consumo" value="a consumo"> A Consumo </option>
 					</select>
 					<label id="minutiResiduiLabel" style="display: none;" for="MinutiResidui">Minuti Residui: </label>
 					<input type="text" name="MinutiResidui" id="MinutiResidui" style="display: none;" />
-					<label id="creditoResiduoLabel" style="display: none;" for="CreditoResiduo">Credito Residuo:
-					</label>
+					<label id="creditoResiduoLabel" style="display: none;" for="CreditoResiduo">Credito Residuo:</label>
 					<input type="text" name="CreditoResiduo" id="CreditoResiduo" style="display: none;" /> <br>
-					<button type="button" onclick="updateData()" class="search-button">Aggiorna</button>
+					<button type="button" onclick="updateData('<?php echo $Tipo; ?>', '<?php echo $MinutiResidui; ?>', '<?php echo $CreditoResiduo; ?>')" class="search-button">Aggiorna</button>
 				</form>
 			</div>
 		</div>
-
-
-
 
 		<div class="research-filter">
 			<form name="myform" method="POST">
@@ -94,19 +97,11 @@
 				</select>
 				<input id="Data" name="Data" type="date" placeholder="gg/mm/aa" class="search-box" />
 				<div class="buttons-container">
-					<!--
-					<div class="buttons-operation">
-						
-						<a id="InsCont" href="InserimentoContratto.php"><img src="icons/plus.png" width="20px"
-								height="20px"></a> 
-					</div> -->
 					<form name="myform" method="POST">
 						<input type="submit" value="Cerca" class="search-button" />
 						<input type="button" value="Aggiungi" class="add-button"
 							onclick="window.location.href='InserimentoContratto.php'" />
 					</form>
-					<!--<a id="InsCont" href="InserimentoContratto.php"><img src="icons/plus.png" width="20px"
-								height="20px"></a>-->
 				</div>
 			</form>
 		</div>
