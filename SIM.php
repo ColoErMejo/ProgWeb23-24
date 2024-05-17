@@ -19,23 +19,23 @@
 	<div class="container">
 		<div class="research-filter">
 			<form name="myform" method="POST">
-				<input id="Codice" name="Codice" type="text" placeholder="Codice" 
-				class="search-box" pattern="[a-zA-Z0-9]+" title="Inserisci una stringa contenente soltanto lettere e numeri"/>
-				<input id="Contratto" name="Contratto" type="text" placeholder="Numero di telefono" 
-				class="search-box" pattern="[0-9]+" title="Inserisci un numero di telefono valido"/>
+				<input id="Codice" name="Codice" type="text" placeholder="Codice" class="search-box"
+					pattern="[a-zA-Z0-9]+" title="Inserisci una stringa contenente soltanto lettere e numeri" />
+				<input id="Contratto" name="Contratto" type="text" placeholder="Numero di telefono" class="search-box"
+					pattern="[0-9]+" title="Inserisci un numero di telefono valido" />
 
-				<select id="TipoSIM" name="TipoSIM" class="custom-select">
-					<option value="tutto">Seleziona tipo SIM</option>
+				<select id="TipoSIM" name="TipoSIM" class="select-box">
+					<option value="" selected disabled>Seleziona tipo SIM</option>
 					<option value="standard">Standard</option>
 					<option value="micro">Micro</option>
 					<option value="elettronica">Elettronica</option>
 				</select>
 
-				<select id="StatoSIM" name="StatoSIM" class="custom-select">
-					<option value="tutto">seleziona stato SIM</option>
-					<option value="SIMAttiva">attiva</option>
-					<option value="SIMDisattiva">disattiva</option>
-					<option value="SIMNonAttiva">non attiva</option>
+				<select id="StatoSIM" name="StatoSIM" class="select-box">
+					<option value="" selected disabled>Seleziona stato SIM</option>
+					<option value="SIMAttiva">Attiva</option>
+					<option value="SIMDisattiva">Disattiva</option>
+					<option value="SIMNonAttiva">Non attiva</option>
 				</select>
 				<div class="buttons-container">
 					<input type="submit" value="Cerca" class="search-button" />
@@ -64,7 +64,7 @@
 			if ($StatoSIM == "" || $StatoSIM == "tutto") {
 				$query = getSIMQry($Codice, $TipoSIM, $Contratto);
 				//echo "<p>SIMQuery: " . $query . "</p>";
-
+			
 				try {
 					$result = $conn->query($query);
 				} catch (PDOException $e) {
