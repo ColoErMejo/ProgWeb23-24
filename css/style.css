@@ -183,6 +183,34 @@ nav a:nth-child(4):hover ~ .animation {
   background-color: #ecd9d9;
 }
 
+@media (max-width: 768px) {
+  nav {
+    width: 90vw;
+  }
+  nav > * {
+    width: auto !important;
+  }
+  nav a {
+    height: 50px;
+    line-height: 50px;
+    font-size: xx-small;
+    margin-inline: 5.8vw;
+  }
+
+  /* nav a:nth-child(1) {
+    width: 18vw;
+  }
+  nav a:nth-child(2) {
+    width: 30vw;
+  }
+  nav a:nth-child(3) {
+    width: 15vw;
+  }
+  nav a:nth-child(4) {
+    width: 20vw;
+  } */
+}
+
 /*Contenuto mid*/
 .container {
   display: flex;
@@ -336,6 +364,7 @@ nav a:nth-child(4):hover ~ .animation {
 @media (max-width: 768px) {
   .container {
     flex-direction: column; /* Modifica l'orientamento dei contenitori su dispositivi mobili */
+    flex-wrap: nowrap;
   }
 
   .research-filter,
@@ -348,8 +377,10 @@ nav a:nth-child(4):hover ~ .animation {
     justify-content: center;
     padding: 6px; /* Aggiunto padding per spaziatura */
   }
-  .content-results {
-    order: -1; /* Cambia l'ordine dei contenitori per mettere prima la barra di ricerca */
+  .research-filter > * {
+    font-size: 10px;
+    padding: 2px;
+    margin-bottom: 2px;
   }
 }
 
@@ -390,31 +421,17 @@ tbody tr:first-child td {
   border-top: none; /* Rimuove il bordo superiore dalla prima riga dei dati */
 }
 
-@media screen and (max-width: 760px) {
-  table,
-  thead,
-  tbody,
-  th,
-  td,
-  tr {
-    display: block;
-  }
-
-  th,
-  td {
+@media screen and (max-width: 768px) {
+  .table th,
+  .table td {
+    /* Riduci le dimensioni delle colonne */
     padding: 6px;
-    border: none;
+    font-size: 12px;
   }
 
-  th:before {
-    content: attr(data-th);
-    display: block;
-    font-weight: bold;
-  }
-  th {
-    position: sticky;
-    top: 0;
-    z-index: 2;
+  /* Aggiungi una barra di scorrimento orizzontale alla tabella */
+  .table {
+    overflow-x: auto;
   }
 }
 
@@ -496,4 +513,62 @@ footer {
 .email-section a {
   text-decoration: none; /* Rimuovi la sottolineatura */
   color: inherit; /* Utilizza il colore ereditato */
+}
+@media screen and (max-width: 768px) {
+  footer {
+    padding: 6px; /* Riduci il padding su dispositivi più piccoli */
+  }
+
+  .email-section {
+    display: flex; /* Usa il flexbox per allineare gli elementi */
+    align-items: center; /* Allinea verticalmente gli elementi al centro */
+    justify-content: space-around; /* Distribuisce uniformemente gli elementi lungo la riga */
+  }
+
+  .email-section img {
+    display: none;
+  }
+
+  .email-section p {
+    margin: 0; /* Rimuove il margine predefinito */
+    flex: 1; /* Fa sì che i paragrafi occupino lo stesso spazio */
+    text-align: center; /* Centra il testo all'interno dei paragrafi */
+  }
+
+  .email-section p:first-child {
+    margin-left: 0; /* Rimuove il margine sinistro per il primo paragrafo */
+  }
+
+  .email-section p:last-child {
+    margin-right: 0; /* Rimuove il margine destro per l'ultimo paragrafo */
+  }
+
+  .email-section p a {
+    color: transparent;
+    position: relative;
+    margin-left: 5px; /* Aggiunge uno spazio tra l'icona e il link */
+    justify-self: center;
+    font-size: 90%;
+  }
+
+  .email-section p a::after {
+    display: inline; /* Assicurati che il contenuto sia visualizzato */
+    white-space: nowrap; /* Assicurati che il testo non venga avvolto */
+    overflow: hidden; /* Nascondi il testo che eccede la larghezza del contenitore */
+    text-overflow: ellipsis; /* Aggiungi puntini di sospensione se il testo viene tagliato */
+    color: white;
+    position: absolute; /* Imposta la posizione assoluta */
+    top: 0; /* Allinea il testo nuovo all'inizio del link */
+    left: 0; /* Allinea il testo nuovo all'inizio del link */
+  }
+
+  .email-section p:nth-child(1) a::after {
+    content: "a.brasi3"; /* Definisci manualmente il testo abbreviato */
+  }
+  .email-section p:nth-child(3) a::after {
+    content: "l.colombo34"; /* Definisci manualmente il testo abbreviato */
+  }
+  .email-section p:nth-child(5) a::after {
+    content: "l.poloni4"; /* Definisci manualmente il testo abbreviato */
+  }
 }
