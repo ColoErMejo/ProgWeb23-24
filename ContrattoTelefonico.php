@@ -76,7 +76,7 @@
 
 		<div class="research-filter">
 			<form name="myform" method="POST">
-				<input id="Numero" name="Numero" type="text" placeholder="Numero di Telefono" class="search-box"
+				<input id="Numero" name="Numero" type="number" placeholder="Numero di Telefono" class="search-box"
 					pattern="[0-9]+" title="Inserisci un numero di telefono valido">
 				<select id="Tipo" name="Tipo" class="select-box">
 					<option id="tutto" value="" selected disabled>Seleziona tipo contratto</option>
@@ -124,12 +124,12 @@
 
 				<table class="table" id="myTable">
 					<tr class="header">
-						<th>Numero</th>
-						<th>Data Attivazione</th>
+						<th onclick="sortTable(0, 'num')">Numero</th>
+						<th onclick="sortTable(1, 'date')">Data Attivazione</th>
 						<th>Tipo</th>
 						<th>Minuti Residui</th>
 						<th>Credito Residuo</th>
-						<th>Telefonate</th>
+						<th onclick="sortTable(5, 'telefonate')">Telefonate</th>
 						<th>SIM Attiva</th>
 						<th>SIM Disattive</th>
 						<th>Modifica</th>

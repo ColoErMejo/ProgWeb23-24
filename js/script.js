@@ -38,7 +38,7 @@ function setEliminazione(numero) {
   return "<a href='EliminazioneContratto.php?Numero=" + numero + "' class='modal'  >Elimina</a>";
 }
 
-function updateModal(numero,dataAttivazione) {
+function updateModal(numero, dataAttivazione) {
   document.getElementById('myModal').style.display = "block";
   document.getElementById('myTable').classList.add('table-blur');
   document.getElementById('numero').innerText = numero;
@@ -51,19 +51,71 @@ function closeModal() {
 }
 
 function updateData(numero, tipo, minutiResidui, creditoResiduo) {
-  var numero=docuemnt.getElementById("Numero").value;
+  var numero = document.getElementById("Numero").value;
   var tipo = document.getElementById("Tipo").value;
   var minutiResidui = document.getElementById("MinutiResidui").value;
   var creditoResiduo = document.getElementById("CreditoResiduo").value;
 
   // Dati da inviare al backend
   var data = {
-      Numero: numero,
-      Tipo: tipo,
-      MinutiResidui: minutiResidui,
-      CreditoResiduo: creditoResiduo
+    Numero: numero,
+    Tipo: tipo,
+    MinutiResidui: minutiResidui,
+    CreditoResiduo: creditoResiduo
   };
-  $query = updateRow($Numero, $Tipo, $MinutiResidui, $CreditoResiduo);
-	$response = "Dati aggiornati con successo!";
+  $query = updateRow(numero, tipo, minutiResidui, creditoResiduo);
+  $response = "Dati aggiornati con successo!";
   closeModal();
+}
+
+//ordinamento tabella in base al campo su cui si clicca
+function sortTable(n, type) {
+	const table = document.getElementById("myTable");
+	const rows = Array.from(table.rows).slice(1); // Ottieni tutte le righe tranne l'intestazione
+	const dir = table.getAttribute('data-sort-dir') === 'asc' ? 'desc' : 'asc';
+	table.setAttribute('data-sort-dir', dir);
+
+	rows.sort((rowA, rowB) => {
+		const x = rowA.getElementsByTagName("TD")[n].innerHTML;
+		const y = rowB.getElementsByTagName("TD")[n].innerHTML;
+		return compareValues(x, y, type, dir);
+	});
+
+	// Rimuovi tutte le righe esistenti
+	while (table.rows.length > 1) {
+		table.deleteRow(1);
+	}
+
+	// Aggiungi le righe ordinate
+	rows.forEach(row => table.appendChild(row));
+}
+
+function compareValues(x, y, type, dir) {
+	if (type === 'num') {
+		x = parseFloat(x);
+		y = parseFloat(y);
+	} else if (type === 'date') {
+		x = parseDate(x);
+		y = parseDate(y);
+	}
+  else if (type === 'telefonate') {
+		const xNum = x.textContent;
+    const yNum = y.textContent;
+    x = parseFloat(xNum);
+    y = parseFloat(yNum);
+	}
+	if (dir === 'asc') {
+		return x > y ? 1 : x < y ? -1 : 0;
+	} else {
+		return x < y ? 1 : x > y ? -1 : 0;
+	}
+}
+
+function parseDate(dateString) {
+	// Assumiamo che il formato delle date sia gg/mm/aaaa
+	const parts = dateString.split('/');
+	const day = parseInt(parts[0], 10);
+	const month = parseInt(parts[1], 10) - 1; // Mesi da 0 a 11
+	const year = parseInt(parts[2], 10);
+	return new Date(year, month, day);
 }
