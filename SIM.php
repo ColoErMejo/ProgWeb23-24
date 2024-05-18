@@ -125,7 +125,7 @@
 
 			} else if ($StatoSIM == "SIMAttiva") {
 				$query = getSIMAttivaQry($Codice, $TipoSIM, $Contratto);
-				echo "<p>SIMQuery: " . $query . "</p>";
+				//echo "<p>SIMQuery: " . $query . "</p>";
 				try {
 					$result = $conn->query($query);
 				} catch (PDOException $e) {
@@ -169,7 +169,7 @@
 
 			} else if ($StatoSIM == "SIMDisattiva") {
 				$query = getSIMDisattivaQry($Codice, $TipoSIM, $Contratto);
-				echo "<p>SIMQuery: " . $query . "</p>";
+				//echo "<p>SIMQuery: " . $query . "</p>";
 				try {
 					$result = $conn->query($query);
 				} catch (PDOException $e) {
@@ -216,7 +216,7 @@
 
 			} else if ($StatoSIM == "SIMNonAttiva") {
 				$query = getSIMNonAttivaQry($Codice, $TipoSIM, $Contratto);
-				echo "<p>SIMQuery: " . $query . "</p>";
+				//echo "<p>SIMQuery: " . $query . "</p>";
 				try {
 					$result = $conn->query($query);
 				} catch (PDOException $e) {
