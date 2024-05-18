@@ -217,7 +217,8 @@
 									</td> <?php
 								}
 							} ?>
-							<td> <a onclick="updateModal('<?php echo $Numero; ?>', '<?php echo $DataAttivazione; ?>')">
+							<td> <a onclick="updateModal('<?php echo $Numero; ?>', '<?php echo $DataAttivazione; ?>')"
+									class='cliccabile'>
 									<img src="icons\pencil.png" height="20px" width="20px">
 								</a>
 							</td>
