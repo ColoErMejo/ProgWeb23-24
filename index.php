@@ -19,7 +19,7 @@
 	?>
 	<div class="container">
 		<div class="research-filter">
-			<img src="icons\trapgif.gif" width="300px">
+			<img src="icons\trapgif.gif" width="300px" alt="TrapGif">
 		</div>
 
 		<div class="content-results">
@@ -32,7 +32,7 @@
 				rimanenti. Si possono aggiornare i campi di ogni contratto telefonico ed eliminarne anche, in questo
 				caso vengono eliminate anche tutte le tuple del registro delle chiamate associate a quel numero e
 				cancellate le SIM associate.</p>
-			<img src="icons\truce.png">
+			<img src="icons\truce.png" alt="Truce">
 		</div>
 	</div>
 </body>

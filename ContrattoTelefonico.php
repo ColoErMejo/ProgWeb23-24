@@ -219,11 +219,12 @@
 							} ?>
 							<td> <a onclick="updateModal('<?php echo $Numero; ?>', '<?php echo $DataAttivazione; ?>')"
 									class='cliccabile'>
-									<img src="icons\pencil.png" height="20px" width="20px">
+									<img src="icons\pencil.png" height="20px" width="20px" alt="Modifica">
 								</a>
 							</td>
 							<td><a onclick="document.getElementById('id01').style.display='block'; document.getElementById('eliminare_contratto').innerHTML=setEliminazione(<?php echo $Numero ?>); "
-									class='cliccabile'"><img src=" icons\bin.png" height="20px" width="20px"></button></a>
+									class='cliccabile'"><img src=" icons\bin.png" height="20px" width="20px"
+									alt="Elimina"></button></a>
 						</tr>
 					<?php } ?>
 				</table>
