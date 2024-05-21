@@ -45,7 +45,7 @@
                 $NumeroContratto = $riga["Numero"];
                 if ($NumeroContratto == $Numero) {
                     $trovato = true;
-                    echo "<h3 class='msg'>ERRORE: Numero di telefono già associato ad un altro contratto: </h3>";
+                    echo "<h3 class='msg'>ERRORE: Numero di telefono gia' associato ad un altro contratto: </h3>";
                     break;
                 }
             }

@@ -22,45 +22,6 @@
 	?>
 
 	<div class="container">
-		<div id="id01" class="w3-modal">
-			<div class="w3-modal-content w3-card-4 w3-animate-zoom modal-dimension-custom">
-				<header class="w3-container w3-red">
-					<span onclick="document.getElementById('id01').style.display='none'"
-						class="w3-button w3-red w3-xlarge w3-display-topright">&times;</span>
-					<h2>ATTENZIONE!</h2>
-				</header>
-
-				<div class="w3-bar w3-border-bottom">
-
-					<div class="w3-container city">
-						<p>Sei veramente sicuro di voler elimare questa utenza?</p>
-						<p>Non si torna più indietro</p>
-					</div>
-
-					<div class="w3-container w3-light-gre w3-padding">
-						<button class="w3-button w3-right w3-red w3-border  "
-							onclick="document.getElementById('id01').style.display='none'"> <span
-								id="utente_eliminare"></span> </button>
-						<button class="w3-button w3-right w3-white w3-border w3-margin-right-custom"
-							onclick="document.getElementById('id01').style.display='none'">Close</button>
-					</div>
-
-				</div>
-			</div>
-
-		</div>
-		<div id="myModal2" class="modal">
-			<div class="modal-content">
-				<span class="close" onclick="closeModal()">&times;</span>
-				<h3 class="modal-title">Eliminazione Contratto Telefonico</h3>
-				<p>Sei davvero sicuro di voler eliminare il Contratto Telefonico con numero associato: <span id="Numero"><?php echo $Numero; ?></span> </p>
-				<p></p>
-				<form id="updateForm">
-					<button type="button" onclick="setEliminazione(
-        			document.getElementById('Numero').textContent)" class="search-button">Elimina</button>
-				</form>
-			</div>
-		</div>
 
 		<div id="myModal" class="modal">
 			<div class="modal-content">
@@ -80,11 +41,57 @@
 					<label id="creditoResiduoLabel" style="display: none;" for="CreditoResiduo">Credito Residuo:</label>
 					<input type="text" name="CreditoResiduo" id="CreditoResiduo" style="display: none;" /> <br>
 					<button type="button" onclick="updateData(
-        			document.getElementById('Numero').textContent,
-        			document.getElementById('Tipo').value,
-        			document.getElementById('CreditoResiduo').value,
-       				document.getElementById('MinutiResidui').value
+					document.getElementById('Numero').textContent,
+					document.getElementById('Tipo').value,
+					document.getElementById('CreditoResiduo').value,
+					   document.getElementById('MinutiResidui').value
 					)" class="search-button">Aggiorna</button>
+				</form>
+			</div>
+		</div>
+
+		<div id="myModal2" class="modal">
+			<div class="modal-content">
+				<span class="close" onclick="closeModal()">&times;</span>
+				<h3 class="modal-title">Eliminazione Contratto Telefonico</h3>
+				<p>Sei davvero sicuro di voler eliminare il Contratto Telefonico con numero associato: <span
+						id="Numero"><?php echo $Numero; ?></span> </p>
+				<p></p>
+				<form id="updateForm">
+					<button type="button" onclick="setEliminazione(
+					document.getElementById('Numero').textContent)" class="search-button">Elimina</button>
+				</form>
+			</div>
+		</div>
+
+
+		<div id="myModal3" class="modal">
+			<div class="modal-content">
+				<span class="close" onclick="closeModal()">&times;</span>
+				<h3 class="modal-title">Inserimento Contratto Telefonico</h3>
+				<form id="updateForm">
+					<label for="Numero">Numero di telefono: </label>
+					<input name="Numero" id="Numero" required><br><br>
+					<label for="DataAttivazione">Data Attivazione: </label>
+					<input type="date" name="DataAttivazione" id="DataAttivazione" value="<?php echo date('Y-m-d'); ?>"
+						required /> <br><br>
+					<select id="Tipo" name="Tipo" onchange="showHideFields()">
+						<option value="" disabled selected hidden>Tipologia Contratto</option>
+						<option value="a ricarica"> A ricarica </option>
+						<option value="a consumo"> A consumo </option>
+					</select><br><br>
+					<label id="minutiResiduiLabel" style="display: none;" for="MinutiResidui">Minuti Residui: </label>
+					<input type="text" name="MinutiResidui" id="MinutiResidui" style="display: none;" />
+					<label id="creditoResiduoLabel" style="display: none;" for="CreditoResiduo">Credito Residuo:
+					</label>
+					<input type="text" name="CreditoResiduo" id="CreditoResiduo" style="display: none;" /> <br>
+					<button type="button" onclick="insertData(
+					document.getElementById('Numero').textContent,
+					document.getElementById('DataAttivazione').value,
+					document.getElementById('Tipo').value,
+					document.getElementById('CreditoResiduo').value,
+					   document.getElementById('MinutiResidui').value
+					)" class="search-button">Inserisci</button>
 				</form>
 			</div>
 		</div>
@@ -102,8 +109,7 @@
 				<div class="buttons-container">
 					<form name="myform" method="POST">
 						<input type="submit" value="Cerca" class="search-button" />
-						<input type="button" value="Aggiungi" class="add-button"
-							onclick="window.location.href='InserimentoContratto.php'" />
+						<input type="button" value="Aggiungi" class="add-button" onclick="insertModal()" />
 					</form>
 				</div>
 			</form>
@@ -237,8 +243,7 @@
 									<img src="icons\pencil.png" height="20px" width="20px" alt="Modifica">
 								</a>
 							</td>
-							<td><a onclick="deleteModal('<?php echo $Numero; ?>')"
-									class='cliccabile'>
+							<td><a onclick="deleteModal('<?php echo $Numero; ?>')" class='cliccabile'>
 									<img src=" icons\bin.png" height="20px" width="20px" alt="Elimina"></button></a>
 						</tr>
 					<?php } ?>

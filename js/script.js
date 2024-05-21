@@ -39,7 +39,7 @@ function setEliminazione(Numero) {
     window.location.href = url;
     closeModal();
   }
-  
+
 function updateModal(Numero, DataAttivazione) {
   document.getElementById('myModal').style.display = "block";
   document.getElementById('myTable').classList.add('table-blur');
@@ -54,9 +54,15 @@ function deleteModal(Numero) {
   document.getElementById('DataAttivazione').innerText = DataAttivazione;
 }
 
+function insertModal() {
+  document.getElementById('myModal3').style.display = "block";
+  document.getElementById('myTable').classList.add('table-blur');
+}
+
 function closeModal() {
   document.getElementById('myModal').style.display = "none";
   document.getElementById('myModal2').style.display = "none";
+  document.getElementById('myModal3').style.display = "none";
   document.getElementById('myTable').classList.remove('table-blur');
 }
 
