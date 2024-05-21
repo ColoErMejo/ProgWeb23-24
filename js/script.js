@@ -34,12 +34,6 @@ function mostraInserimento(numero) {
   window.location.href = nextPage;
 }
 
-function setEliminazione(Numero) {
-    var url = 'EliminazioneContratto.php?Numero=' + encodeURIComponent(Numero);
-    window.location.href = url;
-    closeModal();
-  }
-
 function updateModal(Numero, DataAttivazione) {
   document.getElementById('myModal').style.display = "block";
   document.getElementById('myTable').classList.add('table-blur');
@@ -52,6 +46,12 @@ function deleteModal(Numero) {
   document.getElementById('myTable').classList.add('table-blur');
   document.getElementById('Numero').innerText = Numero;
   document.getElementById('DataAttivazione').innerText = DataAttivazione;
+}
+
+function setEliminazione(Numero) {
+  var url = 'EliminazioneContratto.php?Numero=' + encodeURIComponent(Numero);
+  window.location.href = url;
+  closeModal();
 }
 
 function insertModal() {
@@ -72,8 +72,17 @@ function updateData(Numero, Tipo, CreditoResiduo, MinutiResidui) {
             '&Tipo=' + encodeURIComponent(Tipo) +
             '&CreditoResiduo=' + encodeURIComponent(CreditoResiduo) +
             '&MinutiResidui=' + encodeURIComponent(MinutiResidui);
+  window.location.href = url;
+  closeModal();
+}
 
-  // Redirigi alla pagina ModificaContratto.php con i parametri GET
+function insertData(Numero, DataAttivazione, Tipo, CreditoResiduo, MinutiResidui) {
+
+  var url = 'InserisciContratto.php?Numero=' + encodeURIComponent(Numero) +
+            '&DataAttivazione=' + encodeURIComponent(DataAttivazione) +
+            '&Tipo=' + encodeURIComponent(Tipo) +
+            '&CreditoResiduo=' + encodeURIComponent(CreditoResiduo) +
+            '&MinutiResidui=' + encodeURIComponent(MinutiResidui);
   window.location.href = url;
   closeModal();
 }

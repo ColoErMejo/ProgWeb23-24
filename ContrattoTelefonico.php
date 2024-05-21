@@ -33,8 +33,9 @@
 				<form id="updateForm">
 					<label for="Tipo">Tipo:</label>
 					<select id="Tipo" name="Tipo" onchange="showHideFields()">
-						<option id="a ricarica" value="a ricarica"> A ricarica </option>
-						<option id="a consumo" value="a consumo"> A Consumo </option>
+						<option value="" disabled selected hidden>Tipologia Contratto</option>
+						<option value="a ricarica"> A ricarica </option>
+						<option value="a consumo"> A consumo </option>
 					</select>
 					<label id="minutiResiduiLabel" style="display: none;" for="MinutiResidui">Minuti Residui: </label>
 					<input type="text" name="MinutiResidui" id="MinutiResidui" style="display: none;" />
@@ -69,21 +70,20 @@
 			<div class="modal-content">
 				<span class="close" onclick="closeModal()">&times;</span>
 				<h3 class="modal-title">Inserimento Contratto Telefonico</h3>
-				<form id="updateForm">
+				<form id="myForm" method="POST">
 					<label for="Numero">Numero di telefono: </label>
 					<input name="Numero" id="Numero" required><br><br>
 					<label for="DataAttivazione">Data Attivazione: </label>
 					<input type="date" name="DataAttivazione" id="DataAttivazione" value="<?php echo date('Y-m-d'); ?>"
 						required /> <br><br>
-					<select id="Tipo" name="Tipo" onchange="showHideFields()">
+						<select id="Tipo" name="Tipo" onchange="showHideFields()">
 						<option value="" disabled selected hidden>Tipologia Contratto</option>
 						<option value="a ricarica"> A ricarica </option>
 						<option value="a consumo"> A consumo </option>
-					</select><br><br>
+					</select>
 					<label id="minutiResiduiLabel" style="display: none;" for="MinutiResidui">Minuti Residui: </label>
 					<input type="text" name="MinutiResidui" id="MinutiResidui" style="display: none;" />
-					<label id="creditoResiduoLabel" style="display: none;" for="CreditoResiduo">Credito Residuo:
-					</label>
+					<label id="creditoResiduoLabel" style="display: none;" for="CreditoResiduo">Credito Residuo:</label>
 					<input type="text" name="CreditoResiduo" id="CreditoResiduo" style="display: none;" /> <br>
 					<button type="button" onclick="insertData(
 					document.getElementById('Numero').textContent,
