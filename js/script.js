@@ -38,11 +38,11 @@ function setEliminazione(numero) {
   return "<a href='EliminazioneContratto.php?Numero=" + numero + "' class='modal'  >Elimina</a>";
 }
 
-function updateModal(numero, dataAttivazione) {
+function updateModal(Numero, DataAttivazione) {
   document.getElementById('myModal').style.display = "block";
   document.getElementById('myTable').classList.add('table-blur');
-  document.getElementById('numero').innerText = numero;
-  document.getElementById('dataAttivazione').innerText = dataAttivazione;
+  document.getElementById('Numero').innerText = Numero;
+  document.getElementById('DataAttivazione').innerText = DataAttivazione;
 }
 
 function closeModal() {
@@ -50,21 +50,15 @@ function closeModal() {
   document.getElementById('myTable').classList.remove('table-blur');
 }
 
-function updateData(numero, tipo, minutiResidui, creditoResiduo) {
-  var numero = document.getElementById("Numero").value;
-  var tipo = document.getElementById("Tipo").value;
-  var minutiResidui = document.getElementById("MinutiResidui").value;
-  var creditoResiduo = document.getElementById("CreditoResiduo").value;
+function updateData(Numero, Tipo, CreditoResiduo, MinutiResidui) {
 
-  // Dati da inviare al backend
-  var data = {
-    Numero: numero,
-    Tipo: tipo,
-    MinutiResidui: minutiResidui,
-    CreditoResiduo: creditoResiduo
-  };
-  $query = updateRow(numero, tipo, minutiResidui, creditoResiduo);
-  $response = "Dati aggiornati con successo!";
+  var url = 'ModificaContratto.php?Numero=' + encodeURIComponent(Numero) +
+            '&Tipo=' + encodeURIComponent(Tipo) +
+            '&CreditoResiduo=' + encodeURIComponent(CreditoResiduo) +
+            '&MinutiResidui=' + encodeURIComponent(MinutiResidui);
+
+  // Redirigi alla pagina ModificaContratto.php con i parametri GET
+  window.location.href = url;
   closeModal();
 }
 

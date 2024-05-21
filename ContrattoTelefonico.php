@@ -54,8 +54,8 @@
 			<div class="modal-content">
 				<span class="close" onclick="closeModal()">&times;</span>
 				<h3 class="modal-title">Modifica Contratto Telefonico</h3>
-				<p>Numero: <span id="numero"><?php echo $Numero; ?></span> Data Attivazione: <span
-						id="dataAttivazione"><?php echo $DataAttivazione; ?></span></p>
+				<p>Numero: <span id="Numero"><?php echo $Numero; ?></span> Data Attivazione: <span
+						id="DataAttivazione"><?php echo $DataAttivazione; ?></span></p>
 				<p></p>
 				<form id="updateForm">
 					<label for="Tipo">Tipo:</label>
@@ -67,9 +67,12 @@
 					<input type="text" name="MinutiResidui" id="MinutiResidui" style="display: none;" />
 					<label id="creditoResiduoLabel" style="display: none;" for="CreditoResiduo">Credito Residuo:</label>
 					<input type="text" name="CreditoResiduo" id="CreditoResiduo" style="display: none;" /> <br>
-					<button type="button"
-						onclick="updateData('<?php echo $Numero; ?>','<?php echo $Tipo; ?>', '<?php echo $MinutiResidui; ?>', '<?php echo $CreditoResiduo; ?>')"
-						class="search-button">Aggiorna</button>
+					<button type="button" onclick="updateData(
+        			document.getElementById('Numero').textContent,
+        			document.getElementById('Tipo').value,
+        			document.getElementById('CreditoResiduo').value,
+       				document.getElementById('MinutiResidui').value
+					)" class="search-button">Aggiorna</button>
 				</form>
 			</div>
 		</div>
