@@ -49,6 +49,18 @@
 			</div>
 
 		</div>
+		<div id="myModal2" class="modal">
+			<div class="modal-content">
+				<span class="close" onclick="closeModal()">&times;</span>
+				<h3 class="modal-title">Eliminazione Contratto Telefonico</h3>
+				<p>Sei davvero sicuro di voler eliminare il Contratto Telefonico con numero associato: <span id="Numero"><?php echo $Numero; ?></span> </p>
+				<p></p>
+				<form id="updateForm">
+					<button type="button" onclick="setEliminazione(
+        			document.getElementById('Numero').textContent)" class="search-button">Elimina</button>
+				</form>
+			</div>
+		</div>
 
 		<div id="myModal" class="modal">
 			<div class="modal-content">
@@ -225,9 +237,9 @@
 									<img src="icons\pencil.png" height="20px" width="20px" alt="Modifica">
 								</a>
 							</td>
-							<td><a onclick="document.getElementById('id01').style.display='block'; document.getElementById('eliminare_contratto').innerHTML=setEliminazione(<?php echo $Numero ?>); "
-									class='cliccabile'"><img src=" icons\bin.png" height="20px" width="20px"
-									alt="Elimina"></button></a>
+							<td><a onclick="deleteModal('<?php echo $Numero; ?>')"
+									class='cliccabile'>
+									<img src=" icons\bin.png" height="20px" width="20px" alt="Elimina"></button></a>
 						</tr>
 					<?php } ?>
 				</table>

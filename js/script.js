@@ -34,10 +34,12 @@ function mostraInserimento(numero) {
   window.location.href = nextPage;
 }
 
-function setEliminazione(numero) {
-  return "<a href='EliminazioneContratto.php?Numero=" + numero + "' class='modal'  >Elimina</a>";
-}
-
+function setEliminazione(Numero) {
+    var url = 'EliminazioneContratto.php?Numero=' + encodeURIComponent(Numero);
+    window.location.href = url;
+    closeModal();
+  }
+  
 function updateModal(Numero, DataAttivazione) {
   document.getElementById('myModal').style.display = "block";
   document.getElementById('myTable').classList.add('table-blur');
@@ -45,8 +47,16 @@ function updateModal(Numero, DataAttivazione) {
   document.getElementById('DataAttivazione').innerText = DataAttivazione;
 }
 
+function deleteModal(Numero) {
+  document.getElementById('myModal2').style.display = "block";
+  document.getElementById('myTable').classList.add('table-blur');
+  document.getElementById('Numero').innerText = Numero;
+  document.getElementById('DataAttivazione').innerText = DataAttivazione;
+}
+
 function closeModal() {
   document.getElementById('myModal').style.display = "none";
+  document.getElementById('myModal2').style.display = "none";
   document.getElementById('myTable').classList.remove('table-blur');
 }
 
