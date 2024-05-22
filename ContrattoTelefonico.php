@@ -22,75 +22,74 @@
 	?>
 
 	<div class="container">
-
+		<!-- Modifica Contratto -->
 		<div id="myModal" class="modal">
 			<div class="modal-content">
 				<span class="close" onclick="closeModal()">&times;</span>
 				<h3 class="modal-title">Modifica Contratto Telefonico</h3>
 				<p>Numero: <span id="Numero"><?php echo $Numero; ?></span> Data Attivazione: <span
 						id="DataAttivazione"><?php echo $DataAttivazione; ?></span></p>
-				<p></p>
 				<form id="updateForm">
 					<label for="Tipo">Tipo:</label>
 					<select id="Tipo" name="Tipo" onchange="showHideFields()">
 						<option value="" disabled selected hidden>Tipologia Contratto</option>
-						<option value="a ricarica"> A ricarica </option>
-						<option value="a consumo"> A consumo </option>
+						<option value="a ricarica">A ricarica</option>
+						<option value="a consumo">A consumo</option>
 					</select>
 					<label id="minutiResiduiLabel" style="display: none;" for="MinutiResidui">Minuti Residui: </label>
 					<input type="text" name="MinutiResidui" id="MinutiResidui" style="display: none;" />
 					<label id="creditoResiduoLabel" style="display: none;" for="CreditoResiduo">Credito Residuo:</label>
 					<input type="text" name="CreditoResiduo" id="CreditoResiduo" style="display: none;" /> <br>
 					<button type="button" onclick="updateData(
-					document.getElementById('Numero').textContent,
-					document.getElementById('Tipo').value,
-					document.getElementById('CreditoResiduo').value,
-					   document.getElementById('MinutiResidui').value
+						document.getElementById('Numero').textContent,
+						document.getElementById('Tipo').value,
+						document.getElementById('CreditoResiduo').value,
+						document.getElementById('MinutiResidui').value
 					)" class="search-button">Aggiorna</button>
 				</form>
 			</div>
 		</div>
 
+		<!-- Eliminazione Contratto -->
 		<div id="myModal2" class="modal">
 			<div class="modal-content">
 				<span class="close" onclick="closeModal()">&times;</span>
 				<h3 class="modal-title">Eliminazione Contratto Telefonico</h3>
-				<p>Sei davvero sicuro di voler eliminare il Contratto Telefonico con numero associato: <span
-						id="Numero"><?php echo $Numero; ?></span> </p>
-				<p></p>
-				<form id="updateForm">
-					<button type="button" onclick="setEliminazione(
-					document.getElementById('Numero').textContent)" class="search-button">Elimina</button>
+				<p>Sei davvero sicuro di voler eliminare il Contratto Telefonico? </p>
+				<form id="deleteForm">
+					<button type="button" onclick="setEliminazione(document.getElementById('Numero').textContent)"
+						class="search-button">Elimina</button>
 				</form>
 			</div>
 		</div>
 
-
+		<!-- Inserimento Contratto -->
 		<div id="myModal3" class="modal">
 			<div class="modal-content">
 				<span class="close" onclick="closeModal()">&times;</span>
 				<h3 class="modal-title">Inserimento Contratto Telefonico</h3>
-				<form id="myForm" method="POST">
+				<form id="createForm">
 					<label for="Numero">Numero di telefono: </label>
 					<input name="Numero" id="Numero" required><br><br>
 					<label for="DataAttivazione">Data Attivazione: </label>
 					<input type="date" name="DataAttivazione" id="DataAttivazione" value="<?php echo date('Y-m-d'); ?>"
 						required /> <br><br>
-						<select id="Tipo" name="Tipo" onchange="showHideFields()">
+					<label for="Tipo2">Tipo:</label>
+					<select id="Tipo2" name="Tipo" onchange="showHideFields()">
 						<option value="" disabled selected hidden>Tipologia Contratto</option>
-						<option value="a ricarica"> A ricarica </option>
-						<option value="a consumo"> A consumo </option>
+						<option value="a ricarica">A ricarica</option>
+						<option value="a consumo">A consumo</option>
 					</select>
-					<label id="minutiResiduiLabel" style="display: none;" for="MinutiResidui">Minuti Residui: </label>
-					<input type="text" name="MinutiResidui" id="MinutiResidui" style="display: none;" />
-					<label id="creditoResiduoLabel" style="display: none;" for="CreditoResiduo">Credito Residuo:</label>
-					<input type="text" name="CreditoResiduo" id="CreditoResiduo" style="display: none;" /> <br>
+					<label id="minutiResiduiLabel2" style="display: none;" for="MinutiResidui2">Minuti Residui: </label>
+					<input type="text" name="MinutiResidui" id="MinutiResidui2" style="display: none;" />
+					<label id="creditoResiduoLabel2" style="display: none;" for="CreditoResiduo2">Credito Residuo:</label>
+					<input type="text" name="CreditoResiduo" id="CreditoResiduo2" style="display: none;" /> <br>
 					<button type="button" onclick="insertData(
-					document.getElementById('Numero').textContent,
-					document.getElementById('DataAttivazione').value,
-					document.getElementById('Tipo').value,
-					document.getElementById('CreditoResiduo').value,
-					   document.getElementById('MinutiResidui').value
+						document.getElementById('Numero').value,
+						document.getElementById('DataAttivazione').value,
+						document.getElementById('Tipo').value,
+						document.getElementById('CreditoResiduo').value,
+						document.getElementById('MinutiResidui').value
 					)" class="search-button">Inserisci</button>
 				</form>
 			</div>

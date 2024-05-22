@@ -3,8 +3,8 @@ include 'connectDB.php';
 
 // Controlla se è stata inviata una richiesta POST
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-    // Ottieni i valori dai parametri GET
     $Numero = $_GET['Numero'];
+    $DataAttivazione = $_GET['$DataAttivazione'];
     $Tipo = $_GET['Tipo'];
     $MinutiResidui = $_GET['MinutiResidui'];
     $CreditoResiduo = $_GET['CreditoResiduo'];

@@ -9,23 +9,37 @@ function setH1contrattotelefonico() {
 function setH1sim() {
   $("#h1Title").eq(0).html("SIM DB");
 }
+
 function showHideFields() {
   var tipoContratto = document.getElementById("Tipo").value;
+  var tipoContratto2 = document.getElementById("Tipo2").value;
   var minutiResiduiLabel = document.getElementById("minutiResiduiLabel");
+  var minutiResiduiLabel2 = document.getElementById("minutiResiduiLabel2");
   var minutiResiduiInput = document.getElementById("MinutiResidui");
+  var minutiResiduiInput2 = document.getElementById("MinutiResidui2");
   var creditoResiduoLabel = document.getElementById("creditoResiduoLabel");
+  var creditoResiduoLabel2 = document.getElementById("creditoResiduoLabel2");
   var creditoResiduoInput = document.getElementById("CreditoResiduo");
+  var creditoResiduoInput2 = document.getElementById("CreditoResiduo2");
 
-  if (tipoContratto === "a consumo") {
-    minutiResiduiLabel.style.display = "block";
-    minutiResiduiInput.style.display = "block";
-    creditoResiduoLabel.style.display = "none";
-    creditoResiduoInput.style.display = "none";
-  } else if (tipoContratto === "a ricarica") {
-    minutiResiduiLabel.style.display = "none";
-    minutiResiduiInput.style.display = "none";
-    creditoResiduoLabel.style.display = "block";
-    creditoResiduoInput.style.display = "block";
+  if (tipoContratto === "a consumo" || tipoContratto2 === "a consumo") {
+      minutiResiduiLabel.style.display = "block";
+      minutiResiduiLabel2.style.display = "block";
+      minutiResiduiInput.style.display = "block";
+      minutiResiduiInput2.style.display = "block";
+      creditoResiduoLabel.style.display = "none";
+      creditoResiduoLabel2.style.display = "none";
+      creditoResiduoInput.style.display = "none";
+      creditoResiduoInput2.style.display = "none";
+  } else if (tipoContratto === "a ricarica" || tipoContratto2 === "a ricarica") {
+      minutiResiduiLabel.style.display = "none";
+      minutiResiduiLabel2.style.display = "none";
+      minutiResiduiInput.style.display = "none";
+      minutiResiduiInput2.style.display = "none";
+      creditoResiduoLabel.style.display = "block";
+      creditoResiduoLabel2.style.display = "block";
+      creditoResiduoInput.style.display = "block";
+      creditoResiduoInput2.style.display = "block";
   }
 }
 
@@ -36,14 +50,14 @@ function mostraInserimento(numero) {
 
 function updateModal(Numero, DataAttivazione) {
   document.getElementById('myModal').style.display = "block";
-  document.getElementById('myTable').classList.add('table-blur');
+  document.getElementById('tabellaContratto').classList.add('table-blur');
   document.getElementById('Numero').innerText = Numero;
   document.getElementById('DataAttivazione').innerText = DataAttivazione;
 }
 
 function deleteModal(Numero) {
   document.getElementById('myModal2').style.display = "block";
-  document.getElementById('myTable').classList.add('table-blur');
+  document.getElementById('tabellaContratto').classList.add('table-blur');
   document.getElementById('Numero').innerText = Numero;
   document.getElementById('DataAttivazione').innerText = DataAttivazione;
 }
@@ -56,14 +70,16 @@ function setEliminazione(Numero) {
 
 function insertModal() {
   document.getElementById('myModal3').style.display = "block";
-  document.getElementById('myTable').classList.add('table-blur');
+  document.getElementById('tabellaContratto').classList.add('table-blur');
+  document.getElementById('Numero').innerText = Numero;
+  document.getElementById('DataAttivazione').innerText = DataAttivazione;
 }
 
 function closeModal() {
   document.getElementById('myModal').style.display = "none";
   document.getElementById('myModal2').style.display = "none";
   document.getElementById('myModal3').style.display = "none";
-  document.getElementById('myTable').classList.remove('table-blur');
+  document.getElementById('tabellaContratto').classList.remove('table-blur');
 }
 
 function updateData(Numero, Tipo, CreditoResiduo, MinutiResidui) {
@@ -77,7 +93,6 @@ function updateData(Numero, Tipo, CreditoResiduo, MinutiResidui) {
 }
 
 function insertData(Numero, DataAttivazione, Tipo, CreditoResiduo, MinutiResidui) {
-
   var url = 'InserisciContratto.php?Numero=' + encodeURIComponent(Numero) +
             '&DataAttivazione=' + encodeURIComponent(DataAttivazione) +
             '&Tipo=' + encodeURIComponent(Tipo) +
