@@ -55,11 +55,11 @@
 				<table class="table" id="tabellaTelefonata">
 					<tr class="header">
 						<th>ID</th>
-						<th onclick="sortTable(1, 'num', 'tabellaTelefonata')">EffettuataDa</th>
-						<th onclick="sortTable(2, 'date', 'tabellaTelefonata')">Data</th>
+						<th onclick="sortTable(1, 'num', 'tabellaTelefonata')">EffettuataDa ↕</th>
+						<th onclick="sortTable(2, 'date', 'tabellaTelefonata')">Data ↕</th>
 						<th>Ora</th>
-						<th onclick="sortTable(4, 'num', 'tabellaTelefonata')">Durata</th>
-						<th onclick="sortTable(5, 'num', 'tabellaTelefonata')">Costo</th>
+						<th onclick="sortTable(4, 'num', 'tabellaTelefonata')">Durata ↕</th>
+						<th onclick="sortTable(5, 'num', 'tabellaTelefonata')">Costo ↕</th>
 					</tr>
 					<?php
 					$i = 0;
