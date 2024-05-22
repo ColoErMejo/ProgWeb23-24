@@ -27,19 +27,19 @@
 			<div class="modal-content">
 				<span class="close" onclick="closeModal()">&times;</span>
 				<h3 class="modal-title">Modifica Contratto Telefonico</h3>
-				<p>Numero: <span id="Numero"><?php echo $Numero; ?></span> Data Attivazione: <span
+				<p>Numero: <span id="Numero"><?php echo $Numero; ?></span> <br> Data Attivazione: <span
 						id="DataAttivazione"><?php echo $DataAttivazione; ?></span></p>
 				<form id="updateForm">
 					<label for="Tipo">Tipo:</label>
-					<select id="Tipo" name="Tipo" onchange="showHideFields()">
+					<select id="Tipo" name="Tipo" class="modal-select" onchange="showHideFields()">
 						<option value="" disabled selected hidden>Tipologia Contratto</option>
 						<option value="a ricarica">A ricarica</option>
 						<option value="a consumo">A consumo</option>
 					</select>
 					<label id="minutiResiduiLabel" style="display: none;" for="MinutiResidui">Minuti Residui: </label>
-					<input type="text" name="MinutiResidui" id="MinutiResidui" style="display: none;" />
+					<input type="text" name="MinutiResidui" id="MinutiResidui" class="modal-input" style="display: none;" />
 					<label id="creditoResiduoLabel" style="display: none;" for="CreditoResiduo">Credito Residuo:</label>
-					<input type="text" name="CreditoResiduo" id="CreditoResiduo" style="display: none;" /> <br>
+					<input type="text" name="CreditoResiduo" id="CreditoResiduo" class="modal-input" style="display: none;" /> <br>
 					<button type="button" onclick="updateData(
 						document.getElementById('Numero').textContent,
 						document.getElementById('Tipo').value,
@@ -70,20 +70,20 @@
 				<h3 class="modal-title">Inserimento Contratto Telefonico</h3>
 				<form id="createForm">
 					<label for="Numero2">Numero di telefono: </label>
-					<input name="Numero" id="Numero2" required><br><br>
+					<input name="Numero" id="Numero2" class="modal-input" required><br><br>
 					<label for="DataAttivazione2">Data Attivazione: </label>
-					<input type="date" name="DataAttivazione" id="DataAttivazione2" value="<?php echo date('Y-m-d'); ?>"
+					<input type="date" name="DataAttivazione" id="DataAttivazione2" class="modal-input" value="<?php echo date('Y-m-d'); ?>"
 						required /> <br><br>
 					<label for="Tipo2">Tipo:</label>
-					<select id="Tipo2" name="Tipo" onchange="showHideFields()">
+					<select id="Tipo2" name="Tipo" class="modal-select" onchange="showHideFields()">
 						<option value="" disabled selected hidden>Tipologia Contratto</option>
 						<option value="a ricarica">A ricarica</option>
 						<option value="a consumo">A consumo</option>
 					</select>
 					<label id="minutiResiduiLabel2" style="display: none;" for="MinutiResidui2">Minuti Residui: </label>
-					<input type="text" name="MinutiResidui" id="MinutiResidui2" style="display: none;" />
+					<input type="text" name="MinutiResidui" id="MinutiResidui2" class="modal-input" style="display: none;" />
 					<label id="creditoResiduoLabel2" style="display: none;" for="CreditoResiduo2">Credito Residuo:</label>
-					<input type="text" name="CreditoResiduo" id="CreditoResiduo2" style="display: none;" /> <br>
+					<input type="text" name="CreditoResiduo" id="CreditoResiduo2" class="modal-input" style="display: none;" /> <br>
 					<button type="button" onclick="insertData(
 						document.getElementById('Numero2').value,
 						document.getElementById('DataAttivazione2').value,

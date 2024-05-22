@@ -219,8 +219,9 @@ nav a:nth-child(4):hover ~ .animation {
   height: calc(100vh - 300px);
   padding: 4px;
   margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 40px;
   white-space: nowrap;
+  padding-bottom: 40px;
 }
 
 .research-filter,
@@ -235,8 +236,8 @@ nav a:nth-child(4):hover ~ .animation {
 /*zona di ricerca a sx*/
 .research-filter {
   background-color: #ecd9d9;
-  /*border: 1px solid #ccc;*/
   border-radius: 15px;
+  margin-bottom: 40px;
   flex: 0 0 25%;
   display: flex;
   align-items: center;
@@ -295,6 +296,9 @@ nav a:nth-child(4):hover ~ .animation {
   font-size: 14px;
   color: #333;
 }
+.select-box:hover {
+  border-color: #9d7575; /* Cambia il colore del bordo al passaggio del mouse */
+}
 
 .research-filter .search-box:focus {
   border-bottom: 1px solid #800000;
@@ -336,6 +340,7 @@ nav a:nth-child(4):hover ~ .animation {
 
 .add-button {
   border: 2px solid #800000;
+  background-color: #f2f2f2f2;
   transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
   &:hover {
     box-shadow: 0 0 40px 40px #800000 inset;
@@ -360,6 +365,7 @@ nav a:nth-child(4):hover ~ .animation {
   flex: 0 0 70%;
   height: 95%;
   overflow: auto; /* abilita lo scorrimento all'interno del div se necessario */
+  margin-bottom: 40px;
 }
 
 @media (max-width: 768px) {
@@ -487,6 +493,61 @@ tbody tr:first-child td {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.modal .modal-input{
+  font-weight: 500;
+  font-size: 14px;
+  height: 40px;
+  border-radius: 10px;
+  padding-left: 10px;
+  outline: none;
+  color: #9d7575;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  cursor: pointer;
+  margin-bottom: 10px; /* Spazio tra gli input */
+}
+
+.modal .modal-input:focus {
+  border: 1px solid #800000;
+  transition: 0.5s;
+}
+
+.modal .modal-input:hover {
+  border-color: #999;
+}
+.modal-select {
+  font-weight: 500;
+  font-size: 14px;
+  height: 40px;
+  border-radius: 10px;
+  padding-left: 10px;
+  outline: none;
+  color: #9d7575;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  margin-bottom: 10px; /* Spazio tra gli input */
+}
+
+/* Stile al passaggio del mouse */
+.modal-select:hover {
+  border-color: #999; /* Cambia il colore del bordo al passaggio del mouse */
+}
+
+/* Stile al focus */
+.modal-select:focus {
+  outline: none; /* Rimuove il bordo di focus */
+  border: 1px solid #800000;
+  transition: 0.5s;
+}
+
+/* Stile per gli option */
+.modal-select option {
+  font-size: 14px;
+  color: #333;
 }
 
 .table-blur {
