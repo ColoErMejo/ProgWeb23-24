@@ -143,14 +143,14 @@
 			if (!$error) {
 				?>
 
-				<table class="table" id="myTable">
+				<table class="table" id="tabellaContratto">
 					<tr class="header">
-						<th onclick="sortTable(0, 'num')">Numero</th>
-						<th onclick="sortTable(1, 'date')">Data Attivazione</th>
+						<th onclick="sortTable(0, 'num', 'tabellaContratto')">Numero</th>
+						<th onclick="sortTable(1, 'date', 'tabellaContratto')">Data Attivazione</th>
 						<th>Tipo</th>
 						<th>Minuti Residui</th>
 						<th>Credito Residuo</th>
-						<th onclick="sortTable(5, 'telefonate')">Telefonate</th>
+						<th>Telefonate</th>
 						<th>SIM Attiva</th>
 						<th>SIM Disattive</th>
 						<th>Modifica</th>

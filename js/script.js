@@ -88,8 +88,8 @@ function insertData(Numero, DataAttivazione, Tipo, CreditoResiduo, MinutiResidui
 }
 
 //ordinamento tabella in base al campo su cui si clicca
-function sortTable(n, type) {
-	const table = document.getElementById("myTable");
+function sortTable(n, type, tableID) {
+	const table = document.getElementById(tableID);
 	const rows = Array.from(table.rows).slice(1); // Ottieni tutte le righe tranne l'intestazione
 	const dir = table.getAttribute('data-sort-dir') === 'asc' ? 'desc' : 'asc';
 	table.setAttribute('data-sort-dir', dir);
@@ -116,12 +116,6 @@ function compareValues(x, y, type, dir) {
 	} else if (type === 'date') {
 		x = parseDate(x);
 		y = parseDate(y);
-	}
-  else if (type === 'telefonate') {
-		const xNum = x.textContent;
-    const yNum = y.textContent;
-    x = parseFloat(xNum);
-    y = parseFloat(yNum);
 	}
 	if (dir === 'asc') {
 		return x > y ? 1 : x < y ? -1 : 0;

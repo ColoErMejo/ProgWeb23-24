@@ -52,14 +52,14 @@
 			}
 			if (!$error) {
 				?>
-				<table class="table" id="myTable">
+				<table class="table" id="tabellaTelefonata">
 					<tr class="header">
-						<th onclick="ordinatabella(0)">ID</th>
-						<th onclick="ordinatabella(1)">EffettuataDa</th>
-						<th onclick="ordinatabella(2)">Data</th>
-						<th onclick="ordinatabella(3)">Ora</th>
-						<th onclick="ordinatabella(4)">Durata</th>
-						<th onclick="ordinatabella(5)">Costo</th>
+						<th>ID</th>
+						<th onclick="sortTable(1, 'num', 'tabellaTelefonata')">EffettuataDa</th>
+						<th onclick="sortTable(2, 'date', 'tabellaTelefonata')">Data</th>
+						<th>Ora</th>
+						<th onclick="sortTable(4, 'num', 'tabellaTelefonata')">Durata</th>
+						<th onclick="sortTable(5, 'num', 'tabellaTelefonata')">Costo</th>
 					</tr>
 					<?php
 					$i = 0;
