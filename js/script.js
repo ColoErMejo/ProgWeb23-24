@@ -92,12 +92,12 @@ function updateData(Numero, Tipo, CreditoResiduo, MinutiResidui) {
   closeModal();
 }
 
-function insertData(Numero, DataAttivazione, Tipo, CreditoResiduo, MinutiResidui) {
-  var url = 'InserisciContratto.php?Numero=' + encodeURIComponent(Numero) +
-            '&DataAttivazione=' + encodeURIComponent(DataAttivazione) +
-            '&Tipo=' + encodeURIComponent(Tipo) +
-            '&CreditoResiduo=' + encodeURIComponent(CreditoResiduo) +
-            '&MinutiResidui=' + encodeURIComponent(MinutiResidui);
+function insertData(Numero2, DataAttivazione2, Tipo2, CreditoResiduo2, MinutiResidui2) {
+  var url = 'InserisciContratto.php?Numero=' + encodeURIComponent(Numero2) +
+            '&DataAttivazione=' + encodeURIComponent(DataAttivazione2) +
+            '&Tipo=' + encodeURIComponent(Tipo2) +
+            '&CreditoResiduo=' + encodeURIComponent(CreditoResiduo2) +
+            '&MinutiResidui=' + encodeURIComponent(MinutiResidui2);
   window.location.href = url;
   closeModal();
 }

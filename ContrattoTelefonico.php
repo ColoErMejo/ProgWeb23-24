@@ -69,10 +69,10 @@
 				<span class="close" onclick="closeModal()">&times;</span>
 				<h3 class="modal-title">Inserimento Contratto Telefonico</h3>
 				<form id="createForm">
-					<label for="Numero">Numero di telefono: </label>
-					<input name="Numero" id="Numero" required><br><br>
-					<label for="DataAttivazione">Data Attivazione: </label>
-					<input type="date" name="DataAttivazione" id="DataAttivazione" value="<?php echo date('Y-m-d'); ?>"
+					<label for="Numero2">Numero di telefono: </label>
+					<input name="Numero" id="Numero2" required><br><br>
+					<label for="DataAttivazione2">Data Attivazione: </label>
+					<input type="date" name="DataAttivazione" id="DataAttivazione2" value="<?php echo date('Y-m-d'); ?>"
 						required /> <br><br>
 					<label for="Tipo2">Tipo:</label>
 					<select id="Tipo2" name="Tipo" onchange="showHideFields()">
@@ -85,11 +85,11 @@
 					<label id="creditoResiduoLabel2" style="display: none;" for="CreditoResiduo2">Credito Residuo:</label>
 					<input type="text" name="CreditoResiduo" id="CreditoResiduo2" style="display: none;" /> <br>
 					<button type="button" onclick="insertData(
-						document.getElementById('Numero').value,
-						document.getElementById('DataAttivazione').value,
-						document.getElementById('Tipo').value,
-						document.getElementById('CreditoResiduo').value,
-						document.getElementById('MinutiResidui').value
+						document.getElementById('Numero2').value,
+						document.getElementById('DataAttivazione2').value,
+						document.getElementById('Tipo2').value,
+						document.getElementById('CreditoResiduo2').value,
+						document.getElementById('MinutiResidui2').value
 					)" class="search-button">Inserisci</button>
 				</form>
 			</div>
