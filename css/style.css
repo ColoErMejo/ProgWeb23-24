@@ -359,6 +359,19 @@ nav a:nth-child(4):hover ~ .animation {
   }
 }
 
+/* For Chrome, Safari, Edge, and Opera */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Firefox */
+input[type="number"] {
+  appearance: initial;
+  -moz-appearance: textfield;
+}
+
 /*Zona di contenuto (tabelle) a dx*/
 .content-results {
   background-color: white;
@@ -428,21 +441,20 @@ tbody tr:first-child td {
   border-top: none; /* Rimuove il bordo superiore dalla prima riga dei dati */
 }
 
-
 .table .rowEven {
-  background-color: #ecd9d9; 
+  background-color: #ecd9d9;
 }
 
 .table .rowOdd {
-  background-color: #ffffff; 
+  background-color: #ffffff;
 }
 
 .table tr.header th {
-  background-color: #800000; 
-  color: white; 
+  background-color: #800000;
+  color: white;
 }
 .table th:not(:first-child) {
-  background-color: #ecd9d9; 
+  background-color: #ecd9d9;
 }
 
 @media screen and (max-width: 768px) {
@@ -495,7 +507,7 @@ tbody tr:first-child td {
   cursor: pointer;
 }
 
-.modal .modal-input{
+.modal .modal-input {
   font-weight: 500;
   font-size: 14px;
   height: 40px;
