@@ -76,7 +76,7 @@
 
 					<table class="table" id="tabellaSIM">
 						<tr class="header">
-							<th onclick="sortTable(0, 'string', 'tabellaSIM')">Codice ↕</th>
+							<th onclick="sortTable(0, 'string', 'tabellaSIM')" class="th-cursor-pointer">Codice ↕</th>
 							<th>Tipo</th>
 							<th>Associata a</th>
 							<th>Era Associata A</th>

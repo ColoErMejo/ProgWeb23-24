@@ -18,8 +18,8 @@
 	<div class="container">
 		<div class="research-filter">
 			<form name="myform" method="POST" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-				<input id="EffettuataDa" name="EffettuataDa" type="text" placeholder="Effettuata Da"
-					class="search-box" pattern="[0-9]+" title="Inserisci un numero di telefono valido"/>
+				<input id="EffettuataDa" name="EffettuataDa" type="text" placeholder="Effettuata Da" class="search-box"
+					pattern="[0-9]+" title="Inserisci un numero di telefono valido" />
 				<input id="Data" name="Data" type="date" placeholder="gg/mm/aa" class="search-box" />
 				<div class="buttons-container">
 					<input type="submit" value="Cerca" class="search-button" />
@@ -31,7 +31,7 @@
 			<?php
 			$ID = "";
 			$EffettuataDa = "";
-			$Data="";
+			$Data = "";
 			if (count($_POST) > 0) {
 				$ID = $_POST["ID"];
 				$EffettuataDa = $_POST["EffettuataDa"];
@@ -55,11 +55,11 @@
 				<table class="table" id="tabellaTelefonata">
 					<tr class="header">
 						<th>ID</th>
-						<th onclick="sortTable(1, 'num', 'tabellaTelefonata')">EffettuataDa ↕</th>
-						<th onclick="sortTable(2, 'date', 'tabellaTelefonata')">Data ↕</th>
+						<th onclick="sortTable(1, 'num', 'tabellaTelefonata')" class="th-cursor-pointer">EffettuataDa ↕</th>
+						<th onclick="sortTable(2, 'date', 'tabellaTelefonata')" class="th-cursor-pointer">Data ↕</th>
 						<th>Ora</th>
-						<th onclick="sortTable(4, 'num', 'tabellaTelefonata')">Durata ↕</th>
-						<th onclick="sortTable(5, 'num', 'tabellaTelefonata')">Costo ↕</th>
+						<th onclick="sortTable(4, 'num', 'tabellaTelefonata')" class="th-cursor-pointer">Durata ↕</th>
+						<th onclick="sortTable(5, 'num', 'tabellaTelefonata')" class="th-cursor-pointer">Costo ↕</th>
 					</tr>
 					<?php
 					$i = 0;

@@ -37,9 +37,11 @@
 						<option value="a consumo">A consumo</option>
 					</select>
 					<label id="minutiResiduiLabel" style="display: none;" for="MinutiResidui">Minuti Residui: </label>
-					<input type="text" name="MinutiResidui" id="MinutiResidui" class="modal-input" style="display: none;" />
+					<input type="text" name="MinutiResidui" id="MinutiResidui" class="modal-input"
+						style="display: none;" />
 					<label id="creditoResiduoLabel" style="display: none;" for="CreditoResiduo">Credito Residuo:</label>
-					<input type="text" name="CreditoResiduo" id="CreditoResiduo" class="modal-input" style="display: none;" /> <br>
+					<input type="text" name="CreditoResiduo" id="CreditoResiduo" class="modal-input"
+						style="display: none;" /> <br>
 					<button type="button" onclick="updateData(
 						document.getElementById('Numero').textContent,
 						document.getElementById('Tipo').value,
@@ -72,8 +74,8 @@
 					<label for="Numero2">Numero di telefono: </label>
 					<input name="Numero" id="Numero2" class="modal-input" required><br><br>
 					<label for="DataAttivazione2">Data Attivazione: </label>
-					<input type="date" name="DataAttivazione" id="DataAttivazione2" class="modal-input" value="<?php echo date('Y-m-d'); ?>"
-						required /> <br><br>
+					<input type="date" name="DataAttivazione" id="DataAttivazione2" class="modal-input"
+						value="<?php echo date('Y-m-d'); ?>" required /> <br><br>
 					<label for="Tipo2">Tipo:</label>
 					<select id="Tipo2" name="Tipo" class="modal-select" onchange="showHideFields()">
 						<option value="" disabled selected hidden>Tipologia Contratto</option>
@@ -81,9 +83,12 @@
 						<option value="a consumo">A consumo</option>
 					</select>
 					<label id="minutiResiduiLabel2" style="display: none;" for="MinutiResidui2">Minuti Residui: </label>
-					<input type="text" name="MinutiResidui" id="MinutiResidui2" class="modal-input" style="display: none;" />
-					<label id="creditoResiduoLabel2" style="display: none;" for="CreditoResiduo2">Credito Residuo:</label>
-					<input type="text" name="CreditoResiduo" id="CreditoResiduo2" class="modal-input" style="display: none;" /> <br>
+					<input type="text" name="MinutiResidui" id="MinutiResidui2" class="modal-input"
+						style="display: none;" />
+					<label id="creditoResiduoLabel2" style="display: none;" for="CreditoResiduo2">Credito
+						Residuo:</label>
+					<input type="text" name="CreditoResiduo" id="CreditoResiduo2" class="modal-input"
+						style="display: none;" /> <br>
 					<button type="button" onclick="insertData(
 						document.getElementById('Numero2').value,
 						document.getElementById('DataAttivazione2').value,
@@ -144,8 +149,9 @@
 
 				<table class="table" id="tabellaContratto">
 					<tr class="header">
-						<th onclick="sortTable(0, 'num', 'tabellaContratto')">Numero ↕</th>
-						<th onclick="sortTable(1, 'date', 'tabellaContratto')">Data Attivazione ↕</th>
+						<th onclick="sortTable(0, 'num', 'tabellaContratto')" class="th-cursor-pointer">Numero ↕</th>
+						<th onclick="sortTable(1, 'date', 'tabellaContratto')" class="th-cursor-pointer">Data Attivazione ↕
+						</th>
 						<th>Tipo</th>
 						<th>Minuti Residui</th>
 						<th>Credito Residuo</th>

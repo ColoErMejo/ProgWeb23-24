@@ -114,6 +114,7 @@ h3 {
 /*Home*/
 /* Stile per il container */
 #containerHome {
+  position: relative; /* Imposta il contesto di posizionamento per gli elementi figlio */
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -134,6 +135,10 @@ h3 {
 
 /* Stile per l'elemento h3 */
 .container h3 {
+  position: absolute; /* Rendi fisso il posizionamento */
+  top: 0; /* Fissa l'elemento in alto */
+  left: 50%; /* Centra l'elemento orizzontalmente */
+  transform: translateX(-50%); /* Correggi la posizione orizzontale */
   margin-bottom: 10px; /* Spazio sotto il titolo */
   font-size: 1.5em; /* Dimensione del font del titolo */
   color: #333; /* Colore del testo del titolo */
@@ -141,10 +146,11 @@ h3 {
 
 /* Stile per il paragrafo */
 .container p {
+  margin-top: 10px;
   font-size: 1.2em; /* Dimensione del font del paragrafo */
   line-height: 1.6; /* Altezza della linea per migliorare la leggibilità */
   color: #333; /* Colore del testo del paragrafo */
-  max-width: 80vw;
+  max-width: 45vw;
 }
 
 /* Navbar*/
@@ -454,6 +460,18 @@ table tr.header {
   top: 0;
   z-index: 2;
 }
+th.th-cursor-pointer {
+  cursor: pointer;
+}
+/*animazione glow
+th.th-cursor-pointer:hover {
+  color: white;
+  text-shadow: 0px 0px 15px white;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}*/
 
 /* Stile per il contenuto della tabella */
 .table th,
@@ -493,7 +511,9 @@ tbody tr:first-child td {
 .table th:not(:first-child) {
   background-color: #ecd9d9;
 }
-
+.table td a {
+  color: inherit;
+}
 @media screen and (max-width: 768px) {
   .table th,
   .table td {
