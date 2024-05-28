@@ -452,7 +452,6 @@ input[type="number"] {
   .research-filter > * {
     font-size: 10px;
     padding: 2px;
-    margin-bottom: 1.5vh;
     height: 35vh;
   }
   .research-filter form * {
