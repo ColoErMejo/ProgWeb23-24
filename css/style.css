@@ -444,11 +444,19 @@ input[type="number"] {
     align-items: center;
     justify-content: center;
     padding: 6px; /* Aggiunto padding per spaziatura */
+    width: 60vw;
+    align-self: center;
+    height: 30vh;
+    margin-bottom: 2vh;
   }
   .research-filter > * {
     font-size: 10px;
     padding: 2px;
-    margin-bottom: 2px;
+    margin-bottom: 1.5vh;
+    height: 35vh;
+  }
+  .research-filter form * {
+    margin: 0.2rem;
   }
 }
 
