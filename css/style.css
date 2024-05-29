@@ -293,6 +293,7 @@ nav a:nth-child(4):hover ~ .animation {
   flex: 0 0 25%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   flex-direction: column; /* Allinea gli elementi verticalmente */
 }
 
@@ -301,7 +302,7 @@ nav a:nth-child(4):hover ~ .animation {
   display: flex;
   flex-direction: column;
   align-items: center; /* Centra gli elementi verticalmente */
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 @media (max-width: 780px) {
