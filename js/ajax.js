@@ -1,12 +1,3 @@
-/*Chiamata Telefonata.php
-$(document).ready(function () {
-  $(".tel").click(function () {
-    $.ajax({
-      url: "Telefonata.php",
-    });
-  });
-});*/
-
 /*carica filtri/contenuti*/
 $(document).ready(function () {
   // Funzione per caricare i contenuti dei filtri e della tabella
