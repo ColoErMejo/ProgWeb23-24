@@ -178,3 +178,35 @@ function parseDate(dateString) {
   const year = parseInt(parts[2], 10);
   return new Date(year, month, day);
 }
+
+function controlloModifica() {
+  var tipoContratto = document.getElementById('Tipo').value;
+  var minutiResidui = document.getElementById('MinutiResidui').value;
+  var creditoResiduo = document.getElementById('CreditoResiduo').value;
+
+  if (tipoContratto === "") {
+      alert("Per favore, seleziona una tipologia di contratto.");
+      return; // Ferma l'esecuzione della funzione se il contratto non è selezionato
+  }
+
+  if (tipoContratto === "a ricarica" && (minutiResidui === "" || creditoResiduo === "")) {
+      alert("Per favore, inserisci i minuti residui e il credito residuo per un contratto a ricarica.");
+      return; // Ferma l'esecuzione della funzione se i campi obbligatori non sono compilati
+  }
+}
+
+function controlloInserimento() {
+  var tipoContratto = document.getElementById('Tipo2').value;
+  var minutiResidui = document.getElementById('MinutiResidui2').value;
+  var creditoResiduo = document.getElementById('CreditoResiduo2').value;
+
+  if (tipoContratto === "") {
+      alert("Per favore, seleziona una tipologia di contratto.");
+      return; // Ferma l'esecuzione della funzione se il contratto non è selezionato
+  }
+
+  if (tipoContratto === "a ricarica" && (minutiResidui === "" || creditoResiduo === "")) {
+      alert("Per favore, inserisci i minuti residui e il credito residuo per un contratto a ricarica.");
+      return; // Ferma l'esecuzione della funzione se i campi obbligatori non sono compilati
+  }
+}

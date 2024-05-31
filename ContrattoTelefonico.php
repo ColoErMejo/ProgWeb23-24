@@ -41,7 +41,7 @@
 					<label id="creditoResiduoLabel" style="display: none;" for="CreditoResiduo">Credito Residuo:</label>
 					<input type="text" name="CreditoResiduo" id="CreditoResiduo" class="modal-input"
 						style="display: none;" /> <br>
-					<button type="button" onclick="updateData(
+					<button type="button" onclick="controlloModifica()" onclick="updateData(
 						document.getElementById('Numero').textContent,
 						document.getElementById('Tipo').value,
 						document.getElementById('CreditoResiduo').value,
@@ -76,25 +76,25 @@
 					<input type="date" name="DataAttivazione" id="DataAttivazione2" class="modal-input"
 						value="<?php echo date('Y-m-d'); ?>" required /> <br><br>
 					<label for="Tipo2">Tipo:</label>
-					<select id="Tipo2" name="Tipo" class="modal-select" onchange="showHideFields()">
+					<select id="Tipo2" name="Tipo" class="modal-select"  onchange="showHideFields()">
 						<option value="" disabled selected hidden>Tipologia Contratto</option>
 						<option value="a ricarica">A ricarica</option>
 						<option value="a consumo">A consumo</option>
 					</select>
 					<label id="minutiResiduiLabel2" style="display: none;" for="MinutiResidui2">Minuti Residui: </label>
-					<input type="text" name="MinutiResidui" id="MinutiResidui2" class="modal-input"
+					<input type="text" name="MinutiResidui" id="MinutiResidui2" class="modal-input" 
 						style="display: none;" />
 					<label id="creditoResiduoLabel2" style="display: none;" for="CreditoResiduo2">Credito
 						Residuo:</label>
-					<input type="text" name="CreditoResiduo" id="CreditoResiduo2" class="modal-input"
+					<input type="text" name="CreditoResiduo" id="CreditoResiduo2" class="modal-input" 
 						style="display: none;" /> <br>
-					<button type="button" onclick="insertData(
+					<button type="button" onclick="controllo()" onclick="insertData(
 						document.getElementById('Numero2').value,
 						document.getElementById('DataAttivazione2').value,
 						document.getElementById('Tipo2').value,
 						document.getElementById('CreditoResiduo2').value,
 						document.getElementById('MinutiResidui2').value
-					)" class="search-button">Inserisci</button>
+					)" class="search-button"  >Inserisci</button>
 				</form>
 			</div>
 		</div>
