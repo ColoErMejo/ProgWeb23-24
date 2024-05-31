@@ -111,13 +111,7 @@ function updateData(Numero, Tipo, CreditoResiduo, MinutiResidui) {
   closeModal();
 }
 
-function insertData(
-  Numero2,
-  DataAttivazione2,
-  Tipo2,
-  CreditoResiduo2,
-  MinutiResidui2
-) {
+function insertData(Numero2, DataAttivazione2, Tipo2, CreditoResiduo2, MinutiResidui2) {
   var url =
     "InserisciContratto.php?Numero=" +
     encodeURIComponent(Numero2) +
@@ -180,33 +174,60 @@ function parseDate(dateString) {
 }
 
 function controlloModifica() {
-  var tipoContratto = document.getElementById('Tipo').value;
-  var minutiResidui = document.getElementById('MinutiResidui').value;
+  var isValid = true;
+  var tipo = document.getElementById('Tipo').value;
   var creditoResiduo = document.getElementById('CreditoResiduo').value;
-
-  if (tipoContratto === "") {
-      alert("Per favore, seleziona una tipologia di contratto.");
-      return; // Ferma l'esecuzione della funzione se il contratto non è selezionato
+  var minutiResidui = document.getElementById('MinutiResidui').value;
+  document.getElementById('tipoWarning').style.display = tipo ? 'none' : 'inline';
+  if (!tipo) isValid = false;
+  if (tipo === 'a ricarica' && !creditoResiduo) {
+      document.getElementById('creditoResiduoWarning').style.display = 'inline';
+      isValid = false;
+  } else {
+      document.getElementById('creditoResiduoWarning').style.display = 'none';
   }
-
-  if (tipoContratto === "a ricarica" && (minutiResidui === "" || creditoResiduo === "")) {
-      alert("Per favore, inserisci i minuti residui e il credito residuo per un contratto a ricarica.");
-      return; // Ferma l'esecuzione della funzione se i campi obbligatori non sono compilati
+  if (tipo === 'a consumo' && !minutiResidui) {
+      document.getElementById('minutiResiduiWarning').style.display = 'inline';
+      isValid = false;
+  } else {
+      document.getElementById('minutiResiduiWarning').style.display = 'none';
+  }
+  if (isValid) {updateData(document.getElementById('Numero').textContent, tipo, creditoResiduo, minutiResidui);
   }
 }
 
-function controlloInserimento() {
-  var tipoContratto = document.getElementById('Tipo2').value;
-  var minutiResidui = document.getElementById('MinutiResidui2').value;
-  var creditoResiduo = document.getElementById('CreditoResiduo2').value;
 
-  if (tipoContratto === "") {
-      alert("Per favore, seleziona una tipologia di contratto.");
-      return; // Ferma l'esecuzione della funzione se il contratto non è selezionato
+function controlloInserimento() {
+  var isValid = true;
+  var numero = document.getElementById('Numero2').value;
+  var dataAttivazione = document.getElementById('DataAttivazione2').value;
+  var tipo = document.getElementById('Tipo2').value;
+  var creditoResiduo = document.getElementById('CreditoResiduo2').value;
+  var minutiResidui = document.getElementById('MinutiResidui2').value;
+
+  document.getElementById('numeroWarning').style.display = numero ? 'none' : 'inline';
+  document.getElementById('dataAttivazioneWarning').style.display = dataAttivazione ? 'none' : 'inline';
+  document.getElementById('tipoWarning').style.display = tipo ? 'none' : 'inline';
+
+  if (!numero) isValid = false;
+  if (!dataAttivazione) isValid = false;
+  if (!tipo) isValid = false;
+
+  if (tipo === 'a ricarica' && !creditoResiduo) {
+      document.getElementById('creditoResiduoWarning').style.display = 'inline';
+      isValid = false;
+  } else {
+      document.getElementById('creditoResiduoWarning').style.display = 'none';
   }
 
-  if (tipoContratto === "a ricarica" && (minutiResidui === "" || creditoResiduo === "")) {
-      alert("Per favore, inserisci i minuti residui e il credito residuo per un contratto a ricarica.");
-      return; // Ferma l'esecuzione della funzione se i campi obbligatori non sono compilati
+  if (tipo === 'a consumo' && !minutiResidui) {
+      document.getElementById('minutiResiduiWarning').style.display = 'inline';
+      isValid = false;
+  } else {
+      document.getElementById('minutiResiduiWarning').style.display = 'none';
+  }
+
+  if (isValid) {
+      insertData(numero, dataAttivazione, tipo, creditoResiduo, minutiResidui);
   }
 }
