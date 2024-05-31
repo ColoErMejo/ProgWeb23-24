@@ -1,3 +1,24 @@
+:root {
+  --primary-color: #800000; /* Bordeaux */
+  --secondary-color: #ffae90; /*Rosino in palette*/
+  --background-color: #ecd9d9; /* Grigio chiaro */
+  --text-color1: #333; /* Grigio scuro */
+  --light-text-color: #9d7575; /*Grigio*/
+  --accent-color: #e74c3c; /* Rosso */
+  --white-color: #fbfcff; /* Bianco */
+  --border-primary-color: #ccc;
+  --border-secondary-color: #999;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --black-color: #0c0c0c; /*Black Oil*/
+  --black-transparent-color: rgba(12, 12, 12, 0.4);
+  --gradient-bg: linear-gradient(
+    135deg,
+    transparent,
+    var(--primary-color),
+    var(--secondary-color)
+  ); /* Gradiente */
+}
+
 body {
   font-family: Arial, sans-serif;
   display: flex;
@@ -11,8 +32,8 @@ body {
 .header {
   position: relative;
   text-align: center;
-  background: #800000; /*BORDEAUX*/
-  color: white;
+  background: var(--primary-color); /*BORDEAUX*/
+  color: var(--white-color);
 }
 h1 {
   font-family: "LCD2", sans-serif;
@@ -27,7 +48,7 @@ h3 {
   font-style: normal;
 }
 .change-color:hover {
-  color: #800000;
+  color: var(--primary-color);
 }
 
 .inner-header {
@@ -58,7 +79,7 @@ h3 {
   position: relative;
   /*height: 20vh;*/
   text-align: center;
-  background-color: white;
+  background-color: var(--white-color);
 }
 
 /* Animation */
@@ -130,9 +151,9 @@ h3 {
   overflow-x: hidden;
   margin: 0.5rem auto; /* Centra il container orizzontalmente */
   margin-bottom: 3rem;
-  background-color: #f9f9f9; /* Colore di sfondo */
+  background-color: var(--background-color); /* Colore di sfondo */
   border-radius: 10px; /* Angoli arrotondati */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px var(--shadow-color);
 }
 
 /* Stile per l'elemento h3 */
@@ -143,7 +164,7 @@ h3 {
   transform: translateX(-50%); /* Correggi la posizione orizzontale */
   margin-bottom: 10px; /* Spazio sotto il titolo */
   font-size: 1.5em; /* Dimensione del font del titolo */
-  color: #333; /* Colore del testo del titolo */
+  color: var(--text-color1); /* Colore del testo del titolo */
   flex-shrink: 0; /* Impedisce al titolo di ridursi */
 }
 
@@ -152,7 +173,7 @@ h3 {
   margin: 3.5vh 0px 0px 0px;
   font-size: 1.1em; /* Dimensione del font del paragrafo */
   line-height: 1.6; /* Altezza della linea per migliorare la leggibilità */
-  color: #333; /* Colore del testo del paragrafo */
+  color: var(--text-color1); /* Colore del testo del paragrafo */
   max-width: 45vw;
   overflow-y: auto; /* Permette lo scorrimento verticale */
   word-wrap: break-word; /* Impedisce il taglio delle parole */
@@ -182,7 +203,7 @@ nav {
   margin: 27px auto 0;
   position: relative;
   height: 50px;
-  background-color: #800000;
+  background-color: var(--primary-color);
   border-radius: 8px;
   font-size: 0;
   font-family: "LCD2";
@@ -197,7 +218,7 @@ nav a {
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
-  color: white;
+  color: var(--white-color);
   cursor: pointer;
 }
 nav .animation {
@@ -207,7 +228,7 @@ nav .animation {
   z-index: 0;
   transition: all 0.5s ease 0s;
   border-radius: 8px;
-  background-color: #800000; /* Colore di sfondo predefinito */
+  background-color: var(--primary-color); /* Colore di sfondo predefinito */
 }
 nav a:nth-child(1) {
   width: 100px;
@@ -228,26 +249,26 @@ nav a:nth-child(4) {
 nav a:nth-child(1):hover ~ .animation {
   width: 100px;
   left: 0;
-  background-color: #ecd9d9;
-  color: #800000;
+  background-color: var(--background-color);
+  color: var(--primary-color);
 }
 
 nav a:nth-child(2):hover ~ .animation {
   width: 230px;
   left: 100px;
-  background-color: #ecd9d9;
+  background-color: var(--background-color);
 }
 
 nav a:nth-child(3):hover ~ .animation {
   width: 80px;
   left: 330px;
-  background-color: #ecd9d9;
+  background-color: var(--background-color);
 }
 
 nav a:nth-child(4):hover ~ .animation {
   width: 130px;
   left: 410px;
-  background-color: #ecd9d9;
+  background-color: var(--background-color);
 }
 
 @media (max-width: 768px) {
@@ -265,8 +286,8 @@ nav a:nth-child(4):hover ~ .animation {
   }
 
   nav a.change-color:hover {
-    color: #ecd9d9;
-    text-shadow: 0px 0px 30px #ecd9d9;
+    color: var(--background-color);
+    text-shadow: 0px 0px 30px var(--background-color);
     -moz-transition: all 0.2s ease-in;
     -o-transition: all 0.2s ease-in;
     -webkit-transition: all 0.2s ease-in;
@@ -310,7 +331,7 @@ nav a:nth-child(4):hover ~ .animation {
 
 /*zona di ricerca a sx*/
 .research-filter {
-  background-color: #ecd9d9;
+  background-color: var(--background-color);
   border-radius: 15px;
   margin-bottom: 40px;
   flex: 0 0 25%;
@@ -360,17 +381,19 @@ nav a:nth-child(4):hover ~ .animation {
 }
 
 .research-filter .search-box,
-.research-filter .select-box {
+.research-filter .select-box,
+.modal .modal-input,
+.modal .modal-select {
   font-weight: 500;
   font-size: 14px;
   height: 40px;
   border-radius: 10px;
   padding-left: 10px;
   outline: none;
-  color: #9d7575;
-  border: 1px solid #ccc;
+  color: var(--light-text-color);
+  border: 1px solid var(--border-primary-color);
   border-radius: 10px;
-  background-color: #fff;
+  background-color: var(--white-color);
   cursor: pointer;
 }
 select.select-box {
@@ -380,26 +403,30 @@ select.select-box {
 /* Stile al passaggio del mouse */
 .search-box:hover,
 .select-box:hover {
-  border-color: #999; /* Cambia il colore del bordo al passaggio del mouse */
+  border-color: var(
+    --border-secondary-color
+  ); /* Cambia il colore del bordo al passaggio del mouse */
 }
 
 /* Stile al focus */
 .select-box:focus {
   outline: none; /* Rimuove il bordo di focus */
-  border: 1px solid #800000;
+  border: 1px solid var(--primary-color);
 }
 
 /* Stile per gli option */
 .select-box option {
   font-size: 14px;
-  color: #333;
+  color: var(--text-color1);
 }
 .select-box:hover {
-  border-color: #9d7575; /* Cambia il colore del bordo al passaggio del mouse */
+  border-color: var(
+    --border-secondary-color
+  ); /* Cambia il colore del bordo al passaggio del mouse */
 }
 
 .research-filter .search-box:focus {
-  border-bottom: 1px solid #800000;
+  border-bottom: 1px solid var(--primary-color);
   -webkit-transition: 0.1s;
   transition: 0.5s;
 }
@@ -431,29 +458,31 @@ select.select-box {
 
   &:hover,
   &:focus {
-    color: #fff;
+    color: var(--white-color);
     outline: 0;
   }
 }
 
 .add-button {
-  border: 2px solid #800000;
-  background-color: #f2f2f2f2;
+  border: 2px solid var(--primary-color);
+  background-color: var(--background-color);
   transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
   &:hover {
-    box-shadow: 0 0 40px 40px #800000 inset;
+    box-shadow: 0 0 40px 40px var(--primary-color) inset;
   }
 }
 
 .search-button {
-  border: 2px solid #800000;
-  color: #fff;
-  box-shadow: 0 0 30px 30px #800000 inset, 0 0 0 0 #800000;
+  border: 2px solid var(--primary-color);
+  color: var(--white-color);
+  box-shadow: 0 0 30px 30px var(--primary-color) inset,
+    0 0 0 0 var(--primary-color);
   transition: all 150ms ease-in-out;
 
   &:hover {
-    box-shadow: 0 0 3px 0 #800000 inset, 0 0 3px 1px #800000;
-    color: #800000;
+    box-shadow: 0 0 3px 0 var(--primary-color) inset,
+      0 0 3px 1px var(--primary-color);
+    color: var(--primary-color);
   }
 }
 
@@ -472,7 +501,7 @@ input[type="number"] {
 
 /*Zona di contenuto (tabelle) a dx*/
 .content-results {
-  background-color: white;
+  background-color: var(--white-color);
   flex: 0 0 70%;
   height: 95%;
   overflow: auto; /* abilita lo scorrimento all'interno del div se necessario */
@@ -567,19 +596,19 @@ tbody tr:first-child td {
 }
 
 .table .rowEven {
-  background-color: #ecd9d9;
+  background-color: var(--background-color);
 }
 
 .table .rowOdd {
-  background-color: #ffffff;
+  background-color: var(--white-color);
 }
 
 .table tr.header th {
-  background-color: #800000;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--white-color);
 }
 .table th:not(:first-child) {
-  background-color: #ecd9d9;
+  background-color: var(--background-color);
 }
 .table td a {
   color: inherit;
@@ -606,22 +635,30 @@ tbody tr:first-child td {
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  background-color: var(--black-transparent-color);
+  backdrop-filter: blur(10px); /* Aggiunge sfocatura */
+  -webkit-backdrop-filter: blur(10px); /* Supporto per Safari */
+}
+
+h3.modal-title {
+  border-radius: 10px;
+  background-color: var(--background-color);
+  padding: 1.1rem;
 }
 
 /* Stile per il contenitore del modal */
 .modal-content {
-  background-color: #fefefe;
+  background-color: var(--background-color);
   margin: 15% auto;
   padding: 20px;
-  border: 1px solid #888;
+  border: 1px solid var(--border-primary-color);
   width: 40%;
   border-radius: 15px;
 }
 
 .close {
-  color: #800000;
+  color: var(--primary-color);
   float: right;
   font-size: 32px;
   font-weight: bold;
@@ -629,64 +666,38 @@ tbody tr:first-child td {
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: var(--black-color);
   text-decoration: none;
   cursor: pointer;
 }
 
-.modal .modal-input {
-  font-weight: 500;
-  font-size: 14px;
-  height: 40px;
-  border-radius: 10px;
-  padding-left: 10px;
-  outline: none;
-  color: #9d7575;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background-color: #fff;
-  cursor: pointer;
-  margin-bottom: 10px; /* Spazio tra gli input */
-}
-
 .modal .modal-input:focus {
-  border: 1px solid #800000;
+  border: 1px solid var(--primary-color);
   transition: 0.5s;
 }
 
 .modal .modal-input:hover {
-  border-color: #999;
-}
-.modal-select {
-  font-weight: 500;
-  font-size: 14px;
-  height: 40px;
-  border-radius: 10px;
-  padding-left: 10px;
-  outline: none;
-  color: #9d7575;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  cursor: pointer;
-  margin-bottom: 10px; /* Spazio tra gli input */
+  border-color: var(--border-secondary-color);
 }
 
 /* Stile al passaggio del mouse */
 .modal-select:hover {
-  border-color: #999; /* Cambia il colore del bordo al passaggio del mouse */
+  border-color: var(
+    --border-secondary-color
+  ); /* Cambia il colore del bordo al passaggio del mouse */
 }
 
 /* Stile al focus */
 .modal-select:focus {
   outline: none; /* Rimuove il bordo di focus */
-  border: 1px solid #800000;
+  border: 1px solid var(--primary-color);
   transition: 0.5s;
 }
 
 /* Stile per gli option */
 .modal-select option {
   font-size: 14px;
-  color: #333;
+  color: var(--text-color1);
 }
 
 .table-blur {
@@ -700,8 +711,8 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #800000;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--white-color);
   padding: 9px;
   text-align: center;
   display: flex;
@@ -774,7 +785,7 @@ footer {
     white-space: nowrap; /* Assicurati che il testo non venga avvolto */
     overflow: hidden; /* Nascondi il testo che eccede la larghezza del contenitore */
     text-overflow: ellipsis; /* Aggiungi puntini di sospensione se il testo viene tagliato */
-    color: white;
+    color: var(--white-color);
     position: absolute; /* Imposta la posizione assoluta */
     top: 0; /* Allinea il testo nuovo all'inizio del link */
     left: 0; /* Allinea il testo nuovo all'inizio del link */
