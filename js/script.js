@@ -181,18 +181,19 @@ function controlloModifica() {
   document.getElementById('tipoWarning').style.display = tipo ? 'none' : 'inline';
   if (!tipo) isValid = false;
   if (tipo === 'a ricarica' && !creditoResiduo) {
-      document.getElementById('creditoResiduoWarning').style.display = 'inline';
-      isValid = false;
+    document.getElementById('creditoResiduoWarning').style.display = 'inline';
+    isValid = false;
   } else {
-      document.getElementById('creditoResiduoWarning').style.display = 'none';
+    document.getElementById('creditoResiduoWarning').style.display = 'none';
   }
   if (tipo === 'a consumo' && !minutiResidui) {
-      document.getElementById('minutiResiduiWarning').style.display = 'inline';
-      isValid = false;
+    document.getElementById('minutiResiduiWarning').style.display = 'inline';
+    isValid = false;
   } else {
-      document.getElementById('minutiResiduiWarning').style.display = 'none';
+    document.getElementById('minutiResiduiWarning').style.display = 'none';
   }
-  if (isValid) {updateData(document.getElementById('Numero').textContent, tipo, creditoResiduo, minutiResidui);
+  if (isValid) {
+    updateData(document.getElementById('Numero').textContent, tipo, creditoResiduo, minutiResidui);
   }
 }
 
@@ -206,28 +207,24 @@ function controlloInserimento() {
   var minutiResidui = document.getElementById('MinutiResidui2').value;
 
   document.getElementById('numeroWarning').style.display = numero ? 'none' : 'inline';
-  document.getElementById('dataAttivazioneWarning').style.display = dataAttivazione ? 'none' : 'inline';
-  document.getElementById('tipoWarning').style.display = tipo ? 'none' : 'inline';
-
+  document.getElementById('dataAttivazioneWarning2').style.display = dataAttivazione ? 'none' : 'inline';
+  document.getElementById('tipoWarning2').style.display = tipo ? 'none' : 'inline';
   if (!numero) isValid = false;
   if (!dataAttivazione) isValid = false;
   if (!tipo) isValid = false;
-
-  if (tipo === 'a ricarica' && !creditoResiduo) {
-      document.getElementById('creditoResiduoWarning').style.display = 'inline';
-      isValid = false;
-  } else {
-      document.getElementById('creditoResiduoWarning').style.display = 'none';
-  }
-
   if (tipo === 'a consumo' && !minutiResidui) {
-      document.getElementById('minutiResiduiWarning').style.display = 'inline';
-      isValid = false;
+    document.getElementById('minutiResiduiWarning2').style.display = 'inline';
+    isValid = false;
   } else {
-      document.getElementById('minutiResiduiWarning').style.display = 'none';
+    document.getElementById('minutiResiduiWarning2').style.display = 'none';
   }
-
+  if (tipo === 'a ricarica' && !creditoResiduo) {
+    document.getElementById('creditoResiduoWarning2').style.display = 'inline';
+    isValid = false;
+  } else {
+    document.getElementById('creditoResiduoWarning2').style.display = 'none';
+  }
   if (isValid) {
-      insertData(numero, dataAttivazione, tipo, creditoResiduo, minutiResidui);
+    insertData(numero, dataAttivazione, tipo, minutiResidui, creditoResiduo);
   }
 }

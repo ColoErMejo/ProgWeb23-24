@@ -17,10 +17,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
     // Aggiungi campi aggiuntivi alla query e ai parametri in base al tipo di contratto
     if ($Tipo == 'a consumo') {
-        $query .= ", MinutiResidui = :MinutiResidui, CreditoResiduo = 0";
+        $query .= ", MinutiResidui = :MinutiResidui, CreditoResiduo = NULL";
         $params[':MinutiResidui'] = $MinutiResidui;
     } elseif ($Tipo == 'a ricarica') {
-        $query .= ", MinutiResidui = 0, CreditoResiduo = :CreditoResiduo";
+        $query .= ", MinutiResidui = NULL, CreditoResiduo = :CreditoResiduo";
         $params[':CreditoResiduo'] = $CreditoResiduo;
     }
 

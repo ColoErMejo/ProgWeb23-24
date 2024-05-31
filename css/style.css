@@ -627,6 +627,13 @@ tbody tr:first-child td {
   }
 }
 
+
+.warning {
+  color: var(--primary-color);
+  font-weight: bold;
+  display: none;
+}
+
 .modal {
   display: none;
   position: fixed;
