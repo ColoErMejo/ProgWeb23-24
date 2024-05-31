@@ -8,9 +8,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         $Numero = $_GET['Numero'];
         $DataAttivazione = $_GET['DataAttivazione'];
         $Tipo = $_GET['Tipo'];
-        $MinutiResidui = $_GET['MinutiResidui'];
-        $CreditoResiduo = $_GET['CreditoResiduo'];
 
+        if ($Tipo == 'a consumo') {
+            $MinutiResidui = $_GET['MinutiResidui'];
+            $CreditoResiduo = NULL;
+        }
+        else{
+            $MinutiResidui = NULL;
+            $CreditoResiduo = $_GET['CreditoResiduo'];
+        }
+       
         // Verifica che la data di attivazione non sia vuota e la formatta
         if ($DataAttivazione != "") {
             if (!empty($DataAttivazione)) {
@@ -49,8 +56,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                     $stmt->bindParam(':Numero', $Numero, PDO::PARAM_INT);
                     $stmt->bindParam(':DataAttivazione', $DataSQL); // Utilizzo della data formattata
                     $stmt->bindParam(':Tipo', $Tipo);
-                    $stmt->bindParam(':MinutiResidui', $MinutiResidui, PDO::PARAM_INT);
-                    $stmt->bindParam(':CreditoResiduo', $CreditoResiduo, PDO::PARAM_INT);
+                    if($Tipo == 'a consumo'){
+                        $stmt->bindParam(':MinutiResidui', $MinutiResidui, PDO::PARAM_INT);
+                        $stmt->bindValue(':CreditoResiduo', NULL, PDO::PARAM_NULL);
+                    }
+                    else{
+                        $stmt->bindValue(':MinutiResidui', NULL, PDO::PARAM_NULL);
+                        $stmt->bindParam(':CreditoResiduo', $CreditoResiduo, PDO::PARAM_INT);
+                    }
                     $stmt->execute();
 
                     echo ("<script>alert('Query eseguita')</script>");
