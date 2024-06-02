@@ -81,16 +81,13 @@
 						<option value="a ricarica">A ricarica</option>
 						<option value="a consumo">A consumo</option>
 					</select>
-					<span id="tipoWarning2" class="warning">Campo obbligatorio</span><br>
+					<span id="tipoWarning2" class="warning">Campo obbligatorio</span>
 					<label id="minutiResiduiLabel2" style="display: none;" for="MinutiResidui2">Minuti Residui: </label>
-					<input type="text" name="MinutiResidui" id="MinutiResidui2" class="modal-input"
-						style="display: none;" />
-					<span id="minutiResiduiWarning2" class="warning">Campo obbligatorio</span><br>
-					<label id="creditoResiduoLabel2" style="display: none;" for="CreditoResiduo2">Credito
-						Residuo:</label>
-					<input type="text" name="CreditoResiduo" id="CreditoResiduo2" class="modal-input"
-						style="display: none;" />
-					<span id="creditoResiduoWarning2" class="warning">Campo obbligatorio</span><br>
+					<input type="text" name="MinutiResidui" id="MinutiResidui2" class="modal-input" style="display: none;" />
+					<span id="minutiResiduiWarning2" class="warning">Campo obbligatorio</span>
+					<label id="creditoResiduoLabel2" style="display: none;" for="CreditoResiduo2">Credito Residuo:</label>
+					<input type="text" name="CreditoResiduo" id="CreditoResiduo2" class="modal-input" style="display: none;" />
+					<span id="creditoResiduoWarning2" class="warning">Campo obbligatorio</span>
 					<button type="button" onclick="controlloInserimento()" class="search-button">Inserisci</button>
 				</form>
 			</div>
