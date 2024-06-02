@@ -37,10 +37,12 @@
 					</select>
 					<span id="tipoWarning" class="warning">Campo obbligatorio</span><br>
 					<label id="minutiResiduiLabel" style="display: none;" for="MinutiResidui">Minuti Residui: </label>
-					<input type="text" name="MinutiResidui" id="MinutiResidui" class="modal-input" style="display: none;" />
+					<input type="text" name="MinutiResidui" id="MinutiResidui" class="modal-input"
+						style="display: none;" />
 					<span id="minutiResiduiWarning" class="warning">Campo obbligatorio</span><br>
 					<label id="creditoResiduoLabel" style="display: none;" for="CreditoResiduo">Credito Residuo:</label>
-					<input type="text" name="CreditoResiduo" id="CreditoResiduo" class="modal-input" style="display: none;" />
+					<input type="text" name="CreditoResiduo" id="CreditoResiduo" class="modal-input"
+						style="display: none;" />
 					<span id="creditoResiduoWarning" class="warning">Campo obbligatorio</span><br>
 					<button type="button" onclick="controlloModifica()" class="search-button">Aggiorna</button>
 				</form>
@@ -81,10 +83,13 @@
 					</select>
 					<span id="tipoWarning2" class="warning">Campo obbligatorio</span><br>
 					<label id="minutiResiduiLabel2" style="display: none;" for="MinutiResidui2">Minuti Residui: </label>
-					<input type="text" name="MinutiResidui" id="MinutiResidui2" class="modal-input" style="display: none;" />
+					<input type="text" name="MinutiResidui" id="MinutiResidui2" class="modal-input"
+						style="display: none;" />
 					<span id="minutiResiduiWarning2" class="warning">Campo obbligatorio</span><br>
-					<label id="creditoResiduoLabel2" style="display: none;" for="CreditoResiduo2">Credito Residuo:</label>
-					<input type="text" name="CreditoResiduo" id="CreditoResiduo2" class="modal-input" style="display: none;" />
+					<label id="creditoResiduoLabel2" style="display: none;" for="CreditoResiduo2">Credito
+						Residuo:</label>
+					<input type="text" name="CreditoResiduo" id="CreditoResiduo2" class="modal-input"
+						style="display: none;" />
 					<span id="creditoResiduoWarning2" class="warning">Campo obbligatorio</span><br>
 					<button type="button" onclick="controlloInserimento()" class="search-button">Inserisci</button>
 				</form>
@@ -234,13 +239,13 @@
 									</td> <?php
 								}
 							} ?>
-							<td> <a onclick="updateModal('<?php echo $Numero; ?>', '<?php echo $DataAttivazione; ?>')"
-									class='cliccabile'>
-									<img src="icons\pencil.png" height="20px" width="20px" alt="Modifica">
+							<td>
+								<a onclick="updateModal('<?php echo $Numero; ?>', '<?php echo $DataAttivazione; ?>')" class="cliccabile">
+									<img src="icons\pencil.png" height="20px" width="20px"  class="icon-pencil" alt="Modifica">
 								</a>
 							</td>
 							<td><a onclick="deleteModal('<?php echo $Numero; ?>')" class='cliccabile'>
-									<img src=" icons\bin.png" height="20px" width="20px" alt="Elimina" ></button></a>
+									<img src="icons\bin-hover.png" height="20px" width="20px" class="icon-bin" alt="Elimina" ></button></a>
 						</tr>
 					<?php } ?>
 				</table>

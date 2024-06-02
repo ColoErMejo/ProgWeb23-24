@@ -32,7 +32,7 @@ body {
 .header {
   position: relative;
   text-align: center;
-  background: var(--primary-color); /*BORDEAUX*/
+  background: var(--primary-color); 
   color: var(--white-color);
 }
 h1 {
@@ -133,6 +133,40 @@ h3 {
   cursor: pointer;
 }
 
+.icon-pencil, .icon-bin {
+  height: 20px;
+  width: 20px;
+  transition: opacity 0.3s ease;
+}
+
+.cliccabile::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cliccabile:hover .icon-pencil,
+.cliccabile:hover .icon-bin {
+  opacity: 0.5;
+}
+
+.cliccabile:hover::after {
+  opacity: 1;
+}
+
+.icon-pencil + .cliccabile::after {
+  content: url('icons/pencil.png');
+}
+
+.icon-bin + .cliccabile::after {
+  content: url('icons/bin-hover.png');
+}
+
 /*Home*/
 /* Stile per il container */
 #containerHome {
@@ -144,13 +178,14 @@ h3 {
   justify-content: center;
   text-align: center; /* Centra il testo all'interno degli elementi */
   padding: 40px;
+  padding-bottom: 10px;
   height: 75vh;
   width: 80%; /* Regola la larghezza del container */
   max-width: fit-content; /* Larghezza massima del container */
   white-space: wrap;
   overflow-x: hidden;
   margin: 0.5rem auto; /* Centra il container orizzontalmente */
-  margin-bottom: 3rem;
+  margin-bottom: 3rem; /* Spazio sotto il container */
   background-color: var(--background-color); /* Colore di sfondo */
   border-radius: 10px; /* Angoli arrotondati */
   box-shadow: 0 4px 8px var(--shadow-color);
@@ -181,11 +216,12 @@ h3 {
 
 @media (max-width: 780px) {
   #containerHome {
-    padding: 20px;
+    padding: 4px;
     margin: 10px;
     max-height: 60vh; /* Limita l'altezza del container per consentire lo scorrimento */
     align-self: center;
     max-width: 80vw;
+    margin-bottom: 3rem; /* Spazio sotto il container */
   }
 
   .container h3 {
@@ -197,6 +233,7 @@ h3 {
     margin-top: 4.5vh;
   }
 }
+
 
 /* Navbar*/
 nav {
