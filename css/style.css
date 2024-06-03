@@ -32,7 +32,7 @@ body {
 .header {
   position: relative;
   text-align: center;
-  background: var(--primary-color); 
+  background: var(--primary-color);
   color: var(--white-color);
 }
 h1 {
@@ -133,14 +133,15 @@ h3 {
   cursor: pointer;
 }
 
-.icon-pencil, .icon-bin {
+.icon-pencil,
+.icon-bin {
   height: 20px;
   width: 20px;
   transition: opacity 0.3s ease;
 }
 
 .cliccabile::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -160,11 +161,11 @@ h3 {
 }
 
 .icon-pencil + .cliccabile::after {
-  content: url('icons/pencil.png');
+  content: url("icons/pencil.png");
 }
 
 .icon-bin + .cliccabile::after {
-  content: url('icons/bin-hover.png');
+  content: url("icons/bin-hover.png");
 }
 
 /*Home*/
@@ -233,7 +234,6 @@ h3 {
     margin-top: 4.5vh;
   }
 }
-
 
 /* Navbar*/
 nav {
@@ -435,6 +435,29 @@ nav a:nth-child(4):hover ~ .animation {
 }
 select.select-box {
   width: 213.6px !important;
+}
+
+.search-box:invalid {
+  animation: justshake 0.3s forwards;
+  color: red;
+}
+
+@keyframes justshake {
+  25% {
+    transform: translateX(5px);
+  }
+
+  50% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
+
+  100% {
+    transform: translateX-(5px);
+  }
 }
 
 /* Stile al passaggio del mouse */
@@ -663,7 +686,6 @@ tbody tr:first-child td {
     overflow-x: auto;
   }
 }
-
 
 .warning {
   color: var(--primary-color);
