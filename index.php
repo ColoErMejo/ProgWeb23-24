@@ -21,17 +21,16 @@
 
 		<!--<img src="icons\trapgif.gif" width="300px" alt="TrapGif">-->
 		<h3>Introduzione</h3>
-		<p>Questo gestionale è stato progettato per amministrare facilmente il database di una nota compagnia
-			telefonica.
-			L'obiettivo è gestire tutti i contratti telefonici stipulati dalla compagnia, la relativa lista delle
-			chiamate
-			effettuate da ogni numero e la totalità delle SIM. <br> Ogni SIM può essere attiva, disattiva o non attiva.
+		<p>Questo sito web è stato sviluppato per amministrare efficacemente il database di una rinomata compagnia
+			telefonica. L'obiettivo principale è la gestione completa dei contratti telefonici stipulati dalla
+			compagnia, inclusa la registrazione delle chiamate effettuate da ogni numero e la gestione delle SIM card.
+			Le SIM possono avere uno stato attivo, disattivo o non attivo.
 
-			L'utente può aggiungere nuovi contratti, specificando il numero di telefono, la data di attivazione,
-			la tipologia di contratto (a ricarica / a consumo) e gli eventuali credito/minuti rimanenti. <br>
-			Si possono aggiornare i campi di ogni contratto telefonico ed eliminarne anche, in questo caso vengono
-			eliminate anche tutte le tuple del registro delle chiamate associate a quel numero e cancellate le SIM
-			associate.</p>
+			Gli utenti hanno la possibilità di aggiungere nuovi contratti, specificando il numero di telefono, la data
+			di attivazione, il tipo di contratto (a ricarica o a consumo) e gli eventuali minuti o credito residui. È
+			inoltre possibile aggiornare i dettagli di ciascun contratto telefonico, nonché eliminarli. In caso di
+			eliminazione di un contratto, tutte le registrazioni delle chiamate associate a quel numero verranno
+			cancellate, insieme alle SIM associate.</p>
 	</div>
 
 </body>
