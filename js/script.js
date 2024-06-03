@@ -146,7 +146,15 @@ function sortTable(n, type, tableID) {
   }
 
   // Aggiungi le righe ordinate
-  rows.forEach((row) => table.appendChild(row));
+  rows.forEach((row, index) => {
+    table.appendChild(row);
+    // Assegna la classe in base all'indice
+    if (index % 2 === 0) {
+      row.className = 'rowOdd';
+    } else {
+      row.className = 'rowEven';
+    }
+  });
 }
 
 function compareValues(x, y, type, dir) {
