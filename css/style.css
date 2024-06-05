@@ -213,6 +213,7 @@ h3 {
   max-width: 45vw;
   overflow-y: auto; /* Permette lo scorrimento verticale */
   word-wrap: break-word; /* Impedisce il taglio delle parole */
+  text-align: left;
 }
 
 @media (max-width: 780px) {
