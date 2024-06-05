@@ -83,10 +83,13 @@
 					</select>
 					<span id="tipoWarning2" class="warning">Campo obbligatorio</span>
 					<label id="minutiResiduiLabel2" style="display: none;" for="MinutiResidui2">Minuti Residui: </label>
-					<input type="text" name="MinutiResidui" id="MinutiResidui2" class="modal-input" style="display: none;" />
+					<input type="text" name="MinutiResidui" id="MinutiResidui2" class="modal-input"
+						style="display: none;" />
 					<span id="minutiResiduiWarning2" class="warning">Campo obbligatorio</span>
-					<label id="creditoResiduoLabel2" style="display: none;" for="CreditoResiduo2">Credito Residuo:</label>
-					<input type="text" name="CreditoResiduo" id="CreditoResiduo2" class="modal-input" style="display: none;" />
+					<label id="creditoResiduoLabel2" style="display: none;" for="CreditoResiduo2">Credito
+						Residuo:</label>
+					<input type="text" name="CreditoResiduo" id="CreditoResiduo2" class="modal-input"
+						style="display: none;" />
 					<span id="creditoResiduoWarning2" class="warning">Campo obbligatorio</span>
 					<button type="button" onclick="controlloInserimento()" class="search-button">Inserisci</button>
 				</form>
@@ -102,7 +105,8 @@
 					<option id="a ricarica" value="a ricarica"> A ricarica </option>
 					<option id="a consumo" value="a consumo"> A Consumo </option>
 				</select>
-				<input id="Data" name="Data" type="date" placeholder="gg/mm/aa" class="search-box" />
+				<input id="DataAttivazione" name="DataAttivazione" type="date" placeholder="gg/mm/aa"
+					class="search-box" />
 				<div class="buttons-container">
 					<form name="myform" method="POST">
 						<input type="submit" value="Cerca" class="search-button" />
@@ -237,12 +241,14 @@
 								}
 							} ?>
 							<td>
-								<a onclick="updateModal('<?php echo $Numero; ?>', '<?php echo $DataAttivazione; ?>')" class="cliccabile">
-									<img src="icons\pencil.png" height="20px" width="20px"  class="icon-pencil" alt="Modifica">
+								<a onclick="updateModal('<?php echo $Numero; ?>', '<?php echo $DataAttivazione; ?>')"
+									class="cliccabile">
+									<img src="icons\pencil.png" height="20px" width="20px" class="icon-pencil" alt="Modifica">
 								</a>
 							</td>
 							<td><a onclick="deleteModal('<?php echo $Numero; ?>')" class='cliccabile'>
-									<img src="icons\bin-hover.png" height="20px" width="20px" class="icon-bin" alt="Elimina" ></button></a>
+									<img src="icons\bin-hover.png" height="20px" width="20px" class="icon-bin"
+										alt="Elimina"></button></a>
 						</tr>
 					<?php } ?>
 				</table>
