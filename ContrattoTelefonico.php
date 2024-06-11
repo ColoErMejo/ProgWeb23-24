@@ -101,7 +101,7 @@
 				<input id="Numero" name="Numero" type="number" placeholder="Numero di Telefono" class="search-box"
 					pattern="[0-9]+" title="Inserisci un numero di telefono valido">
 				<select id="Tipo" name="Tipo" class="select-box">
-					<option id="tutto" value="" selected disabled>Seleziona tipo contratto</option>
+					<option id="tutto" value="" selected disabled>Tipologia contratto</option>
 					<option id="a ricarica" value="a ricarica"> A ricarica </option>
 					<option id="a consumo" value="a consumo"> A Consumo </option>
 				</select>

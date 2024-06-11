@@ -111,7 +111,7 @@ function updateData(Numero, Tipo, CreditoResiduo, MinutiResidui) {
   closeModal();
 }
 
-function insertData(Numero2, DataAttivazione2, Tipo2, CreditoResiduo2, MinutiResidui2) {
+function insertData(Numero2, DataAttivazione2, Tipo2, MinutiResidui2, CreditoResiduo2) {
   var url =
     "InserisciContratto.php?Numero=" +
     encodeURIComponent(Numero2) +

@@ -59,7 +59,7 @@
 						<th onclick="sortTable(2, 'date', 'tabellaTelefonata')" class="th-cursor-pointer">Data ↕</th>
 						<th>Ora</th>
 						<th onclick="sortTable(4, 'num', 'tabellaTelefonata')" class="th-cursor-pointer">Durata ↕</th>
-						<th onclick="sortTable(5, 'num', 'tabellaTelefonata')" class="th-cursor-pointer">Costo ↕</th>
+						<th>Costo</th>
 					</tr>
 					<?php
 					$i = 0;
