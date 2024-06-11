@@ -37,11 +37,11 @@
 					</select>
 					<span id="tipoWarning" class="warning">Campo obbligatorio</span><br>
 					<label id="minutiResiduiLabel" style="display: none;" for="MinutiResidui">Minuti Residui: </label>
-					<input type="text" name="MinutiResidui" id="MinutiResidui" class="modal-input"
+					<input type="number" name="MinutiResidui" id="MinutiResidui" class="modal-input"
 						style="display: none;" />
 					<span id="minutiResiduiWarning" class="warning">Campo obbligatorio</span><br>
 					<label id="creditoResiduoLabel" style="display: none;" for="CreditoResiduo">Credito Residuo:</label>
-					<input type="text" name="CreditoResiduo" id="CreditoResiduo" class="modal-input"
+					<input type="number" name="CreditoResiduo" id="CreditoResiduo" class="modal-input"
 						style="display: none;" />
 					<span id="creditoResiduoWarning" class="warning">Campo obbligatorio</span><br>
 					<button type="button" onclick="controlloModifica()" class="search-button">Aggiorna</button>
@@ -69,7 +69,7 @@
 				<h3 class="modal-title">Inserimento Contratto Telefonico</h3>
 				<form id="createForm">
 					<label for="Numero2">Numero di telefono: </label>
-					<input name="Numero" id="Numero2" class="modal-input" required>
+					<input type="number" name="Numero" id="Numero2" class="modal-input" required>
 					<span id="numeroWarning" class="warning">Campo obbligatorio</span><br><br>
 					<label for="DataAttivazione2">Data Attivazione: </label>
 					<input type="date" name="DataAttivazione" id="DataAttivazione2" class="modal-input"
@@ -83,12 +83,12 @@
 					</select>
 					<span id="tipoWarning2" class="warning">Campo obbligatorio</span>
 					<label id="minutiResiduiLabel2" style="display: none;" for="MinutiResidui2">Minuti Residui: </label>
-					<input type="text" name="MinutiResidui" id="MinutiResidui2" class="modal-input"
+					<input type="number" name="MinutiResidui" id="MinutiResidui2" class="modal-input"
 						style="display: none;" />
 					<span id="minutiResiduiWarning2" class="warning">Campo obbligatorio</span>
 					<label id="creditoResiduoLabel2" style="display: none;" for="CreditoResiduo2">Credito
 						Residuo:</label>
-					<input type="text" name="CreditoResiduo" id="CreditoResiduo2" class="modal-input"
+					<input type="number" name="CreditoResiduo" id="CreditoResiduo2" class="modal-input"
 						style="display: none;" />
 					<span id="creditoResiduoWarning2" class="warning">Campo obbligatorio</span>
 					<button type="button" onclick="controlloInserimento()" class="search-button">Inserisci</button>
