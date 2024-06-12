@@ -94,8 +94,17 @@ function closeModal() {
   document.getElementById("myModal").style.display = "none";
   document.getElementById("myModal2").style.display = "none";
   document.getElementById("myModal3").style.display = "none";
+  document.getElementById("myModal4").style.display = "none";
   document.getElementById("tabellaContratto").classList.remove("table-blur");
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  console.log("Document loaded, showModal:", showModal);
+  if (showModal) {
+      console.log("Showing modal");
+      document.getElementById('myModal4').style.display = 'block';
+  }
+});
 
 function updateData(Numero, Tipo, CreditoResiduo, MinutiResidui) {
   var url =

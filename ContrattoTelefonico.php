@@ -1,3 +1,9 @@
+<?php
+session_start(); // Deve essere la prima riga del file
+$show_modal = isset($_SESSION['show_modal']) ? $_SESSION['show_modal'] : false;
+unset($_SESSION['show_modal']); // Rimuove la variabile di sessione dopo averla utilizzata
+?>
+
 <!DOCTYPE HTML>
 <html lang="it">
 
@@ -95,6 +101,21 @@
 				</form>
 			</div>
 		</div>
+
+		<!-- Errore Contratto -->
+		<div id="myModal4" class="modal">
+			<div class="modal-content">
+				<span class="close" onclick="closeModal()">&times;</span>
+				<h3 class="modal-title">Errore!</h3>
+				<p>Il numero che hai inserito e' gia' presente nel database, 
+					si prega di modificarne il valore </p>
+			</div>
+		</div>
+
+		<script>
+			var showModal = <?php echo json_encode($show_modal); ?>;
+			console.log("showModal: ", showModal); // Aggiungi questa linea per il debug
+		</script>
 
 		<div class="research-filter">
 			<form name="myform" method="POST">

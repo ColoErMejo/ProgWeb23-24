@@ -1,5 +1,6 @@
 <?php
 include 'connectDB.php';
+echo '<script type="text/javascript" src="./js/script.js"></script>';
 
 // Controlla se è stata inviata una richiesta GET
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
@@ -12,12 +13,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         if ($Tipo == 'a consumo') {
             $MinutiResidui = $_GET['MinutiResidui'];
             $CreditoResiduo = NULL;
-        }
-        else{
+        } else {
             $MinutiResidui = NULL;
             $CreditoResiduo = $_GET['CreditoResiduo'];
         }
-       
+
         // Verifica che la data di attivazione non sia vuota e la formatta
         if ($DataAttivazione != "") {
             if (!empty($DataAttivazione)) {
@@ -43,7 +43,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             // Verifica se il numero esiste già
             if ($stmt->rowCount() > 0) {
                 $trovato = true;
-                echo "<h3 class='msg'>ERRORE: Numero di telefono già associato ad un altro contratto.</h3>";
+            }
+            if ($trovato) {
+                $_SESSION['show_modal'] = true;
+                header('Location: ContrattoTelefonico.php');
+                exit();
+            } else {
+                // Se non trovato, puoi fare qualcosa di diverso o restare sulla stessa pagina
+                echo "Numero non trovato. Rimani su questa pagina o fai altro.";
             }
 
             // Se il numero non esiste, inserisce il nuovo contratto
@@ -56,11 +63,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                     $stmt->bindParam(':Numero', $Numero, PDO::PARAM_INT);
                     $stmt->bindParam(':DataAttivazione', $DataSQL); // Utilizzo della data formattata
                     $stmt->bindParam(':Tipo', $Tipo);
-                    if($Tipo == 'a consumo'){
+                    if ($Tipo == 'a consumo') {
                         $stmt->bindParam(':MinutiResidui', $MinutiResidui, PDO::PARAM_INT);
                         $stmt->bindValue(':CreditoResiduo', NULL, PDO::PARAM_NULL);
-                    }
-                    else{
+                    } else {
                         $stmt->bindValue(':MinutiResidui', NULL, PDO::PARAM_NULL);
                         $stmt->bindParam(':CreditoResiduo', $CreditoResiduo, PDO::PARAM_INT);
                     }
