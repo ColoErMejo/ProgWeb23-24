@@ -91,19 +91,10 @@
 					<input type="number" name="CreditoResiduo" id="CreditoResiduo2" class="modal-input"
 						style="display: none;" />
 					<span id="creditoResiduoWarning2" class="warning">Campo obbligatorio</span>
+					<button type="button" onclick="controlloInserimento()" class="search-button">Inserisci</button>
 				</form>
 			</div>
 		</div>
-
-		<!-- Errore Contratto -->
-		<div id="myModal4" class="modal">
-			<div class="modal-content">
-				<span class="close" onclick="closeModal()">&times;</span>
-				<h3 class="modal-title">DRIN DRIN...Errore! </h3>
-				<p>Numero di telefono gia' inserito in precedenza si prega di procedere alla modifica</p>
-			</div>
-		</div>
-
 
 		<div class="research-filter">
 			<form name="myform" method="POST">
