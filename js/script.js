@@ -101,8 +101,8 @@ function closeModal() {
 document.addEventListener('DOMContentLoaded', function() {
   console.log("Document loaded, showModal:", showModal);
   if (showModal) {
-      console.log("Showing modal");
       document.getElementById('myModal4').style.display = 'block';
+      document.getElementById("tabellaContratto").classList.add("table-blur");
   }
 });
 

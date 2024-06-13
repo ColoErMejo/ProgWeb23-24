@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'connectDB.php';
 echo '<script type="text/javascript" src="./js/script.js"></script>';
 
@@ -49,7 +50,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                 header('Location: ContrattoTelefonico.php');
                 exit();
             } else {
-                // Se non trovato, puoi fare qualcosa di diverso o restare sulla stessa pagina
                 echo "Numero non trovato. Rimani su questa pagina o fai altro.";
             }
 
