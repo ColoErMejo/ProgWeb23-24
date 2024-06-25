@@ -831,11 +831,13 @@ footer {
   }
 
   .email-section {
-    display: flex; /* Usa il flexbox per allineare gli elementi */
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center; /* Allinea verticalmente gli elementi al centro */
     justify-content: space-between; /* Distribuisce uniformemente gli elementi lungo la riga */
+    width: 100%;
+    padding-left: 2vw;
+    padding-right: 2vw;
   }
 
   .email-section img {
@@ -844,44 +846,6 @@ footer {
 
   .email-section p {
     margin: 0; /* Rimuove il margine predefinito */
-    flex: 1; /* Fa sì che i paragrafi occupino lo stesso spazio */
     text-align: center; /* Centra il testo all'interno dei paragrafi */
-  }
-
-  .email-section p:first-child {
-    margin-left: 0; /* Rimuove il margine sinistro per il primo paragrafo */
-  }
-
-  .email-section p:last-child {
-    margin-right: 0; /* Rimuove il margine destro per l'ultimo paragrafo */
-  }
-
-  .email-section p a {
-    color: transparent;
-    position: relative;
-    margin-left: 5px; /* Aggiunge uno spazio tra l'icona e il link */
-    justify-self: center;
-    font-size: 90%;
-  }
-
-  .email-section p a::after {
-    display: inline; /* Assicurati che il contenuto sia visualizzato */
-    white-space: nowrap; /* Assicurati che il testo non venga avvolto */
-    overflow: hidden; /* Nascondi il testo che eccede la larghezza del contenitore */
-    text-overflow: ellipsis; /* Aggiungi puntini di sospensione se il testo viene tagliato */
-    color: var(--white-color);
-    position: absolute; /* Imposta la posizione assoluta */
-    top: 0; /* Allinea il testo nuovo all'inizio del link */
-    left: 0; /* Allinea il testo nuovo all'inizio del link */
-  }
-
-  .email-section p:nth-child(1) a::after {
-    content: "a.brasi3"; /* Definisci manualmente il testo abbreviato */
-  }
-  .email-section p:nth-child(3) a::after {
-    content: "l.colombo34"; /* Definisci manualmente il testo abbreviato */
-  }
-  .email-section p:nth-child(5) a::after {
-    content: "l.poloni4"; /* Definisci manualmente il testo abbreviato */
   }
 }

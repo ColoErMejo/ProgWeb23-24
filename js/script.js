@@ -98,11 +98,11 @@ function closeModal() {
   document.getElementById("tabellaContratto").classList.remove("table-blur");
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   console.log("Document loaded, showModal:", showModal);
   if (showModal) {
-      document.getElementById('myModal4').style.display = 'block';
-      document.getElementById("tabellaContratto").classList.add("table-blur");
+    document.getElementById("myModal4").style.display = "block";
+    document.getElementById("tabellaContratto").classList.add("table-blur");
   }
 });
 
@@ -120,7 +120,13 @@ function updateData(Numero, Tipo, CreditoResiduo, MinutiResidui) {
   closeModal();
 }
 
-function insertData(Numero2, DataAttivazione2, Tipo2, MinutiResidui2, CreditoResiduo2) {
+function insertData(
+  Numero2,
+  DataAttivazione2,
+  Tipo2,
+  MinutiResidui2,
+  CreditoResiduo2
+) {
   var url =
     "InserisciContratto.php?Numero=" +
     encodeURIComponent(Numero2) +
@@ -159,9 +165,9 @@ function sortTable(n, type, tableID) {
     table.appendChild(row);
     // Assegna la classe in base all'indice
     if (index % 2 === 0) {
-      row.className = 'rowOdd';
+      row.className = "rowOdd";
     } else {
-      row.className = 'rowEven';
+      row.className = "rowEven";
     }
   });
 }
@@ -192,56 +198,86 @@ function parseDate(dateString) {
 
 function controlloModifica() {
   var isValid = true;
-  var tipo = document.getElementById('Tipo').value;
-  var creditoResiduo = document.getElementById('CreditoResiduo').value;
-  var minutiResidui = document.getElementById('MinutiResidui').value;
-  document.getElementById('tipoWarning').style.display = tipo ? 'none' : 'inline';
+  var tipo = document.getElementById("Tipo").value;
+  var creditoResiduo = document.getElementById("CreditoResiduo").value;
+  var minutiResidui = document.getElementById("MinutiResidui").value;
+  document.getElementById("tipoWarning").style.display = tipo
+    ? "none"
+    : "inline";
   if (!tipo) isValid = false;
-  if (tipo === 'a ricarica' && !creditoResiduo) {
-    document.getElementById('creditoResiduoWarning').style.display = 'inline';
+  if (tipo === "a ricarica" && !creditoResiduo) {
+    document.getElementById("creditoResiduoWarning").style.display = "inline";
     isValid = false;
   } else {
-    document.getElementById('creditoResiduoWarning').style.display = 'none';
+    document.getElementById("creditoResiduoWarning").style.display = "none";
   }
-  if (tipo === 'a consumo' && !minutiResidui) {
-    document.getElementById('minutiResiduiWarning').style.display = 'inline';
+  if (tipo === "a consumo" && !minutiResidui) {
+    document.getElementById("minutiResiduiWarning").style.display = "inline";
     isValid = false;
   } else {
-    document.getElementById('minutiResiduiWarning').style.display = 'none';
+    document.getElementById("minutiResiduiWarning").style.display = "none";
   }
   if (isValid) {
-    updateData(document.getElementById('Numero').textContent, tipo, creditoResiduo, minutiResidui);
+    updateData(
+      document.getElementById("Numero").textContent,
+      tipo,
+      creditoResiduo,
+      minutiResidui
+    );
   }
 }
 
-
 function controlloInserimento() {
   var isValid = true;
-  var numero = document.getElementById('Numero2').value;
-  var dataAttivazione = document.getElementById('DataAttivazione2').value;
-  var tipo = document.getElementById('Tipo2').value;
-  var creditoResiduo = document.getElementById('CreditoResiduo2').value;
-  var minutiResidui = document.getElementById('MinutiResidui2').value;
+  var numero = document.getElementById("Numero2").value;
+  var dataAttivazione = document.getElementById("DataAttivazione2").value;
+  var tipo = document.getElementById("Tipo2").value;
+  var creditoResiduo = document.getElementById("CreditoResiduo2").value;
+  var minutiResidui = document.getElementById("MinutiResidui2").value;
 
-  document.getElementById('numeroWarning').style.display = numero ? 'none' : 'inline';
-  document.getElementById('dataAttivazioneWarning2').style.display = dataAttivazione ? 'none' : 'inline';
-  document.getElementById('tipoWarning2').style.display = tipo ? 'none' : 'inline';
+  document.getElementById("numeroWarning").style.display = numero
+    ? "none"
+    : "inline";
+  document.getElementById("dataAttivazioneWarning2").style.display =
+    dataAttivazione ? "none" : "inline";
+  document.getElementById("tipoWarning2").style.display = tipo
+    ? "none"
+    : "inline";
   if (!numero) isValid = false;
   if (!dataAttivazione) isValid = false;
   if (!tipo) isValid = false;
-  if (tipo === 'a consumo' && !minutiResidui) {
-    document.getElementById('minutiResiduiWarning2').style.display = 'inline';
+  if (tipo === "a consumo" && !minutiResidui) {
+    document.getElementById("minutiResiduiWarning2").style.display = "inline";
     isValid = false;
   } else {
-    document.getElementById('minutiResiduiWarning2').style.display = 'none';
+    document.getElementById("minutiResiduiWarning2").style.display = "none";
   }
-  if (tipo === 'a ricarica' && !creditoResiduo) {
-    document.getElementById('creditoResiduoWarning2').style.display = 'inline';
+  if (tipo === "a ricarica" && !creditoResiduo) {
+    document.getElementById("creditoResiduoWarning2").style.display = "inline";
     isValid = false;
   } else {
-    document.getElementById('creditoResiduoWarning2').style.display = 'none';
+    document.getElementById("creditoResiduoWarning2").style.display = "none";
   }
   if (isValid) {
     insertData(numero, dataAttivazione, tipo, minutiResidui, creditoResiduo);
   }
 }
+// Funzione per modificare il testo degli elementi <a> solo se la larghezza dello schermo è <= 768px
+function modificaTestoMail() {
+  var screenWidth = window.innerWidth; // Ottieni la larghezza dello schermo
+
+  if (screenWidth <= 768) {
+    var links = document.querySelectorAll(".mail-link"); // Seleziona tutti gli elementi <a> con la classe 'email-link'
+
+    links.forEach(function (link) {
+      var testoOriginale = link.textContent; // Salva il testo originale
+      var nomeCognome = testoOriginale.split("@")[0]; // Ottieni solo il nome.cognome
+
+      link.textContent = nomeCognome; // Modifica il testo dell'elemento <a> con nome.cognome
+    });
+  }
+}
+
+// Esegui la funzione al caricamento della pagina e al ridimensionamento della finestra
+window.onload = modificaTestoMail;
+window.onresize = modificaTestoMail;
