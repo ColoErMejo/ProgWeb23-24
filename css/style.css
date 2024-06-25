@@ -836,8 +836,8 @@ footer {
     align-items: center; /* Allinea verticalmente gli elementi al centro */
     justify-content: space-between; /* Distribuisce uniformemente gli elementi lungo la riga */
     width: 100%;
-    padding-left: 2vw;
-    padding-right: 2vw;
+    padding-left: 10%;
+    padding-right: 10%;
   }
 
   .email-section img {
