@@ -18,7 +18,7 @@
 	?>
 	<div class="container">
 		<div class="research-filter">
-			<form name="myform" method="POST">
+			<form name="myform" method="POST" autocomplete="off">
 				<input id="Codice" name="Codice" type="text" placeholder="Codice" class="search-box"
 					pattern="[a-zA-Z0-9]+" title="Inserisci una stringa contenente soltanto lettere e numeri" />
 				<input id="Contratto" name="Contratto" type="text" placeholder="Numero di telefono" class="search-box"

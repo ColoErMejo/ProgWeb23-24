@@ -1,7 +1,7 @@
 <?php
-session_start(); 
+session_start();
 $show_modal = isset($_SESSION['show_modal']) ? $_SESSION['show_modal'] : false;
-unset($_SESSION['show_modal']); 
+unset($_SESSION['show_modal']);
 ?>
 
 <!DOCTYPE HTML>
@@ -34,7 +34,7 @@ unset($_SESSION['show_modal']);
 				<h3 class="modal-title">Modifica Contratto Telefonico</h3>
 				<p>Numero: <span id="Numero"><?php echo $Numero; ?></span> <br> Data Attivazione: <span
 						id="DataAttivazione"><?php echo $DataAttivazione; ?></span></p>
-				<form id="updateForm">
+				<form id="updateForm" autocomplete="off">
 					<label for="Tipo">Tipo:</label>
 					<select id="Tipo" name="Tipo" class="modal-select" onchange="showHideFields()">
 						<option value="" disabled selected hidden>Tipologia Contratto</option>
@@ -73,7 +73,7 @@ unset($_SESSION['show_modal']);
 			<div class="modal-content">
 				<span class="close" onclick="closeModal()">&times;</span>
 				<h3 class="modal-title">Inserimento Contratto Telefonico</h3>
-				<form id="createForm">
+				<form id="createForm" autocomplete="off">
 					<label for="Numero2">Numero di telefono: </label>
 					<input type="number" name="Numero" id="Numero2" class="modal-input" required>
 					<span id="numeroWarning" class="warning">Campo obbligatorio</span><br><br>
@@ -117,7 +117,7 @@ unset($_SESSION['show_modal']);
 		</script>
 
 		<div class="research-filter">
-			<form name="myform" method="POST">
+			<form name="myform" method="POST" autocomplete="off">
 				<input id="Numero" name="Numero" type="number" placeholder="Numero di Telefono" class="search-box"
 					pattern="[0-9]+" title="Inserisci un numero di telefono valido">
 				<select id="Tipo" name="Tipo" class="select-box">

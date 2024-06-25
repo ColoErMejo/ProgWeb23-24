@@ -17,7 +17,7 @@
 	?>
 	<div class="container">
 		<div class="research-filter">
-			<form name="myform" method="POST" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
+			<form name="myform" method="POST" autocomplete="off" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
 				<input id="EffettuataDa" name="EffettuataDa" type="text" placeholder="Effettuata Da" class="search-box"
 					pattern="[0-9]+" title="Inserisci un numero di telefono valido" />
 				<input id="Data" name="Data" type="date" placeholder="gg/mm/aa" class="search-box" />
