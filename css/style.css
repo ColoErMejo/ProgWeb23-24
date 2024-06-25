@@ -319,7 +319,7 @@ nav a:nth-child(4):hover ~ .animation {
 
 .research-filter form * {
   /*tutti gli elementi figlio nel form*/
-  margin: 15px; /* Distanza tra i filtri */
+  margin: 13px; /* Distanza tra i filtri */
 }
 
 .research-filter .search-box,
@@ -407,7 +407,7 @@ select.select-box {
 .buttons-container {
   display: flex; /* Utilizza Flexbox */
   justify-content: space-between; /* Spazia gli elementi uniformemente lungo la riga */
-  margin: auto !important;
+  margin: auto;
 }
 
 .search-button,
@@ -648,7 +648,7 @@ footer {
   justify-content: center;
   align-items: center;
   z-index: 3;
-  margin-top: 35px;
+  margin-top: 5vh;
 }
 
 .email-section {
@@ -725,7 +725,7 @@ footer {
   nav a {
     height: 50px;
     line-height: 50px;
-    font-size: xx-small;
+    font-size: 12px;
     /*margin-inline: 5.8vw;*/
     flex-grow: 1; /* Gli elementi crescono proporzionalmente */
     flex-shrink: 1; /* Gli elementi possono restringersi se necessario */
@@ -755,13 +755,39 @@ footer {
     width: 20vw;
   } */
 }
+
 @media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column; /* Modifica l'orientamento dei contenitori su dispositivi mobili */
+    flex-wrap: nowrap;
+    padding-bottom: 0;
+    height: 65vh;
+    margin: 2vh 0 2vh 0;
+  }
+
   /*Filtri di Ricerca*/
+  .research-filter {
+    flex: 0 0 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px; /* Aggiunto padding per spaziatura */
+    width: 60vw;
+    align-self: center;
+    height: 30vh;
+    margin-bottom: 1.8vh;
+  }
+  .research-filter > * {
+    font-size: 10px;
+    padding: 2px;
+  }
+  .research-filter form * {
+    margin: 4px;
+  }
   .research-filter form {
     margin-top: 0;
   }
-}
-@media (max-width: 768px) {
   .research-filter .search-box,
   .research-filter .custom-select,
   .research-filter .date-pick,
@@ -772,44 +798,12 @@ footer {
     margin-bottom: auto;
     width: 90%;
   }
-}
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column; /* Modifica l'orientamento dei contenitori su dispositivi mobili */
-    flex-wrap: nowrap;
-    padding-bottom: 0;
-    /*height: 45vh;*/
-    margin: 2vh 0 2vh 0;
-  }
 
-  .research-filter,
   .content-results {
-    flex: 100%; /* Entrambi i contenitori occupano tutta la larghezza */
-  }
-  .research-filter {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 6px; /* Aggiunto padding per spaziatura */
-    width: 60vw;
-    align-self: center;
-    height: 30vh;
-    margin-bottom: 2vh;
-  }
-  .research-filter > * {
-    font-size: 10px;
-    padding: 2px;
-  }
-  .research-filter form * {
-    margin: 0.2rem;
+    flex: 0 0 70%;
   }
 }
 
-@media (max-width: 1200px) {
-  .content-results {
-    flex: 0 0 60%;
-  }
-}
 @media screen and (max-width: 768px) {
   /*Tabella Risultati*/
   .table th,
@@ -828,6 +822,7 @@ footer {
   /*Footer*/
   footer {
     padding: 6px; /* Riduci il padding su dispositivi più piccoli */
+    margin-top: 3vh;
   }
 
   .email-section {
