@@ -674,8 +674,8 @@ footer {
 }
 
 /*MEDIA QUERIES*/
+/*Onde Header*/
 @media (max-width: 768px) {
-  /*Onde Header*/
   .waves {
     height: 40px;
     min-height: 40px;
@@ -687,8 +687,8 @@ footer {
     font-size: 24px;
   }
 }
+/*Home*/
 @media (max-width: 768px) {
-  /*Home*/
   #containerHome {
     padding: 20px;
     margin: 3vh 0;
@@ -728,8 +728,8 @@ footer {
   }
 }
 
+/*Navbar*/
 @media (max-width: 768px) {
-  /*Navbar*/
   nav {
     position: sticky;
     margin: 2vh 2vw 2vh 2vw !important;
@@ -776,6 +776,7 @@ footer {
   } */
 }
 
+/*Content mid*/
 @media (max-width: 768px) {
   .container {
     display: flex;
@@ -823,9 +824,8 @@ footer {
     flex: 0 0 70%;
   }
 }
-
+/*Tabella Risultati*/
 @media screen and (max-width: 768px) {
-  /*Tabella Risultati*/
   .table th,
   .table td {
     /* Riduci le dimensioni delle colonne */
@@ -838,8 +838,8 @@ footer {
     overflow-x: auto;
   }
 }
+/*Footer*/
 @media screen and (max-width: 768px) {
-  /*Footer*/
   footer {
     padding: 6px; /* Riduci il padding su dispositivi più piccoli */
     margin-top: 3vh;
