@@ -78,7 +78,7 @@
 						?>
 						<tr <?php echo $classRiga; ?>>
 							<td> <?php echo $ID; ?> </td>
-							<td> <?php echo $EffettuataDa; ?> </td>
+							<td> <a href="ContrattoTelefonico.php?Numero=<?php echo $EffettuataDa ?>"><?php echo $EffettuataDa; ?></a> </td>
 							<td> <?php echo $Data ?> </td>
 							<td> <?php echo $Ora ?> </td>
 							<td> <?php echo $Durata; ?> </td>

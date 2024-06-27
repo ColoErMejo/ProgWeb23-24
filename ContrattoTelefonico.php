@@ -75,7 +75,7 @@ unset($_SESSION['show_modal']);
 				<h3 class="modal-title">Inserimento Contratto Telefonico</h3>
 				<form id="createForm" autocomplete="off">
 					<label for="Numero2">Numero di telefono: </label>
-					<input type="number" name="Numero" id="Numero2" class="modal-input" required>
+					<input type="number" name="Numero" id="Numero2" class="modal-input" required min="1" max="9999999999">
 					<span id="numeroWarning" class="warning">Campo obbligatorio</span><br><br>
 					<label for="DataAttivazione2">Data Attivazione: </label>
 					<input type="date" name="DataAttivazione" id="DataAttivazione2" class="modal-input"
@@ -211,9 +211,14 @@ unset($_SESSION['show_modal']);
 							if (!$error) {
 								foreach ($result as $riga) {
 									$NumeroTelefonate = $riga["NumeroTelefonate"];
+									if($NumeroTelefonate != 0){
 									?>
 									<td><a href="Telefonata.php?EffettuataDa=<?php echo $Numero ?>"><?php echo $NumeroTelefonate; ?></a>
 									</td> <?php
+									} else {
+										?>
+										<td><?php echo $NumeroTelefonate;?> </td> <?php
+									}
 								}
 							}
 
@@ -254,10 +259,16 @@ unset($_SESSION['show_modal']);
 							if (!$error) {
 								foreach ($result as $riga) {
 									$NumeroSIMDisattive = $riga["NumeroSIMDisattive"];
+									if($NumeroSIMDisattive != 0) {
 									?>
 									<td><a
 											href="SIM.php?StatoSIM=SIMDisattiva&Contratto=<?php echo $Numero ?>"><?php echo $NumeroSIMDisattive; ?></a>
-									</td> <?php
+									</td> <?php 
+									}
+									else{
+										?>
+									<td><?php echo $NumeroSIMDisattive; ?></td> <?php
+									}
 								}
 							} ?>
 							<td>
