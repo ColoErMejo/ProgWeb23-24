@@ -176,7 +176,7 @@ h3 {
   margin-bottom: 12vh;
   background-color: var(--background-color); /* Colore di sfondo */
   border-radius: 10px; /* Angoli arrotondati */
-  box-shadow: 0 4px 8px var(--shadow-color);
+  box-shadow: 0 6px 10px var(--shadow-color);
 }
 
 /* Stile per l'elemento h3 */
@@ -202,6 +202,7 @@ h3 {
 .container p::-webkit-scrollbar {
   display: none; /* Nasconde la barra di scorrimento */
 }
+
 
 /* Navbar*/
 nav {
