@@ -574,6 +574,7 @@ tbody tr:first-child td {
 
 h3.modal-title {
   border-radius: 10px;
+  font-size: 24px;
   background-color: var(--background-color);
   padding: 1.1rem;
 }
@@ -857,6 +858,45 @@ footer {
   /* Aggiungi una barra di scorrimento orizzontale alla tabella */
   .table {
     overflow-x: auto;
+  }
+}
+/*Modal Inserimento*/
+@media screen and (max-width: 1200px) {
+  .modal-content {
+    display: flex;
+    width: 85%;
+    max-height: fit-content;
+    flex-direction: column;
+    padding-top: 10px;
+  }
+  h3.modal-title {
+    font-size: 20px;
+    position: relative;
+    margin: 0px 0px 20px 0px;
+    padding: 0;
+    align-self: center;
+    overflow-wrap: normal;
+  }
+  .modal-content form {
+    display: flex;
+    flex-direction: column;
+  }
+  .modal-content label {
+    font-size: 14px;
+    margin-bottom: 5px; /* Spazio tra label e input */
+    font-weight: bold; /* Esempio di stile per la label */
+  }
+  span.close {
+    position: relative;
+    align-self: flex-end;
+  }
+  div.modal-content button.search-button {
+    width: fit-content;
+    margin: 20px 0;
+  }
+  .modal-content input.modal-input,
+  .modal-content select.modal-select {
+    max-height: 45px;
   }
 }
 /*Footer*/
